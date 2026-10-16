@@ -11,7 +11,7 @@ export function handleApi(request: Request): Response {
   if (request.method !== "GET") return json({ error: "Method not allowed." }, 405);
   const path = new URL(request.url).pathname.replace(/\/$/, "");
   if (path === "/api/viewpoints") {
-    return json({ viewpoints: catalog.viewpoints, count: catalog.viewpoints.length, importedAt: catalog.importedAt, counties: catalog.counties, sources: catalog.sources });
+    return json({ viewpoints: catalog.viewpoints.map(({ visit, ...v }) => ({ ...v, researchStatus: visit?.reviewStatus })), coverage: catalog.coverage, count: catalog.viewpoints.length, importedAt: catalog.importedAt, counties: catalog.counties, sources: catalog.sources });
   }
   const match = /^\/api\/viewpoints\/([^/]+)$/.exec(path);
   if (match) {

@@ -9,6 +9,15 @@ import { promisify } from 'node:util';
 const run = promisify(execFile);
 
 const destination = fileURLToPath(new URL('../data/catalog.json', import.meta.url));
+// Protect the researched catalog from the earlier seed-only importer.
+try {
+  const existing = JSON.parse(await readFile(destination, 'utf8'));
+  if (existing.schemaVersion >= 2) {
+    console.error('This legacy importer would discard researched visitor profiles. Use npm run data:build and the regional extraction workflow in README.md instead.');
+    process.exit(1);
+  }
+} catch (error) { if (error.code !== 'ENOENT') throw error; }
+
 const counties = ['San Francisco', 'San Mateo', 'Santa Clara', 'Alameda', 'Contra Costa', 'Marin', 'Sonoma', 'Napa', 'Solano'];
 const seeds = [
   ['battery-spencer', 'Battery Spencer', 37.8277, -122.4815, 'Marin', 'Look across the Golden Gate Bridge toward San Francisco from this historic headlands overlook.', ['bridges','ocean','skyline'], 'https://www.nps.gov/places/000/battery-spencer-overlook.htm', 'Battery Spencer Golden Gate Bridge'],

@@ -1,0 +1,731 @@
+{
+  "battery-spencer": {
+    "id": "battery-spencer",
+    "title": "Battery Spencer Overlook (U.S. National Park Service)",
+    "url": "https://www.nps.gov/places/000/battery-spencer-overlook.htm",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-16T18:24:33.029066Z",
+    "sha256": "d967791933dd79cc60dcc032bdebd75c80506dfb49892281d46d2d880d577c3e",
+    "kind": "official"
+  },
+  "twin-peaks": {
+    "id": "twin-peaks",
+    "title": "Parks and Facilities • Twin Peaks",
+    "url": "https://www.sfrecpark.org/facilities/facility/details/Twin-Peaks-384",
+    "publisher": "San Francisco Recreation and Parks",
+    "retrievedAt": "2026-10-16T18:24:34.226909Z",
+    "sha256": "dfa5c0e277de59f04b4f5797755a0f7bd7ee9b38e635513406ef5a97f396af14",
+    "kind": "official"
+  },
+  "muir-beach-overlook": {
+    "id": "muir-beach-overlook",
+    "title": "Muir Beach Overlook (U.S. National Park Service)",
+    "url": "https://www.nps.gov/places/000/muir-beach-overlook.htm",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-16T18:24:34.231786Z",
+    "sha256": "d560448f6078e1406965965978a1bc95d8619e74d61e8c6a8a843d5bf384a7f9",
+    "kind": "official"
+  },
+  "mount-tamalpais": {
+    "id": "mount-tamalpais",
+    "title": "Mount Tamalpais State Park",
+    "url": "https://www.parks.ca.gov/?page_id=471",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-16T18:24:34.232161Z",
+    "sha256": "9fccdaf539cf8752692df3963fbcddb631a15b517d4148b902ba9c8919105620",
+    "kind": "official"
+  },
+  "lands-end": {
+    "id": "lands-end",
+    "title": "Lands End - Golden Gate National Recreation Area (U.S. National Park Service)",
+    "url": "https://www.nps.gov/goga/planyourvisit/landsend.htm",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-16T18:24:33.098374Z",
+    "sha256": "3593d64e27a0bf2481abdfab6c4ef1c1f8ef88ee1a069e7e018ea0c522bd4fc0",
+    "kind": "official"
+  },
+  "grandview-park": {
+    "id": "grandview-park",
+    "title": "Parks and Facilities • Grandview Park",
+    "url": "https://www.sfrecpark.org/Facilities/Facility/Details/Grand-View-Park-338",
+    "publisher": "San Francisco Recreation and Parks",
+    "retrievedAt": "2026-10-16T18:24:34.226178Z",
+    "sha256": "f6d03c041140ae34c7af8e95628df5ec0be004b682905a1db55dd3334f6e0795",
+    "kind": "official"
+  },
+  "bernal-heights": {
+    "id": "bernal-heights",
+    "title": "Explore Our Open Spaces | San Francisco Recreation and Parks, CA",
+    "url": "https://www.sfrecpark.org/1401/Explore-Our-Open-Spaces",
+    "publisher": "San Francisco Recreation and Parks",
+    "retrievedAt": "2026-10-16T18:24:35.374949Z",
+    "sha256": "c8fad51fc4dbaf6ddec5cebc1b20892378b11cd8c6e1aa7e9735d67fa53d9298",
+    "kind": "official"
+  },
+  "point-reyes-lighthouse": {
+    "id": "point-reyes-lighthouse",
+    "title": "Lighthouse Observation Deck Picnic Table (U.S. National Park Service)",
+    "url": "https://www.nps.gov/places/point-reyes-picnic-area-lighthouse-observation-deck.htm",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-16T18:24:34.382297Z",
+    "sha256": "d6dc6d662fbe516e81cd2507d8e789549eab25537bc9ffb23b830ac83f9d7c3a",
+    "kind": "official"
+  },
+  "windy-hill": {
+    "id": "windy-hill",
+    "title": "Windy Hill Preserve | Midpeninsula Regional Open Space District",
+    "url": "https://www.openspace.org/preserves/windy-hill",
+    "publisher": "Midpeninsula Regional Open Space District",
+    "retrievedAt": "2026-10-16T18:24:34.865045Z",
+    "sha256": "c30451223fa30ae3c137c724d898b075d5a56e9ee3f5db0f8b4a4c95542876e2",
+    "kind": "official"
+  },
+  "mori-point": {
+    "id": "mori-point",
+    "title": "MoriPoint - Golden Gate National Recreation Area (U.S. National Park Service)",
+    "url": "https://www.nps.gov/goga/planyourvisit/moripoint.htm",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-16T18:24:34.322683Z",
+    "sha256": "92c2ac6f3e162c0e1cdc531380608f3c482578a1f7b5c726ebfe65c8f7cf71dd",
+    "kind": "official"
+  },
+  "mount-umunhum": {
+    "id": "mount-umunhum",
+    "title": "Seven Breathtaking Views | Midpeninsula Regional Open Space District",
+    "url": "https://www.openspace.org/stories/seven-breathtaking-views",
+    "publisher": "Midpeninsula Regional Open Space District",
+    "retrievedAt": "2026-10-16T18:24:34.759562Z",
+    "sha256": "e367ab8466a8eabe1799ca5bf24b51e7c021f85a1729d30ddefa42786d30b4bf",
+    "kind": "official"
+  },
+  "hunters-point": {
+    "id": "hunters-point",
+    "title": "Fremont Older Preserve | Midpeninsula Regional Open Space District",
+    "url": "https://www.openspace.org/preserves/fremont-older-preserve",
+    "publisher": "Midpeninsula Regional Open Space District",
+    "retrievedAt": "2026-10-16T18:24:37.550628Z",
+    "sha256": "500eba0b75b7155073bd795aebcfae6da4127df0c4c9a4d46aeaaab8d5e48dfd",
+    "kind": "official"
+  },
+  "mount-diablo": {
+    "id": "mount-diablo",
+    "title": "Mount Diablo State Park",
+    "url": "https://www.parks.ca.gov/?page_id=517",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-16T18:24:35.341047Z",
+    "sha256": "6fde4dff5330055867c13bc1903742c287974c51e6936996e33003d2b78a1b49",
+    "kind": "official"
+  },
+  "inspiration-point": {
+    "id": "inspiration-point",
+    "title": "Charles Lee Tilden Regional Park | East Bay Regional Park District",
+    "url": "https://www.ebparks.org/parks/tilden",
+    "publisher": "East Bay Regional Park District",
+    "retrievedAt": "2026-10-16T18:24:36.360941Z",
+    "sha256": "348d1408b420384737a2f1c31481c68a98856d7a8f4b15cb1ceabde1f1b8355f",
+    "kind": "official"
+  },
+  "mission-peak": {
+    "id": "mission-peak",
+    "title": "Mission Peak Regional Preserve | East Bay Regional Park District",
+    "url": "https://www.ebparks.org/parks/mission-peak",
+    "publisher": "East Bay Regional Park District",
+    "retrievedAt": "2026-10-16T18:24:35.828193Z",
+    "sha256": "65c654f72120145f77f6e41ba13aa5e5540b3545ca1882825062a88479d87a25",
+    "kind": "official"
+  },
+  "coyote-hills": {
+    "id": "coyote-hills",
+    "title": "Coyote Hills Regional Park | East Bay Regional Park District",
+    "url": "https://www.ebparks.org/parks/coyote-hills",
+    "publisher": "East Bay Regional Park District",
+    "retrievedAt": "2026-10-16T18:24:36.877037Z",
+    "sha256": "a4caab86896fd3d02c3833a318255c204761b6c397488f52c237c3322585d49d",
+    "kind": "official"
+  },
+  "hawk-hill": {
+    "id": "hawk-hill",
+    "title": "Marin Headlands Scenic Vistas - Golden Gate National Recreation Area (U.S. National Park Service)",
+    "url": "https://www.nps.gov/goga/planyourvisit/marin-headlands-scenic-vistas.htm",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-16T18:24:35.918012Z",
+    "sha256": "209809ef3a6bc137f49b0a9be4a3dd0f039926cec509ba47f5d00e1eeee3faad",
+    "kind": "official"
+  },
+  "lynch-canyon": {
+    "id": "lynch-canyon",
+    "title": "Lynch Canyon Open Space | Solano County, California",
+    "url": "https://www.solanocounty.gov/government/resource-management/solano-county-parks/lynch-canyon-open-space",
+    "publisher": "Solano County",
+    "retrievedAt": "2026-10-16T18:24:37.414655Z",
+    "sha256": "c88c69f92e14a34c9b19ff634c041ef569a11fea1b1da2b52d3b571988104480",
+    "kind": "official"
+  },
+  "russian-ridge": {
+    "id": "russian-ridge",
+    "title": "Russian Ridge Preserve | Midpeninsula Regional Open Space District",
+    "url": "https://www.openspace.org/preserves/russian-ridge",
+    "publisher": "Midpeninsula Regional Open Space District",
+    "retrievedAt": "2026-10-16T18:24:04.416248Z",
+    "sha256": "f9d53d2f47f6861d88e855caa75102af65d28f7abb3fb7f51c6e86643171da7c",
+    "kind": "official"
+  },
+  "monte-bello": {
+    "id": "monte-bello",
+    "title": "Monte Bello Preserve | Midpeninsula Regional Open Space District",
+    "url": "https://www.openspace.org/preserves/monte-bello",
+    "publisher": "Midpeninsula Regional Open Space District",
+    "retrievedAt": "2026-10-16T18:24:37.822184Z",
+    "sha256": "2fe9987a08fe8489e3619605e217b625c862dfde10698e293a12fc975f9d30d3",
+    "kind": "official"
+  },
+  "long-ridge": {
+    "id": "long-ridge",
+    "title": "Long Ridge Preserve | Midpeninsula Regional Open Space District",
+    "url": "https://www.openspace.org/preserves/long-ridge",
+    "publisher": "Midpeninsula Regional Open Space District",
+    "retrievedAt": "2026-10-16T18:24:40.537214Z",
+    "sha256": "f8a55f566c00e0c231558330a57d37c5c6765aa551ebb080b396cfb2bb346836",
+    "kind": "official"
+  },
+  "skyline-ridge": {
+    "id": "skyline-ridge",
+    "title": "Skyline Ridge Preserve | Midpeninsula Regional Open Space District",
+    "url": "https://www.openspace.org/preserves/skyline-ridge",
+    "publisher": "Midpeninsula Regional Open Space District",
+    "retrievedAt": "2026-10-16T18:24:38.515160Z",
+    "sha256": "95f1303bc44dd340cd47694923a78ed7f29e675adc2855c8532292a6643d1cc3",
+    "kind": "official"
+  },
+  "coal-creek": {
+    "id": "coal-creek",
+    "title": "Coal Creek Preserve | Midpeninsula Regional Open Space District",
+    "url": "https://www.openspace.org/preserves/coal-creek",
+    "publisher": "Midpeninsula Regional Open Space District",
+    "retrievedAt": "2026-10-16T18:24:39.964911Z",
+    "sha256": "eea9fb62ee0a35ddeaa10bb88ba70e4a642698f13c44304c55e7ecf96c1ff1ac",
+    "kind": "official"
+  },
+  "picchetti-ranch": {
+    "id": "picchetti-ranch",
+    "title": "Picchetti Ranch Preserve | Midpeninsula Regional Open Space District",
+    "url": "https://www.openspace.org/preserves/picchetti-ranch",
+    "publisher": "Midpeninsula Regional Open Space District",
+    "retrievedAt": "2026-10-16T18:24:39.980387Z",
+    "sha256": "202b1ba2ac9a37ac98e5625ce240620a588f2dedf3cf82260a591a409311102e",
+    "kind": "official"
+  },
+  "el-sereno": {
+    "id": "el-sereno",
+    "title": "El Sereno Preserve | Midpeninsula Regional Open Space District",
+    "url": "https://www.openspace.org/preserves/el-sereno",
+    "publisher": "Midpeninsula Regional Open Space District",
+    "retrievedAt": "2026-10-16T18:24:42.651544Z",
+    "sha256": "74f8332d53f8c78a3133cc7064c92a37cc098df1f168efaee37a5a3dc46bbab5",
+    "kind": "official"
+  },
+  "pulgas-ridge": {
+    "id": "pulgas-ridge",
+    "title": "Pulgas Ridge Preserve | Midpeninsula Regional Open Space District",
+    "url": "https://www.openspace.org/preserves/pulgas-ridge",
+    "publisher": "Midpeninsula Regional Open Space District",
+    "retrievedAt": "2026-10-16T18:24:40.619365Z",
+    "sha256": "49f0affe04bdace33d5e5ce7d65d050f002785c25c6a48f6b6087e8eed9d3a71",
+    "kind": "official"
+  },
+  "purisima-creek": {
+    "id": "purisima-creek",
+    "title": "Purisima Creek Redwoods Preserve | Midpeninsula Regional Open Space District",
+    "url": "https://www.openspace.org/preserves/purisima-creek-redwoods",
+    "publisher": "Midpeninsula Regional Open Space District",
+    "retrievedAt": "2026-10-16T18:24:41.935663Z",
+    "sha256": "72564db0e99b5ec642675c685f4d4c15a6e861b01ffe7b9f91bd8806b47549f9",
+    "kind": "official"
+  },
+  "rancho-san-antonio": {
+    "id": "rancho-san-antonio",
+    "title": "Rancho San Antonio Preserve | Midpeninsula Regional Open Space District",
+    "url": "https://www.openspace.org/preserves/rancho-san-antonio",
+    "publisher": "Midpeninsula Regional Open Space District",
+    "retrievedAt": "2026-10-16T18:24:41.670899Z",
+    "sha256": "898cbd950df5751d50fdb90e1fd40950d9e7a18a3a4ed5467202bbdac1054956",
+    "kind": "official"
+  },
+  "sierra-vista": {
+    "id": "sierra-vista",
+    "title": "Sierra Vista | Open Space Authority",
+    "url": "https://www.openspaceauthority.org/preserves/sierra-vista",
+    "publisher": "Santa Clara Valley Open Space Authority",
+    "retrievedAt": "2026-10-16T18:24:42.193594Z",
+    "sha256": "9fe2f3090f72969e3ce21ccb776bcdbc7c549b9237e30c263dc909964bc9b603",
+    "kind": "official"
+  },
+  "coyote-valley": {
+    "id": "coyote-valley",
+    "title": "Coyote Valley | Open Space Authority",
+    "url": "https://www.openspaceauthority.org/preserves/coyote-valley",
+    "publisher": "Santa Clara Valley Open Space Authority",
+    "retrievedAt": "2026-10-16T18:24:42.620402Z",
+    "sha256": "4fd52fca2158744c882b2eced302440a630354a00ebb492476eb9d35643d68cf",
+    "kind": "official"
+  },
+  "sierra-azul": {
+    "id": "sierra-azul",
+    "title": "Sierra Azul Preserve | Midpeninsula Regional Open Space District",
+    "url": "https://www.openspace.org/preserves/sierra-azul",
+    "publisher": "Midpeninsula Regional Open Space District",
+    "retrievedAt": "2026-10-16T18:24:43.729525Z",
+    "sha256": "f92d2bf1efdec8b6a32b29a7f8adf93a943a3b85748e51499342d35d41e709aa",
+    "kind": "official"
+  },
+  "mount-umunhum-guide": {
+    "id": "mount-umunhum-guide",
+    "title": "Sierra Azul Preserve | Midpeninsula Regional Open Space District",
+    "url": "https://www.openspace.org/mount-umunhum",
+    "publisher": "Midpeninsula Regional Open Space District",
+    "retrievedAt": "2026-10-16T18:24:44.090915Z",
+    "sha256": "f92d2bf1efdec8b6a32b29a7f8adf93a943a3b85748e51499342d35d41e709aa",
+    "kind": "official"
+  },
+  "muir-beach-official": {
+    "id": "muir-beach-official",
+    "title": "Muir Beach & Muir Beach Overlook - Golden Gate National Recreation Area (U.S. National Park Service)",
+    "url": "https://www.nps.gov/goga/planyourvisit/muirbeach.htm",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-16T18:24:43.672364Z",
+    "sha256": "f30ba48ad4fee45b607fbcb09576e7546c2c309c1e32a5b3524e061fa9b3d082",
+    "kind": "official"
+  },
+  "point-reyes-lighthouse-guide": {
+    "id": "point-reyes-lighthouse-guide",
+    "title": "Visit the Point Reyes Lighthouse - Point Reyes National Seashore (U.S. National Park Service)",
+    "url": "https://www.nps.gov/pore/planyourvisit/lighthouse.htm",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-16T18:24:43.768731Z",
+    "sha256": "a5c18574c39fd5979e9cd80a063bbe5d06702c6c2ae3f4c8068414ad9da0381a",
+    "kind": "official"
+  },
+  "chimney-rock": {
+    "id": "chimney-rock",
+    "title": "Chimney Rock - Point Reyes National Seashore (U.S. National Park Service)",
+    "url": "https://www.nps.gov/pore/planyourvisit/chimney_rock.htm",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-16T18:26:46.744471Z",
+    "sha256": "4027e31a44bcae5106c807efb76919936e281ad3aa10d62687a7cadf20a56795",
+    "kind": "official"
+  },
+  "alameda-ridge": {
+    "id": "alameda-ridge",
+    "title": "Las Trampas Wilderness Regional Preserve | East Bay Regional Park District",
+    "url": "https://www.ebparks.org/parks/las-trampas",
+    "publisher": "East Bay Regional Park District",
+    "retrievedAt": "2026-10-16T18:24:45.779243Z",
+    "sha256": "ec64b868df8de647876ea36e0ca08f66fe4d01a655a0314a09061123afa3e756",
+    "kind": "official"
+  },
+  "briones": {
+    "id": "briones",
+    "title": "Briones Regional Park | East Bay Regional Park District",
+    "url": "https://www.ebparks.org/parks/briones",
+    "publisher": "East Bay Regional Park District",
+    "retrievedAt": "2026-10-16T18:24:44.796631Z",
+    "sha256": "152f3740ed128eae3d618fc59377971241df2e3dbf9bd7f7fd0abdedb4c12ea6",
+    "kind": "official"
+  },
+  "reinhardt-redwood": {
+    "id": "reinhardt-redwood",
+    "title": "Dr. Aurelia Reinhardt Redwood Regional Park | East Bay Regional Park District",
+    "url": "https://www.ebparks.org/parks/reinhardt-redwood",
+    "publisher": "East Bay Regional Park District",
+    "retrievedAt": "2026-10-16T18:24:45.784401Z",
+    "sha256": "2e211fc755060a4c2a33a5760fd28654f20d2276b674db96583958423dc964e4",
+    "kind": "official"
+  },
+  "sibley": {
+    "id": "sibley",
+    "title": "Sibley Volcanic Regional Preserve | East Bay Regional Park District",
+    "url": "https://www.ebparks.org/parks/sibley-volcanic",
+    "publisher": "East Bay Regional Park District",
+    "retrievedAt": "2026-10-16T18:24:46.306678Z",
+    "sha256": "7797a01377f8c10fb2452f38d0b17b624014e446867aaf6d9851306cc9fad719",
+    "kind": "official"
+  },
+  "round-valley": {
+    "id": "round-valley",
+    "title": "Round Valley Regional Preserve | East Bay Regional Park District",
+    "url": "https://www.ebparks.org/parks/round-valley",
+    "publisher": "East Bay Regional Park District",
+    "retrievedAt": "2026-10-16T18:24:46.290093Z",
+    "sha256": "3f57ed9d453beafa5b8117f977cd8818ebd50a1471ef47a4952eec08afd5ab3b",
+    "kind": "official"
+  },
+  "black-diamond": {
+    "id": "black-diamond",
+    "title": "Black Diamond Mines Regional Preserve | East Bay Regional Park District",
+    "url": "https://www.ebparks.org/parks/black-diamond",
+    "publisher": "East Bay Regional Park District",
+    "retrievedAt": "2026-10-16T18:24:47.354764Z",
+    "sha256": "24862451708750815dc26c761e434d685b10baf997151dce0586098d129f071c",
+    "kind": "official"
+  },
+  "big-basin": {
+    "id": "big-basin",
+    "title": "Trails and Hiking | California State Parks",
+    "url": "https://www.parks.ca.gov/?page_id=28975",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-16T18:24:46.891268Z",
+    "sha256": "3668e2f94172c0718636e5b8188a7fe3439376118098f576bd5e6a3101dc689c",
+    "kind": "official"
+  },
+  "mount-diablo-trails": {
+    "id": "mount-diablo-trails",
+    "title": "Mount Diablo State Park | California State Parks",
+    "url": "https://www.parks.ca.gov/?page_id=28159",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-16T18:24:47.888285Z",
+    "sha256": "85a8023c25f00eb7c2451bfa73c590b02f224dc3422de29ea2edeb461b532c28",
+    "kind": "official"
+  },
+  "castle-rock": {
+    "id": "castle-rock",
+    "title": "Castle Rock State Park",
+    "url": "https://www.parks.ca.gov/?page_id=538",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-16T18:24:47.999341Z",
+    "sha256": "de38ddcc96d0aab62ef964535739b296c93c81c560cd2fe23736684f8ce0e33f",
+    "kind": "official"
+  },
+  "angel-island": {
+    "id": "angel-island",
+    "title": "Angel Island State Park",
+    "url": "https://www.parks.ca.gov/?page_id=468",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-16T18:24:49.502191Z",
+    "sha256": "d2c3b4d7c4b662fb2bf353a26f4df6d81e4183b77c5d5fe50fa942576284b0f6",
+    "kind": "official"
+  },
+  "sugarloaf-ridge": {
+    "id": "sugarloaf-ridge",
+    "title": "Sugarloaf Ridge State Park",
+    "url": "https://www.parks.ca.gov/?page_id=481",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-16T18:24:48.984884Z",
+    "sha256": "e23416aac80b8ab6e8e3dab7f9846e3bd16e557b629c856b82dea011547ee571",
+    "kind": "official"
+  },
+  "jack-london": {
+    "id": "jack-london",
+    "title": "Jack London State Historic Park",
+    "url": "https://www.parks.ca.gov/?page_id=478",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-16T18:24:51.068460Z",
+    "sha256": "8444328dac85c7bcdb03c9971d1d065d94fe1679e3f89ba5fbc9d968ab32b115",
+    "kind": "official"
+  },
+  "lynch-official": {
+    "id": "lynch-official",
+    "title": "Lynch Canyon : Protected Lands : Solano Land Trust",
+    "url": "https://solanolandtrust.org/protected-lands/lynch-canyon.html",
+    "publisher": "Solano Land Trust",
+    "retrievedAt": "2026-10-16T18:26:48.423673Z",
+    "sha256": "312e75291b97103d6235b1e1b1ffb80405c36acbfced97ef04d73ecd654d2a4f",
+    "kind": "official"
+  },
+  "yosemite-glacier": {
+    "id": "yosemite-glacier",
+    "title": "Glacier Point - Yosemite National Park (U.S. National Park Service)",
+    "url": "https://www.nps.gov/yose/planyourvisit/glacierpoint.htm",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-16T18:24:51.137606Z",
+    "sha256": "149f42106afee07430702d0a1586250cf762a0d0ec01ca23428d8ac44aeec40d",
+    "kind": "official"
+  },
+  "yosemite-sentinel": {
+    "id": "yosemite-sentinel",
+    "title": "Sentinel Dome and Taft Point Trailhead (U.S. National Park Service)",
+    "url": "https://www.nps.gov/places/000/sentinel-dome-and-taft-point-trailhead.htm",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-16T18:24:51.179104Z",
+    "sha256": "4d8c72131ac48deb4d4baf80ae557b163cf661cd002cb4260144dba758c1f7cb",
+    "kind": "official"
+  },
+  "yosemite-tunnel": {
+    "id": "yosemite-tunnel",
+    "title": "Tunnel View (U.S. National Park Service)",
+    "url": "https://www.nps.gov/places/000/tunnel-view.htm",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-16T18:24:51.544503Z",
+    "sha256": "f9d96aeca783fbf715445c4d0a4180a569709b337c56bd607c91e122769531a9",
+    "kind": "official"
+  },
+  "lassen-peak": {
+    "id": "lassen-peak",
+    "title": "Hike Lassen Peak (U.S. National Park Service)",
+    "url": "https://www.nps.gov/thingstodo/hikelassenpeak.htm",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-16T18:26:46.949587Z",
+    "sha256": "a273ed25fcd40cabe2293d66b8f5b928b13e1e955a8895895e2f7d21a4986277",
+    "kind": "official"
+  },
+  "emerald-bay": {
+    "id": "emerald-bay",
+    "title": "Emerald Bay State Park",
+    "url": "https://www.parks.ca.gov/?page_id=506",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-16T18:24:53.250119Z",
+    "sha256": "f3fd7835d0b9ea49895dfff535c33eeb7174ad1280e6e4833891a9e523a89306",
+    "kind": "official"
+  },
+  "point-lobos": {
+    "id": "point-lobos",
+    "title": "Point Lobos State Natural Reserve",
+    "url": "https://www.parks.ca.gov/?page_id=571",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-16T18:24:53.253035Z",
+    "sha256": "74a1de860310371766a697dc3f0fbda04372dc4fd3a3ff32f5171a7502cc6ae0",
+    "kind": "official"
+  },
+  "mendocino-headlands": {
+    "id": "mendocino-headlands",
+    "title": "Mendocino Headlands State Park",
+    "url": "https://www.parks.ca.gov/?page_id=442",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-16T18:24:54.220239Z",
+    "sha256": "13c63bb8dae494d4c0d1de0bf39769387f3101e4d1869ed3a83476f54d51b0d9",
+    "kind": "official"
+  },
+  "patrick-point": {
+    "id": "patrick-point",
+    "title": "Sue-meg State Park",
+    "url": "https://www.parks.ca.gov/?page_id=417",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-16T18:24:54.223625Z",
+    "sha256": "e05ea4a192fb0dff77f4121a54b2abbaea3ff778ba5f7a279c55781ec1bd4864",
+    "kind": "official"
+  },
+  "castle-crags": {
+    "id": "castle-crags",
+    "title": "Castle Crags State Park",
+    "url": "https://www.parks.ca.gov/?page_id=454",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-16T18:24:54.691177Z",
+    "sha256": "4cad6ff4d6c03cab252e85f4e1187cf1ae26a1245bb68c13866461c5774a0f09",
+    "kind": "official"
+  },
+  "lassen-trails": {
+    "id": "lassen-trails",
+    "title": "Day Hiking - Lassen Volcanic National Park (U.S. National Park Service)",
+    "url": "https://www.nps.gov/lavo/planyourvisit/hiking_lassen_park.htm",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-16T18:26:47.354403Z",
+    "sha256": "5943f15a2f2327365546380ade8106db69c5af58cb996d210e801759ce8c4d49",
+    "kind": "official"
+  },
+  "goga-vistas": {
+    "id": "goga-vistas",
+    "title": "Marin Headlands Scenic Vistas - Golden Gate National Recreation Area (U.S. National Park Service)",
+    "url": "https://www.nps.gov/goga/planyourvisit/marin-headlands-scenic-vistas.htm",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-16T18:26:47.419764Z",
+    "sha256": "209809ef3a6bc137f49b0a9be4a3dd0f039926cec509ba47f5d00e1eeee3faad",
+    "kind": "official"
+  },
+  "point-bonita": {
+    "id": "point-bonita",
+    "title": "Point Bonita Lighthouse - Golden Gate National Recreation Area (U.S. National Park Service)",
+    "url": "https://www.nps.gov/goga/pobo.htm",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-16T18:26:47.470831Z",
+    "sha256": "0b7c82aef2f4ea5d1df7a006d5c4713b7e1ab0d017fa6995a2896548d3193ce8",
+    "kind": "official"
+  },
+  "presidio-tunnel": {
+    "id": "presidio-tunnel",
+    "title": "Presidio Tunnel Tops | San Francisco Must See | The Presidio (San Francisco)",
+    "url": "https://presidio.gov/explore/attractions/presidio-tunnel-tops",
+    "publisher": "Presidio Trust",
+    "retrievedAt": "2026-10-16T18:26:47.850468Z",
+    "sha256": "f288b72471a7b71bc00cf5b6afa6610d79f066e3393bce2aaf669f7b29d51718",
+    "kind": "official"
+  },
+  "presidio-inspiration": {
+    "id": "presidio-inspiration",
+    "title": "Inspiration Point Overlook | Presidio National Park | The Presidio (San Francisco)",
+    "url": "https://presidio.gov/explore/attractions/inspiration-point-overlook",
+    "publisher": "Presidio Trust",
+    "retrievedAt": "2026-10-16T18:26:48.803002Z",
+    "sha256": "f46796ffc7f64ecdcede19483f22171fa965d99b14720d48563fb74592c1e1c8",
+    "kind": "official"
+  },
+  "presidio-immigrant": {
+    "id": "presidio-immigrant",
+    "title": "Immigrant Point Overlook | Presidio National Park | The Presidio (San Francisco)",
+    "url": "https://presidio.gov/explore/attractions/immigrant-point-overlook",
+    "publisher": "Presidio Trust",
+    "retrievedAt": "2026-10-16T18:26:49.339033Z",
+    "sha256": "072f4cb66dfbb9502fff1c3b005b14bd8a8465f9669b423427c98dc192ceaa18",
+    "kind": "official"
+  },
+  "presidio-pacific": {
+    "id": "presidio-pacific",
+    "title": "Pacific Overlook | California Coastal Trail | The Presidio (San Francisco)",
+    "url": "https://presidio.gov/explore/attractions/pacific-overlook",
+    "publisher": "Presidio Trust",
+    "retrievedAt": "2026-10-16T18:26:49.316097Z",
+    "sha256": "77c98adbfbfa2e91c4bd0fe2fe77e15a48fb43a005c754bd9d3ba7f25fad3bc2",
+    "kind": "official"
+  },
+  "presidio-national": {
+    "id": "presidio-national",
+    "title": "Golden Gate Overlook | Golden Gate Bridge Views | The Presidio (San Francisco)",
+    "url": "https://presidio.gov/explore/attractions/golden-gate-overlook",
+    "publisher": "Presidio Trust",
+    "retrievedAt": "2026-10-16T18:26:49.442130Z",
+    "sha256": "ddfdb20595e1afe7b49be8718a70c4275a6ed2b5c4d4ff20619a135c28561c65",
+    "kind": "official"
+  },
+  "presidio-battery": {
+    "id": "presidio-battery",
+    "title": "Battery East Vista | Golden Gate View Point | The Presidio (San Francisco)",
+    "url": "https://presidio.gov/explore/attractions/battery-east-vista",
+    "publisher": "Presidio Trust",
+    "retrievedAt": "2026-10-16T18:26:49.930799Z",
+    "sha256": "f542dac0875573398b29d1aadbb6f9ba0cc5a7bbeb7c8cc7bebbe5c862314277",
+    "kind": "official"
+  },
+  "san-bruno": {
+    "id": "san-bruno",
+    "title": "San Bruno Mountain State & County Park | County of San Mateo, CA",
+    "url": "https://www.smcgov.org/parks/san-bruno-mountain-state-county-park",
+    "publisher": "County of San Mateo",
+    "retrievedAt": "2026-10-16T18:26:49.557814Z",
+    "sha256": "2a44b2af413b7748c1cc411f550993909301c63195ae77be2338bfe45f846d59",
+    "kind": "official"
+  },
+  "mcnee": {
+    "id": "mcnee",
+    "title": "Gray Whale Cove State Beach",
+    "url": "https://www.parks.ca.gov/?page_id=528",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-16T18:27:08.721793Z",
+    "sha256": "01b8a891c2b87ea96eada7aed2cae714c659c4527a7c58521260d0d766b41d4f",
+    "kind": "official"
+  },
+  "henry-coe": {
+    "id": "henry-coe",
+    "title": "Henry W. Coe State Park",
+    "url": "https://www.parks.ca.gov/?page_id=561",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-16T18:26:50.377121Z",
+    "sha256": "a5f7793554eb7d63b1c19b31d08240c674fc6fa604e5da133028112e2506dde5",
+    "kind": "official"
+  },
+  "henry-cowell": {
+    "id": "henry-cowell",
+    "title": "Henry Cowell Redwoods State Park",
+    "url": "https://www.parks.ca.gov/?page_id=546",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-16T18:26:49.864439Z",
+    "sha256": "6e3b17fe5b8a30a8773152607c42ca56c1d68a6bc1dc0d2353036c4d40e32c72",
+    "kind": "official"
+  },
+  "point-montara": {
+    "id": "point-montara",
+    "title": "Pigeon Point Light Station State Historic Park",
+    "url": "https://www.parks.ca.gov/?page_id=533",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-16T18:26:50.722262Z",
+    "sha256": "1e91c4a53f1ca1363313c89df791677c967295b23fbecd33871f6435d20682d4",
+    "kind": "official"
+  },
+  "devil-slide": {
+    "id": "devil-slide",
+    "title": "Devil's Slide Trail | County of San Mateo, CA",
+    "url": "https://www.smcgov.org/parks/devils-slide-trail",
+    "publisher": "County of San Mateo",
+    "retrievedAt": "2026-10-16T18:26:51.648087Z",
+    "sha256": "afc8428a314487c948c14d93612173ede4b00206e6dc2227baffec59266cf4df",
+    "kind": "official"
+  },
+  "san-pedro": {
+    "id": "san-pedro",
+    "title": "San Pedro Valley Park | County of San Mateo, CA",
+    "url": "https://www.smcgov.org/parks/san-pedro-valley-park",
+    "publisher": "County of San Mateo",
+    "retrievedAt": "2026-10-16T18:26:52.473547Z",
+    "sha256": "06b5a44e4c1f0d88dd2d6099ef1cfbd5d82b3b57f6228f94e8c594130b0b7a30",
+    "kind": "official"
+  },
+  "hood-map": {
+    "id": "hood-map",
+    "title": "Hood Mountain trail map, version 3.5, October 6 2026",
+    "url": "https://parks.sonomacounty.ca.gov/Microsites/Regional%20Parks/Documents/Visit/Maps/Hood-Mountain-Park-Map.pdf",
+    "publisher": "Sonoma County Regional Parks",
+    "retrievedAt": "2026-10-16T18:25:06.798580Z",
+    "sha256": "a8ecce27075eef78f673c0ee74cc02355d47bf35e4153a05e8283420d393ed00",
+    "kind": "official"
+  },
+  "westwood-map": {
+    "id": "westwood-map",
+    "title": "Westwood Hills trail map, June 2022",
+    "url": "https://www.cityofnapa.org/DocumentCenter/View/9994/Westwood-Hills-Trail-Map",
+    "publisher": "City of Napa",
+    "retrievedAt": "2026-10-16T18:24:37.884419Z",
+    "sha256": "2ad7764ce0a9207f9cbc2e2d63f2fd63535773b9993629d7ff49217398d4252b",
+    "kind": "official"
+  },
+  "ebrpd-2026": {
+    "id": "ebrpd-2026",
+    "title": "East Bay Parks 2026 Trails Challenge Guidebook",
+    "url": "https://www.ebparks.org/sites/default/files/TC-2026-Guidebook-web.pdf?v=2",
+    "publisher": "East Bay Regional Park District",
+    "retrievedAt": "2026-10-16T18:36:22.978487Z",
+    "sha256": "0902705b76ca24fe277be35a11803cbc1340252a1207b0c28d2f63eb25f86eb7",
+    "kind": "official"
+  },
+  "soco-hood-short": {
+    "id": "soco-hood-short",
+    "title": "Hood Mountain Regional Park visitor information",
+    "url": "https://socoparks.org/hood",
+    "publisher": "Sonoma County Regional Parks",
+    "retrievedAt": "2026-10-16T18:36:04.786481Z",
+    "sha256": "cfdf059bbe37081a2075a6c2a4fb87c71862d815817fc4839ff00fcf328067f5",
+    "kind": "official"
+  },
+  "midpen-where": {
+    "id": "midpen-where",
+    "title": "Where to Go — preserve access",
+    "url": "https://www.openspace.org/where-to-go",
+    "publisher": "Midpeninsula Regional Open Space District",
+    "retrievedAt": "2026-10-16T18:36:02.661122Z",
+    "sha256": "fe4b6057fd2405cd97f5e7138c724d692dadd1d2f8a5b70709487704eb3d4ddb",
+    "kind": "official"
+  },
+  "bumpass-hell-guide": {
+    "id": "bumpass-hell-guide",
+    "title": "Hike Bumpass Hell",
+    "url": "https://www.nps.gov/thingstodo/hikebumpasshell.htm",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-16T18:36:02.209853Z",
+    "sha256": "15c5b7e56c2fa3ff10ed440626daea8f00b15096c77c480e8556c282a63c90a7",
+    "kind": "official"
+  },
+  "westwood-official": {
+    "id": "westwood-official",
+    "title": "Westwood Hills Park — municipal visitor information",
+    "url": "https://www.cityofnapa.org/facilities/facility/details/Westwood-Hills-Park-77",
+    "publisher": "City of Napa",
+    "retrievedAt": "2026-10-16T18:42:06.821189Z",
+    "sha256": "82137a62d71fef1763d5ff06aba3653d4625d6ae9c499d5daae76934b02e87f1",
+    "kind": "official"
+  },
+  "muir-hours": {
+    "id": "muir-hours",
+    "title": "Muir Woods and nearby beach operating hours",
+    "url": "https://www.nps.gov/muwo/planyourvisit/hours.htm",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-16T18:42:06.881336Z",
+    "sha256": "c17b9d30abe408eac12dd00ca185985a60bc4143027d006c638baf6f4124be17",
+    "kind": "official"
+  }
+}

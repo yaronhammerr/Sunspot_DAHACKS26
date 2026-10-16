@@ -1,0 +1,92 @@
+[
+  {
+    "id": "windy-hill",
+    "previous": {
+      "lat": 37.3644,
+      "lng": -122.2373,
+      "county": "San Mateo"
+    },
+    "replacement": {
+      "lat": 37.3650312,
+      "lng": -122.2460311,
+      "county": "San Mateo"
+    },
+    "sourceUrl": "https://www.openstreetmap.org/node/8379234917",
+    "reason": "Matched the named destination and preserve to an independently identified OSM viewpoint; retain community-coordinate caveat."
+  },
+  {
+    "id": "hunters-point",
+    "previous": {
+      "lat": 37.2885,
+      "lng": -122.0637,
+      "county": "Santa Clara"
+    },
+    "replacement": {
+      "lat": 37.2932225,
+      "lng": -122.0584838,
+      "county": "Santa Clara"
+    },
+    "sourceUrl": "https://www.openstreetmap.org/node/462147139",
+    "reason": "Matched the named destination and preserve to an independently identified OSM viewpoint; retain community-coordinate caveat."
+  },
+  {
+    "id": "hawk-hill",
+    "previous": {
+      "lat": 37.8268,
+      "lng": -122.4995,
+      "county": "Marin"
+    },
+    "replacement": {
+      "lat": 37.8285523,
+      "lng": -122.498775,
+      "county": "Marin"
+    },
+    "sourceUrl": "https://www.openstreetmap.org/node/358833288",
+    "reason": "Matched the named destination and preserve to an independently identified OSM viewpoint; retain community-coordinate caveat."
+  },
+  {
+    "id": "gunsight-rock",
+    "previous": {
+      "lat": 38.487,
+      "lng": -122.567,
+      "county": "Sonoma"
+    },
+    "replacement": {
+      "lat": 38.4564014,
+      "lng": -122.5568712,
+      "county": "Sonoma"
+    },
+    "sourceUrl": "https://www.openstreetmap.org/node/6655166419",
+    "reason": "Matched the named destination and preserve to an independently identified OSM viewpoint; retain community-coordinate caveat."
+  },
+  {
+    "id": "castle-rock-goat",
+    "previous": {
+      "lat": 37.226,
+      "lng": -122.104,
+      "county": "Santa Clara"
+    },
+    "replacement": {
+      "lat": 37.2282384,
+      "lng": -122.108705,
+      "county": "Santa Cruz"
+    },
+    "sourceUrl": "https://www.openstreetmap.org/node/479729910",
+    "reason": "Matched the named destination and preserve to an independently identified OSM viewpoint; retain community-coordinate caveat."
+  },
+  {
+    "id": "glacier-point",
+    "previous": {
+      "lat": 37.7273,
+      "lng": -119.573,
+      "county": "Mariposa"
+    },
+    "replacement": {
+      "lat": 37.7306704,
+      "lng": -119.5736664,
+      "county": "Mariposa"
+    },
+    "sourceUrl": "https://www.openstreetmap.org/node/331507160",
+    "reason": "Matched the named destination and preserve to an independently identified OSM viewpoint; retain community-coordinate caveat."
+  }
+]

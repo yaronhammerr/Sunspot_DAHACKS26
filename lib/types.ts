@@ -1,6 +1,7 @@
+import type { VisitProfile } from "./visit";
 export type Scenery = "ocean" | "skyline" | "bridges" | "hills" | "greenery";
-export type Photo = { url: string; author: string; license: string; sourceUrl: string; caption?: string; reviewId?: string };
-export type Viewpoint = { id: string; name: string; lat: number; lng: number; county: string; description: string; tags: string[]; featured: number | null; directions?: [number, number][]; sourceUrl: string; photos: Photo[] };
+export type Photo = { url: string; author: string; license: string; sourceUrl: string; caption?: string; reviewId?: string; width?: number; height?: number; displayFit?: "contain"; sourceWidth?: number; sourceHeight?: number; originalUrl?: string; licenseUrl?: string; sha256?: string; bytes?: number; verification?: { status: "verified"; checkedAt: string; subjectNote: string } };
+export type Viewpoint = { id: string; name: string; nameContext?: { kind: "official" | "nearby-feature" | "photo-context"; note: string; sourceUrls: string[]; reviewedAt: string }; lat: number; lng: number; county: string; description: string; tags: string[]; featured: number | null; region?: "bay-area" | "northern-california" | "southern-california"; visit?: VisitProfile; researchStatus?: VisitProfile["reviewStatus"]; directions?: [number, number][]; sourceUrl: string; photos: Photo[] };
 export type Review = { id: string; displayName: string; body: string; photos: Photo[]; createdAt: number };
-export type Catalog = { importedAt: string; counties: string[]; sources: {name: string;url: string}[]; viewpoints: Viewpoint[] };
+export type Catalog = { importedAt: string; counties: string[]; sources: {name: string;url: string}[]; viewpoints: Viewpoint[]; coverage?: { total: number; officialProfiles: number; communityMapped: number; routeCount: number; photoVerified?: number; discoveryInventory?: number; excludedWithoutPhoto?: number; complete: boolean; note: string } };
 export type Weather = { cloudCover: number | null; visibility: number | null; rainProbability: number | null; temperature: number | null; wind: number | null; forecastTime: number; fetchedAt: number };
