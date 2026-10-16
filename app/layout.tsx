@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Sunspot — Find your outside",
-  description: "Discover nearby Bay Area viewpoints, personalized for your kind of scenery.",
+  description: "Discover Bay Area and Northern California viewpoints with sourced visitor information and personalized scenery.",
   manifest: "/manifest.webmanifest",
   appleWebApp: { capable: true, title: "Sunspot", statusBarStyle: "default" },
   icons: {
@@ -21,8 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      {/* Writing assistants add attributes before hydration on the root/body. */}
+      <body className="antialiased" suppressHydrationWarning>{children}</body>
     </html>
   );
 }

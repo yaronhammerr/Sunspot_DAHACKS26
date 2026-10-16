@@ -1,12 +1,14 @@
 "use client";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowRight, ArrowUpRight, Binoculars, Compass, Grid2X2, LocateFixed, Map as MapIcon, MapPin, Search, SlidersHorizontal, X } from "lucide-react";
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { ArrowRight, Compass, LocateFixed, Map as MapIcon, Mountain, Search, SlidersHorizontal, Trees, Waves, X } from "lucide-react";
 import type { Catalog, Viewpoint } from "../lib/types";
-import { distanceMiles } from "../lib/discovery";
+import { distanceMiles, SCENERY } from "../lib/discovery";
+import { localRecommendations } from "../lib/map-experience";
 import { DEFAULT_PREFERENCES, PREFERENCES_KEY, personalizedViews, readPreferences, type Preferences } from "../lib/preferences";
 import ViewpointMap from "./components/viewpoint-map";
 import ViewpointDetail from "./components/viewpoint-detail";
-import ViewPhoto from "./components/view-photo";
+import RecommendedSpots from "./components/recommended-spots";
+import { usePresence } from "./components/use-motion";
 import Onboarding from "./components/onboarding";
 import InstallApp from "./components/install-app";
 import LocationPicker from "./components/location-picker";
@@ -17,11 +19,28 @@ export default function Home() {
   const [error, setError] = useState("");
   const [query, setQuery] = useState("");
   const [county, setCounty] = useState("");
+  const [region, setRegion] = useState("");
+  const [scenery, setScenery] = useState("");
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const [locationOpen, setLocationOpen] = useState(false);
+  const [highlightedIds, setHighlightedIds] = useState<string[]>([]);
+  const [activeId, setActiveId] = useState<string | null>(null);
   const [preferences, setPreferences] = useState<Preferences>(DEFAULT_PREFERENCES);
   const [setup, setSetup] = useState<"loading" | "first" | "edit" | "done">("loading");
+  const [editorSession, setEditorSession] = useState(0);
   const [storageStatus, setStorageStatus] = useState("");
-  const [view, setView] = useState<"grid" | "map">("grid");
+  const [view, setView] = useState<"discover" | "map">("discover");
   const [selected, setSelected] = useState<Viewpoint | null>(null);
+  const lastSelected = useRef<Viewpoint | null>(null);
+  if (selected) lastSelected.current = selected;
+  const detailPresence = usePresence(!!selected);
+  const filtersPresence = usePresence(filtersOpen);
+  const locationPresence = usePresence(locationOpen);
+  const editorPresence = usePresence(setup === "edit");
+  const mapPromptPresence = usePresence(view === "map" && !filtersOpen);
+  const editor = useRef<HTMLDivElement>(null);
+  const editorTrigger = useRef<HTMLElement | null>(null);
+  const detailTrigger = useRef<HTMLElement | null>(null);
   const [location, setLocation] = useState<SearchLocation | null>(null);
   const [locationStatus, setLocationStatus] = useState("");
   const [locating, setLocating] = useState(false);
@@ -29,7 +48,26 @@ export default function Home() {
   const locationRequest = useRef(0);
   const [locationFailed, setLocationFailed] = useState(false);
   const [retry, setRetry] = useState(0);
-  const resultsTitle = useRef<HTMLHeadingElement>(null);
+  const searchInput = useRef<HTMLInputElement>(null);
+  const toolbar = useRef<HTMLDivElement>(null);
+  const tabs = useRef<HTMLElement>(null);
+  const filterTrigger = useRef<HTMLElement | null>(null);
+  const locationTrigger = useRef<HTMLElement | null>(null);
+  const closeFilters = (restoreFocus = false) => { setFiltersOpen(false); if (restoreFocus && filterTrigger.current?.isConnected) filterTrigger.current.focus({ preventScroll: true }); };
+  const closeLocation = (restoreFocus = false) => {
+    setLocationOpen(false);
+    if (restoreFocus) (locationTrigger.current?.isConnected ? locationTrigger.current : toolbar.current?.querySelector<HTMLElement>(".map-location-pill"))?.focus({ preventScroll: true });
+  };
+  const toggleFilters = () => {
+    if (filtersOpen) { closeFilters(true); return; }
+    filterTrigger.current = document.activeElement as HTMLElement | null;
+    setFiltersOpen(true); setLocationOpen(false);
+  };
+  const toggleLocation = () => {
+    if (locationOpen) { closeLocation(true); return; }
+    locationTrigger.current = document.activeElement as HTMLElement | null;
+    setLocationOpen(true); setFiltersOpen(false);
+  };
   const nearMe = useCallback(async (): Promise<boolean> => {
     if (locatingRef.current) return false;
     const request = ++locationRequest.current;
@@ -54,7 +92,7 @@ export default function Home() {
   const chooseLocation = (chosen: SearchLocation) => {
     // Ignore late device callbacks after the user chooses an area.
     ++locationRequest.current; locatingRef.current = false; setLocating(false); setLocationFailed(false);
-    setLocation(chosen); setLocationStatus(`Exploring near ${chosen.label}. Distances are approximate, measured from the city center.`);
+    setLocation(chosen); closeLocation(locationOpen); setLocationStatus(`Exploring near ${chosen.label}. Distances are approximate, measured from the city center.`);
   };
   useEffect(() => {
     let saved: Preferences | null = null;
@@ -67,44 +105,80 @@ export default function Home() {
   }, [nearMe]);
   useEffect(() => {
     const controller = new AbortController(); setError("");
-    fetch("/api/viewpoints", { signal: controller.signal }).then(async r => { if (!r.ok) throw new Error("We couldn’t load the viewpoints. Please try again."); return r.json() as Promise<Catalog>; }).then(setCatalog).catch(e => { if (e.name !== "AbortError") setError(e.message); });
+    fetch("/api/viewpoints", { cache: "no-cache", signal: controller.signal }).then(async r => { if (!r.ok) throw new Error("We couldn’t load the viewpoints. Please try again."); return r.json() as Promise<Catalog>; }).then(data => { if (!controller.signal.aborted) setCatalog(data); }).catch(e => { if (!controller.signal.aborted) setError(e instanceof Error ? e.message : "We couldn’t load the viewpoints. Please try again."); });
     return () => controller.abort();
   }, [retry]);
-  const savePreferences = (p: Preferences) => {
+  const savePreferences = (p: Preferences, focusSearch = false) => {
     setPreferences(p); setSetup("done");
     try { localStorage.setItem(PREFERENCES_KEY, JSON.stringify(p)); setStorageStatus(""); }
     catch { setStorageStatus("Your choices are active for this session, but couldn’t be saved on this device."); }
-    setTimeout(() => resultsTitle.current?.focus(), 0);
+    if (focusSearch) setTimeout(() => searchInput.current?.focus({ preventScroll: true }), 0);
   };
+  const switchView = (next: "discover" | "map") => { setView(next); setFiltersOpen(false); setLocationOpen(false); };
+  const locateFromMap = () => { locationTrigger.current = document.activeElement as HTMLElement | null; setLocationOpen(true); setFiltersOpen(false); void nearMe(); };
+  const selectViewpoint = (viewpoint: Viewpoint) => { if (!selected) detailTrigger.current = document.activeElement as HTMLElement | null; setActiveId(viewpoint.id); setSelected(viewpoint); };
+  const editPreferences = () => { editorTrigger.current = filterTrigger.current ?? document.activeElement as HTMLElement | null; setEditorSession(v => v + 1); setSetup("edit"); setFiltersOpen(false); setLocationOpen(false); };
+  useEffect(() => {
+    if (setup !== "edit") return;
+    const keydown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") { setSetup("done"); return; }
+      if (event.key !== "Tab") return;
+      const controls = [...(editor.current?.querySelectorAll<HTMLElement>('button:not([disabled]),a[href],input:not([disabled]),select:not([disabled]),[tabindex="0"]') ?? [])].filter(control => control.getClientRects().length);
+      if (!controls?.length) return;
+      const first = controls[0], last = controls[controls.length - 1];
+      if (event.shiftKey && (document.activeElement === first || document.activeElement?.tagName === "H1")) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    };
+    document.addEventListener("keydown", keydown);
+    return () => document.removeEventListener("keydown", keydown);
+  }, [setup]);
+  useEffect(() => {
+    if (!editorPresence.present && editorTrigger.current) { if (editorTrigger.current.isConnected) editorTrigger.current.focus({ preventScroll: true }); editorTrigger.current = null; }
+  }, [editorPresence.present]);
+  useEffect(() => {
+    if (!detailPresence.present && detailTrigger.current) { if (detailTrigger.current.isConnected) detailTrigger.current.focus({ preventScroll: true }); detailTrigger.current = null; }
+  }, [detailPresence.present]);
   const all = useMemo(() => catalog?.viewpoints ?? [], [catalog]);
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return personalizedViews(all.filter(v => (!q || `${v.name} ${v.county}`.toLowerCase().includes(q)) && (!county || v.county === county)), preferences, location);
-  }, [all, query, county, preferences, location]);
-  const lead = filtered[0];
-  const reset = () => { setQuery(""); setCounty(""); savePreferences(DEFAULT_PREFERENCES); };
-  const changeView = (next: "grid" | "map") => { setView(next); window.scrollTo({ top: 0, behavior: "smooth" }); };
+    return personalizedViews(all.filter(v => (!q || `${v.name} ${v.county}`.toLowerCase().includes(q)) && (!county || v.county === county) && (!region || v.region === region) && (!scenery || v.tags.includes(scenery))), preferences, location);
+  }, [all, query, county, region, scenery, preferences, location]);
+  const recommendations = useMemo(() => localRecommendations(filtered, location), [filtered, location]);
+  const selectedIndex = selected ? filtered.findIndex(v => v.id === selected.id) : -1;
+  const activeTab = filtersOpen || setup === "edit" ? 2 : view === "map" ? 1 : 0;
+  const hasFilters = !!(query || county || region || scenery || preferences.radius !== null);
+  const filterCount = Number(!!county) + Number(!!region) + Number(preferences.radius !== null) + Number(preferences.priority === "scenery");
+  const reset = () => { setQuery(""); setCounty(""); setRegion(""); setScenery(""); savePreferences(DEFAULT_PREFERENCES); };
+  useEffect(() => {
+    const close = (e: PointerEvent) => { if (!toolbar.current?.contains(e.target as Node) && !tabs.current?.contains(e.target as Node)) { setFiltersOpen(false); setLocationOpen(false); } };
+    const escape = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      if (filtersOpen) { setFiltersOpen(false); if (filterTrigger.current?.isConnected) filterTrigger.current.focus({ preventScroll: true }); }
+      if (locationOpen) { setLocationOpen(false); (locationTrigger.current?.isConnected ? locationTrigger.current : toolbar.current?.querySelector<HTMLElement>(".map-location-pill"))?.focus({ preventScroll: true }); }
+    };
+    document.addEventListener("pointerdown", close); document.addEventListener("keydown", escape);
+    return () => { document.removeEventListener("pointerdown", close); document.removeEventListener("keydown", escape); };
+  }, [filtersOpen, locationOpen]);
   if (setup === "loading") return <div className="app-splash" role="status"><img src="/brand/sunspot-wordmark.png" alt="Sunspot" width="190" height="64" /><p>Finding your outside…</p></div>;
-  if (setup === "first" || setup === "edit") return <><InstallApp compact /><Onboarding initial={preferences} editing={setup === "edit"} locationStatus={locationStatus} locating={locating} hasLocation={!!location} locationFailed={locationFailed} onChooseLocation={chooseLocation} onLocate={nearMe} onComplete={savePreferences} onCancel={() => setSetup("done")} /></>;
-  return <div className="sunspot-app discovery-app">
-    <header className="app-header"><a className="brand" href="/" aria-label="Sunspot home"><img src="/brand/sunspot-wordmark.png" alt="Sunspot" width="150" height="50" /></a><button className="location-pill" onClick={() => void nearMe()} disabled={locating}><LocateFixed size={16} />{locating ? "Locating…" : location?.label ? `Near ${location.label}` : location ? "Location on" : "Enable location"}</button></header>
-    <main>
-      <section className="app-greeting"><div className="eyebrow orange"><span className="tiny-line" /> YOUR NEXT LITTLE ESCAPE</div><h1 ref={resultsTitle} tabIndex={-1}>{location?.label ? `A good view near ${location.label}.` : location ? "A good view, nearby." : "Find your kind of outside."}</h1><p>{preferences.tags.length ? `A little more ${preferences.tags.join(", ")}. A little more you.` : "Fresh air. A new perspective. A moment for you."}</p><button className="preferences-link" onClick={() => setSetup("edit")}><SlidersHorizontal size={15} /> Your preferences <ArrowRight size={14} /></button></section>
-      <InstallApp />
-      {!location && <div className="nearby-banner"><LocateFixed size={23} /><div><strong>What’s around you?</strong><p>{preferences.radius !== null ? `Enable location to find views within ${preferences.radius} miles.` : "Enable location for distances and nearby discoveries."}</p></div><button disabled={locating} onClick={() => void nearMe()}>{locating ? "Locating…" : "Find me"}<ArrowRight size={16} /></button></div>}
-      {locationStatus && <p className="location-status" role="status">{locationStatus}{location && <button onClick={() => { ++locationRequest.current; locatingRef.current = false; setLocating(false); setLocation(null); setLocationFailed(false); setLocationStatus("Location cleared for this session."); }}>Clear location</button>}</p>}
-      {(!location || locationFailed) && <LocationPicker expanded={locationFailed} onSelect={chooseLocation} />}
-      {storageStatus && <p className="location-status" role="status">{storageStatus}</p>}
-      {lead && !query && !county && view === "grid" && <button className="daily-pick" onClick={() => setSelected(lead)}><ViewPhoto photo={lead.photos[0]} name={lead.name} className="daily-pick-photo" eager /><div className="daily-pick-shade" /><div className="daily-pick-content"><span className="pick-label"><Compass size={13} /> YOUR FIRST STOP</span><h2>{lead.name}</h2><span><MapPin size={13} />{lead.county.replace(/ County$/, "")}{location && ` · ${distanceMiles(location, lead).toFixed(1)} mi away`}</span></div><span className="pick-open"><ArrowUpRight size={22} /></span></button>}
-      <section id="explore" className="explore-section app-results" aria-labelledby="explore-title"><div className="section-intro"><div><h2 id="explore-title">{view === "map" ? "Your views, mapped." : "Picked for your perspective."}</h2><p>{location && preferences.radius !== null ? `Within ${preferences.radius} miles · straight-line distance` : "Discover viewpoints across the Bay Area"}</p></div><div className="view-toggle" aria-label="View display"><button onClick={() => changeView("grid")} aria-pressed={view === "grid"}><Grid2X2 size={16} />Feed</button><button onClick={() => changeView("map")} aria-pressed={view === "map"}><MapIcon size={16} />Map</button></div></div>
-        <div className="filter-panel"><div className="search-row"><label className="search-field"><Search size={19} /><input type="search" placeholder="Search a viewpoint or county" value={query} onChange={e => setQuery(e.target.value)} aria-label="Search viewpoints by name or county" /></label><div className="county-field"><select aria-label="Filter by county" value={county} onChange={e => setCounty(e.target.value)}><option value="">All counties</option>{catalog?.counties.map(c => <option key={c} value={c}>{c.replace(/ County$/, "")}</option>)}</select></div></div></div>
-        <div className="active-preferences">{preferences.tags.map(t => <span key={t}>{t}</span>)}{preferences.radius !== null && <span>{preferences.radius} mi{!location ? " · location needed" : " radius"}</span>}<button onClick={() => setSetup("edit")}><SlidersHorizontal size={13} /> Adjust</button>{(query || county) && <button onClick={() => { setQuery(""); setCounty(""); }}>Clear search <X size={12} /></button>}</div>
-        <div className="results-heading"><span>{catalog ? <><strong>{filtered.length}</strong> viewpoints to discover</> : "Finding your next favorite view…"}</span><span className="sort-caption">{preferences.priority === "scenery" && preferences.tags.length ? "Scenery matches first" : location ? "Closest first" : preferences.tags.length ? "Scenery matches first" : "Bay Area favorites"}</span></div>
-        {error ? <div className="empty-state" role="alert"><Compass size={34} /><h3>A small detour.</h3><p>{error}</p><button className="primary-button" onClick={() => setRetry(v => v + 1)}>Try again <ArrowRight size={16} /></button></div> : !catalog ? <div className="viewpoint-grid loading-grid">{[0, 1, 2, 3].map(i => <div className="skeleton-card" key={i}><div /><span /><span /></div>)}</div> : filtered.length === 0 ? <div className="empty-state"><Binoculars size={36} /><h3>A little farther afield?</h3><p>No viewpoints match this search{location && preferences.radius !== null ? ` within ${preferences.radius} miles` : ""}. Our current collection covers the Bay Area.</p><button className="primary-button" onClick={() => setSetup("edit")}>Adjust preferences</button><button className="text-button" onClick={reset}>Explore all Bay Area views</button></div> : view === "map" ? <div className="map-layout"><div className="map-results"><div className="map-results-caption"><MapPin size={15} /> Tap a place to take a closer look</div>{filtered.map(v => <button key={v.id} className="map-result" onClick={() => setSelected(v)}><ViewPhoto photo={v.photos[0]} name={v.name} className="map-result-photo" /><span><strong>{v.name}</strong><small>{v.county.replace(/ County$/, "")}{location && ` · ${distanceMiles(location, v).toFixed(1)} mi`}</small></span><ArrowUpRight size={17} /></button>)}</div><ViewpointMap viewpoints={filtered} onSelect={setSelected} location={location} /></div> : <div className="viewpoint-grid">{filtered.map((v, index) => <article className="viewpoint-card" key={v.id}><button className="card-open" onClick={() => setSelected(v)} aria-label={`Explore ${v.name}`}><div className="card-image-wrap"><ViewPhoto photo={v.photos[0]} name={v.name} className="card-photo" eager={index < 2} /><span className="card-county"><MapPin size={11} />{location ? `${distanceMiles(location, v).toFixed(1)} mi away` : v.county.replace(/ County$/, "")}</span><span className="card-arrow"><ArrowUpRight size={19} /></span></div><div className="card-content"><div className="card-kicker">{v.tags.slice(0, 2).join(" · ") || "A new perspective"}</div><h3>{v.name}</h3><p>{v.description}</p>{v.tags.some(t => preferences.tags.includes(t)) && <span className="match-label">Your kind of view</span>}</div></button></article>)}</div>}
-      </section>
-      <details className="coverage-details"><summary>About the collection</summary><p>{all.length} viewpoints across {catalog?.counties.length ?? 9} Bay Area counties. Check local access, hours, and conditions before visiting. Photos and sources are credited in each viewpoint’s details.</p><p>Distances are straight-line estimates, not driving distances. <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">Map © OpenStreetMap contributors</a></p></details>
+  if (setup === "first") return <div className="onboarding-screen"><InstallApp compact /><Onboarding initial={preferences} editing={false} locationStatus={locationStatus} locating={locating} hasLocation={!!location} locationFailed={locationFailed} onChooseLocation={chooseLocation} onLocate={nearMe} onComplete={p => savePreferences(p, true)} onCancel={() => setSetup("done")} /></div>;
+  return <div className="sunspot-app map-home">
+    <main className="map-stage" aria-label="Discover viewpoints" inert={editorPresence.present || detailPresence.present}>
+      <ViewpointMap viewpoints={filtered} recommendations={recommendations} highlightedIds={view === "discover" && !filtersOpen ? highlightedIds : []} activeId={selected?.id ?? activeId} focusedId={selected?.id ?? null} onSelect={selectViewpoint} location={location} onLocate={locateFromMap} locating={locating} searching={hasFilters} expanded={view === "map" || filtersOpen} />
+      <div className="map-topbar" ref={toolbar}>
+        <header className="map-brand-row"><img src="/brand/sunspot-wordmark.png" alt="Sunspot" width="132" height="44" /><button className="map-location-pill" aria-expanded={locationOpen} aria-controls="map-location-panel" onClick={toggleLocation}><LocateFixed size={14} /><span>{locating ? "Finding you…" : location?.label ? `Near ${location.label}` : location ? "Near you" : "Choose your area"}</span></button></header>
+        <div className="map-search-row"><label className="map-search"><Search size={20} /><input ref={searchInput} type="search" placeholder="Find your next good view" value={query} onChange={e => { setQuery(e.target.value); setView("discover"); }} aria-label="Search viewpoints or counties" />{query && <button aria-label="Clear search" onClick={() => { setQuery(""); searchInput.current?.focus({ preventScroll: true }); }}><X size={16} /></button>}</label><button className={`map-filter-button ${filtersOpen || filterCount ? "is-active" : ""}`} aria-label={`Filters${filterCount ? `, ${filterCount} active` : ""}`} aria-expanded={filtersOpen} aria-controls="map-filter-panel" onClick={toggleFilters}><SlidersHorizontal size={19} /><span>Filters</span>{filterCount > 0 && <b>{filterCount}</b>}</button></div>
+        <div className="map-scenery" aria-label="Filter by scenery"><button aria-pressed={!scenery} onClick={() => { setScenery(""); setView("discover"); }}><Compass size={14} />All views</button>{SCENERY.map(tag => <button key={tag} aria-pressed={scenery === tag} onClick={() => { setScenery(scenery === tag ? "" : tag); setView("discover"); }}>{tag === "ocean" ? <Waves size={14} /> : tag === "greenery" ? <Trees size={14} /> : tag === "hills" ? <Mountain size={14} /> : null}{tag}</button>)}</div>
+        {locationPresence.present && <section data-motion={locationPresence.state} inert={!locationOpen} aria-hidden={!locationOpen} className="map-popover location-popover" id="map-location-panel" aria-label="Your location"><div className="popover-title"><h2>A little closer to you.</h2><button aria-label="Close location options" onClick={() => closeLocation(true)}><X size={18} /></button></div><p>Use your location or pick a city for nearby viewpoints.</p><button className="find-location-button" disabled={locating} onClick={() => void nearMe()}><LocateFixed size={16} />{locating ? "Finding your location…" : "Use my location"}<ArrowRight size={16} /></button>{locationStatus && <p className="location-feedback" role="status">{locationStatus}</p>}<LocationPicker expanded onSelect={chooseLocation} />{location && <button className="text-button" onClick={() => { ++locationRequest.current; locatingRef.current = false; setLocating(false); setLocation(null); setLocationFailed(false); setLocationStatus("Location cleared for this session."); }}>Clear location</button>}</section>}
+        {filtersPresence.present && <section data-motion={filtersPresence.state} inert={!filtersOpen} aria-hidden={!filtersOpen} className="map-popover filter-popover" id="map-filter-panel" aria-label="Viewpoint filters"><div className="popover-title"><h2>Make it your kind of outside.</h2><button aria-label="Close filters" onClick={() => closeFilters(true)}><X size={18} /></button></div><div className="map-filter-fields"><label>Explore region<select value={region} onChange={e => { setRegion(e.target.value); setCounty(""); setView("discover"); }}><option value="">All Northern California</option><option value="bay-area">Bay Area · nine counties</option><option value="northern-california">Beyond the Bay Area</option></select></label><label>County<select value={county} onChange={e => { setCounty(e.target.value); setView("discover"); }}><option value="">All counties</option>{catalog?.counties.filter(c => !region || all.some(v => v.county === c && v.region === region)).map(c => <option key={c} value={c}>{c.replace(/ County$/, "")}</option>)}</select></label><label>Distance<select value={preferences.radius ?? ""} onChange={e => { savePreferences({ ...preferences, radius: e.target.value ? Number(e.target.value) : null }); setView("discover"); }}><option value="">Any distance</option><option value="10">Within 10 miles</option><option value="25">Within 25 miles</option><option value="50">Within 50 miles</option></select></label><label>Recommend by<select value={preferences.priority} onChange={e => savePreferences({ ...preferences, priority: e.target.value as Preferences["priority"] })}><option value="nearby">Closest to me</option><option value="scenery">My scenery preferences</option></select></label></div>{!location && preferences.radius !== null && <p className="filter-note">Choose your area to apply the distance filter.</p>}{preferences.tags.length > 0 && <p className="filter-note">Favorite scenery: {preferences.tags.join(", ")}</p>}<div className="filter-actions"><button className="text-button" onClick={reset}>Reset filters</button><button className="filter-done" onClick={() => closeFilters(true)}>Show {filtered.length.toLocaleString()} spots <ArrowRight size={14} /></button></div><button className="preferences-link" onClick={editPreferences}><SlidersHorizontal size={14} />Edit my preferences<ArrowRight size={14} /></button><InstallApp /><details className="map-collection"><summary>About the collection</summary><p>{all.length.toLocaleString()} viewpoints across {catalog?.counties.length ?? 9} counties. {catalog?.coverage?.officialProfiles ?? 0} profiles researched from agency sources; others are community-mapped. Every listed spot has a reviewed preview photo. Check the sourced hours, rules and conditions in each spot’s overview. Distances are straight-line estimates.</p></details></section>}
+      </div>
+      {!location && !locationOpen && !filtersOpen && <button className="map-location-nudge" onClick={locateFromMap} disabled={locating}><LocateFixed size={15} /><span>{locating ? "Finding your location…" : "Find good views near me"}</span><ArrowRight size={14} /></button>}
+      {location && recommendations[0] && distanceMiles(location, recommendations[0]) > 80 && !hasFilters && <p className="map-area-notice">Our collection currently covers Northern California. Search a place to explore there.</p>}
+      <div className="sr-only" role="status">{locationStatus} {storageStatus} {catalog ? `${filtered.length} viewpoints match your search.` : "Loading viewpoints."}</div>
+      <RecommendedSpots viewpoints={recommendations} location={location} hidden={view === "map" || filtersOpen || setup === "edit"} loading={!catalog && !error} error={error} matchingCount={filtered.length} hasFilters={hasFilters} onSelect={selectViewpoint} onHighlight={setHighlightedIds} onActive={setActiveId} onReset={reset} onRetry={() => setRetry(v => v + 1)} />
+      {mapPromptPresence.present && <button data-motion={mapPromptPresence.state} inert={view !== "map" || filtersOpen} aria-hidden={view !== "map" || filtersOpen} className="show-recommendations" onClick={() => switchView("discover")}><Compass size={17} />Show nearby picks<ArrowRight size={15} /></button>}
     </main>
-    <nav className="app-tabbar" aria-label="Main navigation"><button aria-current={view === "grid" ? "page" : undefined} onClick={() => changeView("grid")}><Compass size={22} /><span>Discover</span></button><button aria-current={view === "map" ? "page" : undefined} onClick={() => changeView("map")}><MapIcon size={22} /><span>Map</span></button><button onClick={() => setSetup("edit")}><SlidersHorizontal size={22} /><span>Preferences</span></button></nav>
-    {selected && <ViewpointDetail viewpoint={selected} onClose={() => setSelected(null)} />}
+    <nav ref={tabs} className="map-tabbar" aria-label="Main navigation" inert={editorPresence.present || detailPresence.present} style={{ "--active-tab": activeTab } as CSSProperties}><button aria-current={activeTab === 0 ? "page" : undefined} onClick={() => switchView("discover")}><Compass size={21} /><span>Discover</span></button><button aria-current={activeTab === 1 ? "page" : undefined} onClick={() => switchView("map")}><MapIcon size={21} /><span>Map</span></button><button aria-expanded={filtersOpen} aria-controls="map-filter-panel" onClick={toggleFilters}><SlidersHorizontal size={21} /><span>Preferences</span></button></nav>
+    {editorPresence.present && <div ref={editor} className="preferences-editor" data-motion={editorPresence.state} inert={setup !== "edit"} role="dialog" aria-modal="true" aria-label="Your viewpoint preferences" aria-hidden={setup !== "edit"}><Onboarding key={editorSession} initial={preferences} editing locationStatus={locationStatus} locating={locating} hasLocation={!!location} locationFailed={locationFailed} onChooseLocation={chooseLocation} onLocate={nearMe} onComplete={p => savePreferences(p)} onCancel={() => setSetup("done")} /></div>}
+    {detailPresence.present && lastSelected.current && <ViewpointDetail viewpoint={selected ?? lastSelected.current} visible={!!selected} onClose={() => setSelected(null)} previous={selectedIndex > 0 ? filtered[selectedIndex - 1] : undefined} next={selectedIndex >= 0 ? filtered[selectedIndex + 1] : undefined} position={selectedIndex >= 0 ? `${selectedIndex + 1} / ${filtered.length}` : undefined} onNavigate={selectViewpoint} />}
   </div>;
 }

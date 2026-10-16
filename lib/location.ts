@@ -46,7 +46,7 @@ export async function findDeviceLocation(geo: Pick<Geolocation, "getCurrentPosit
 }
 
 // Approximate city centers, used only after an explicit choice, never as device coordinates.
-export const BAY_AREA_CITIES: (SearchLocation & { label: string })[] = [
+export const CALIFORNIA_CITIES: (SearchLocation & { label: string })[] = [
   { label: "Berkeley", lat: 37.8715, lng: -122.2730 },
   { label: "Concord", lat: 37.9780, lng: -122.0311 },
   { label: "Cupertino", lat: 37.3230, lng: -122.0322 },
@@ -69,5 +69,16 @@ export const BAY_AREA_CITIES: (SearchLocation & { label: string })[] = [
   { label: "Santa Rosa", lat: 38.4404, lng: -122.7141 },
   { label: "Sunnyvale", lat: 37.3688, lng: -122.0363 },
   { label: "Vallejo", lat: 38.1041, lng: -122.2566 },
+  { label: "Chico", lat: 39.7285, lng: -121.8375 },
+  { label: "Davis", lat: 38.5449, lng: -121.7405 },
+  { label: "Eureka", lat: 40.8021, lng: -124.1637 },
+  { label: "Mendocino", lat: 39.3077, lng: -123.7995 },
+  { label: "Monterey", lat: 36.6002, lng: -121.8947 },
+  { label: "Placerville", lat: 38.7296, lng: -120.7985 },
+  { label: "Redding", lat: 40.5865, lng: -122.3917 },
+  { label: "Sacramento", lat: 38.5816, lng: -121.4944 },
+  { label: "Santa Cruz", lat: 36.9741, lng: -122.0308 },
+  { label: "South Lake Tahoe", lat: 38.9399, lng: -119.9772 },
+  { label: "Truckee", lat: 39.3279, lng: -120.1833 },
   { label: "Walnut Creek", lat: 37.9101, lng: -122.0652 },
 ];
