@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Sunspot",
+      "type": "process",
+      "command": "/Users/noamgad/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "args": ["scripts/run-framework.mjs", "dev"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    }
+  ]
+}

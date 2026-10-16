@@ -1,0 +1,665 @@
+{
+  "importedAt": "2026-10-16T17:49:38.994Z",
+  "counties": [
+    "San Francisco",
+    "San Mateo",
+    "Santa Clara",
+    "Alameda",
+    "Contra Costa",
+    "Marin",
+    "Sonoma",
+    "Napa",
+    "Solano"
+  ],
+  "sources": [
+    {
+      "name": "OpenStreetMap contributors · ODbL",
+      "url": "https://www.openstreetmap.org/copyright"
+    },
+    {
+      "name": "Wikimedia Commons · individual photo licenses",
+      "url": "https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia"
+    },
+    {
+      "name": "Battery Spencer",
+      "url": "https://www.nps.gov/places/000/battery-spencer-overlook.htm"
+    },
+    {
+      "name": "Twin Peaks",
+      "url": "https://www.sfrecpark.org/facilities/facility/details/Twin-Peaks-384"
+    },
+    {
+      "name": "Muir Beach Overlook",
+      "url": "https://www.nps.gov/places/000/muir-beach-overlook.htm"
+    },
+    {
+      "name": "Mount Tamalpais — East Peak",
+      "url": "https://www.parks.ca.gov/?page_id=471"
+    },
+    {
+      "name": "Lands End Lookout",
+      "url": "https://www.nps.gov/goga/planyourvisit/landsend.htm"
+    },
+    {
+      "name": "Grandview Park",
+      "url": "https://www.sfrecpark.org/Facilities/Facility/Details/Grand-View-Park-338"
+    },
+    {
+      "name": "Bernal Heights Hill",
+      "url": "https://www.sfrecpark.org/1401/Explore-Our-Open-Spaces"
+    },
+    {
+      "name": "Point Reyes Lighthouse Observation Deck",
+      "url": "https://www.nps.gov/places/point-reyes-picnic-area-lighthouse-observation-deck.htm"
+    },
+    {
+      "name": "Windy Hill Summit",
+      "url": "https://www.openspace.org/preserves/windy-hill"
+    },
+    {
+      "name": "Mori Point",
+      "url": "https://www.nps.gov/goga/planyourvisit/moripoint.htm"
+    },
+    {
+      "name": "Mount Umunhum Summit",
+      "url": "https://www.openspace.org/stories/seven-breathtaking-views"
+    },
+    {
+      "name": "Hunters Point — Fremont Older",
+      "url": "https://www.openspace.org/preserves/fremont-older-preserve"
+    },
+    {
+      "name": "Mount Diablo Summit",
+      "url": "https://www.parks.ca.gov/?page_id=517"
+    },
+    {
+      "name": "Inspiration Point — Tilden",
+      "url": "https://www.ebparks.org/parks/tilden"
+    },
+    {
+      "name": "Mission Peak Summit",
+      "url": "https://www.ebparks.org/parks/mission-peak"
+    },
+    {
+      "name": "Coyote Hills — Bay View",
+      "url": "https://www.ebparks.org/parks/coyote-hills"
+    },
+    {
+      "name": "Hawk Hill",
+      "url": "https://www.nps.gov/goga/planyourvisit/marin-headlands-scenic-vistas.htm"
+    },
+    {
+      "name": "Gunsight Rock Overlook",
+      "url": "https://parks.sonomacounty.ca.gov/Microsites/Regional%20Parks/Documents/Visit/Maps/Hood-Mountain-Park-Map.pdf"
+    },
+    {
+      "name": "Westwood Hills — Summit Vista",
+      "url": "https://www.cityofnapa.org/DocumentCenter/View/9994/Westwood-Hills-Trail-Map"
+    },
+    {
+      "name": "Lynch Canyon — Ridge View",
+      "url": "https://www.solanocounty.gov/government/resource-management/solano-county-parks/lynch-canyon-open-space"
+    }
+  ],
+  "viewpoints": [
+    {
+      "id": "battery-spencer",
+      "name": "Battery Spencer",
+      "lat": 37.8277,
+      "lng": -122.4815,
+      "county": "Marin",
+      "description": "Look across the Golden Gate Bridge toward San Francisco from this historic headlands overlook.",
+      "tags": [
+        "bridges",
+        "ocean",
+        "skyline"
+      ],
+      "featured": 0,
+      "sourceUrl": "https://www.nps.gov/places/000/battery-spencer-overlook.htm",
+      "photos": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Golden_Gate_Bridge%2C_North_view.jpg/1280px-Golden_Gate_Bridge%2C_North_view.jpg",
+          "author": "Radomianin",
+          "license": "CC BY-SA 4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Golden_Gate_Bridge,_North_view.jpg",
+          "caption": "Golden Gate Bridge, North view"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Golden_Gate_Bridge%2C_north_tower_detail.jpg/1280px-Golden_Gate_Bridge%2C_north_tower_detail.jpg",
+          "author": "Radomianin",
+          "license": "CC BY-SA 4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Golden_Gate_Bridge,_north_tower_detail.jpg",
+          "caption": "Golden Gate Bridge, north tower detail"
+        }
+      ]
+    },
+    {
+      "id": "twin-peaks",
+      "name": "Twin Peaks",
+      "lat": 37.7544,
+      "lng": -122.4477,
+      "county": "San Francisco",
+      "description": "The summit trails offer a sweeping, 360-degree perspective above San Francisco. Expect wind and fog.",
+      "tags": [
+        "skyline",
+        "hills",
+        "ocean"
+      ],
+      "featured": 1,
+      "sourceUrl": "https://www.sfrecpark.org/facilities/facility/details/Twin-Peaks-384",
+      "photos": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/San_Francisco_Panorama_from_Twin_Peaks_2013.jpg/1280px-San_Francisco_Panorama_from_Twin_Peaks_2013.jpg",
+          "author": "Tuxyso",
+          "license": "CC BY-SA 3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:San_Francisco_Panorama_from_Twin_Peaks_2013.jpg",
+          "caption": "San Francisco Panorama from Twin Peaks 2013"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/San_Francisco_from_Twin_Peaks_September_2013_panorama_5_edit.jpg/1280px-San_Francisco_from_Twin_Peaks_September_2013_panorama_5_edit.jpg",
+          "author": "King of Hearts",
+          "license": "CC BY-SA 3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:San_Francisco_from_Twin_Peaks_September_2013_panorama_5_edit.jpg",
+          "caption": "San Francisco from Twin Peaks September 2013 panorama 5 edit"
+        }
+      ],
+      "directions": [
+        [
+          0,
+          360
+        ]
+      ]
+    },
+    {
+      "id": "muir-beach-overlook",
+      "name": "Muir Beach Overlook",
+      "lat": 37.8636,
+      "lng": -122.5868,
+      "county": "Marin",
+      "description": "A dramatic coastal staircase leads to an ocean overlook above rocky cliffs. Bring a windbreaker.",
+      "tags": [
+        "ocean",
+        "hills"
+      ],
+      "featured": 2,
+      "sourceUrl": "https://www.nps.gov/places/000/muir-beach-overlook.htm",
+      "photos": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Pacific_coastline_as_seen_from_Muir_Beach_Overlook_in_January_2020.jpg/1280px-Pacific_coastline_as_seen_from_Muir_Beach_Overlook_in_January_2020.jpg",
+          "author": "Frank Schulenburg",
+          "license": "CC BY-SA 4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pacific_coastline_as_seen_from_Muir_Beach_Overlook_in_January_2020.jpg",
+          "caption": "Pacific coastline as seen from Muir Beach Overlook in January 2020"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Muir_Beach_Overlook.jpg/1280px-Muir_Beach_Overlook.jpg",
+          "author": "Frank Schulenburg",
+          "license": "CC BY-SA 3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Muir_Beach_Overlook.jpg",
+          "caption": "Muir Beach Overlook"
+        }
+      ]
+    },
+    {
+      "id": "mount-tamalpais",
+      "name": "Mount Tamalpais — East Peak",
+      "lat": 37.9235,
+      "lng": -122.5779,
+      "county": "Marin",
+      "description": "Enjoy Bay Area and Pacific vistas from the upper mountain and the Verna Dunshee Trail.",
+      "tags": [
+        "ocean",
+        "hills",
+        "greenery",
+        "skyline"
+      ],
+      "featured": 3,
+      "sourceUrl": "https://www.parks.ca.gov/?page_id=471",
+      "photos": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/San_Francisco_viewed_from_Mount_Tamalpais_East_Peak.jpg/1280px-San_Francisco_viewed_from_Mount_Tamalpais_East_Peak.jpg",
+          "author": "Chris Koerner from St. Louis, USA",
+          "license": "CC BY-SA 2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:San_Francisco_viewed_from_Mount_Tamalpais_East_Peak.jpg",
+          "caption": "San Francisco viewed from Mount Tamalpais East Peak"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/View_of_Sutro_Tower_and_surrounding_landscape_from_Mount_Tamalpais_East_Peak.jpg/1280px-View_of_Sutro_Tower_and_surrounding_landscape_from_Mount_Tamalpais_East_Peak.jpg",
+          "author": "Chris Koerner from St. Louis, USA",
+          "license": "CC BY-SA 2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_of_Sutro_Tower_and_surrounding_landscape_from_Mount_Tamalpais_East_Peak.jpg",
+          "caption": "View of Sutro Tower and surrounding landscape from Mount Tamalpais East Peak"
+        }
+      ]
+    },
+    {
+      "id": "lands-end",
+      "name": "Lands End Lookout",
+      "lat": 37.78,
+      "lng": -122.5033,
+      "county": "San Francisco",
+      "description": "Pacific coastline, rocky headlands and the historic Sutro Baths landscape meet at the western edge of the city.",
+      "tags": [
+        "ocean",
+        "greenery"
+      ],
+      "featured": 4,
+      "sourceUrl": "https://www.nps.gov/goga/planyourvisit/landsend.htm",
+      "photos": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Seal_Rocks%2C_Ocean_Beach%2C_San_Francisco.jpg/1280px-Seal_Rocks%2C_Ocean_Beach%2C_San_Francisco.jpg",
+          "author": "Radomianin",
+          "license": "CC BY-SA 4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seal_Rocks,_Ocean_Beach,_San_Francisco.jpg",
+          "caption": "Seal Rocks, Ocean Beach, San Francisco"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Ocean_Sunset_over_Sutro%2C_San_Francisco_%288404251146%29.jpg/1280px-Ocean_Sunset_over_Sutro%2C_San_Francisco_%288404251146%29.jpg",
+          "author": "Sharon Mollerus",
+          "license": "CC BY 2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ocean_Sunset_over_Sutro,_San_Francisco_(8404251146).jpg",
+          "caption": "Ocean Sunset over Sutro, San Francisco (8404251146)"
+        }
+      ]
+    },
+    {
+      "id": "grandview-park",
+      "name": "Grandview Park",
+      "lat": 37.7563,
+      "lng": -122.4719,
+      "county": "San Francisco",
+      "description": "A small hilltop above the Sunset District, with city and coastal scenery. Stay on paths to protect the fragile habitat.",
+      "tags": [
+        "ocean",
+        "skyline",
+        "hills"
+      ],
+      "featured": 5,
+      "sourceUrl": "https://www.sfrecpark.org/Facilities/Facility/Details/Grand-View-Park-338",
+      "photos": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Foggy_San_Francisco_from_Grandview_Park.jpg/1280px-Foggy_San_Francisco_from_Grandview_Park.jpg",
+          "author": "Mauiuy92",
+          "license": "CC BY 3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Foggy_San_Francisco_from_Grandview_Park.jpg",
+          "caption": "Around The World"
+        }
+      ]
+    },
+    {
+      "id": "bernal-heights",
+      "name": "Bernal Heights Hill",
+      "lat": 37.7431,
+      "lng": -122.4146,
+      "county": "San Francisco",
+      "description": "An open hilltop in the city with skyline views and a network of established paths.",
+      "tags": [
+        "skyline",
+        "hills",
+        "greenery"
+      ],
+      "featured": 6,
+      "sourceUrl": "https://www.sfrecpark.org/1401/Explore-Our-Open-Spaces",
+      "photos": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/San_Francisco_nighttime_skyline_from_Bernal_Heights.jpg/1280px-San_Francisco_nighttime_skyline_from_Bernal_Heights.jpg",
+          "author": "Dllu",
+          "license": "CC BY-SA 4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:San_Francisco_nighttime_skyline_from_Bernal_Heights.jpg",
+          "caption": "San Francisco nighttime skyline from Bernal Heights"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Skyline%2C_Bernal_Heights%2C_San_Francisco%2C_California%2C_USA_%28165453211%29.jpg/1280px-Skyline%2C_Bernal_Heights%2C_San_Francisco%2C_California%2C_USA_%28165453211%29.jpg",
+          "author": "Thomas Roessler",
+          "license": "CC BY-SA 3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Skyline,_Bernal_Heights,_San_Francisco,_California,_USA_(165453211).jpg",
+          "caption": "Skyline, Bernal Heights, San Francisco, California, USA"
+        }
+      ]
+    },
+    {
+      "id": "point-reyes-lighthouse",
+      "name": "Point Reyes Lighthouse Observation Deck",
+      "lat": 37.99645,
+      "lng": -123.02099,
+      "county": "Marin",
+      "description": "An observation deck high above the Pacific near the Point Reyes Lighthouse. Conditions can be very windy.",
+      "tags": [
+        "ocean",
+        "hills"
+      ],
+      "featured": 7,
+      "sourceUrl": "https://www.nps.gov/places/point-reyes-picnic-area-lighthouse-observation-deck.htm",
+      "photos": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Point_Reyes_Lighthouse_in_December_2019.jpg/1280px-Point_Reyes_Lighthouse_in_December_2019.jpg",
+          "author": "Frank Schulenburg",
+          "license": "CC BY-SA 4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Point_Reyes_Lighthouse_in_December_2019.jpg",
+          "caption": "Point Reyes Lighthouse in December 2019"
+        }
+      ]
+    },
+    {
+      "id": "windy-hill",
+      "name": "Windy Hill Summit",
+      "lat": 37.3644,
+      "lng": -122.2373,
+      "county": "San Mateo",
+      "description": "The summit gives a 360-degree panorama from San Francisco Bay to the Pacific Ocean.",
+      "tags": [
+        "ocean",
+        "hills",
+        "greenery"
+      ],
+      "featured": 8,
+      "sourceUrl": "https://www.openspace.org/preserves/windy-hill",
+      "photos": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Mount_Diablo_from_Windy_Hill.JPG/1280px-Mount_Diablo_from_Windy_Hill.JPG",
+          "author": "User:David R. Ingham",
+          "license": "CC BY-SA 3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mount_Diablo_from_Windy_Hill.JPG",
+          "caption": "Mount Diablo from Windy Hill"
+        }
+      ],
+      "directions": [
+        [
+          0,
+          360
+        ]
+      ]
+    },
+    {
+      "id": "mori-point",
+      "name": "Mori Point",
+      "lat": 37.6105,
+      "lng": -122.4983,
+      "county": "San Mateo",
+      "description": "Coastal bluffs above Pacifica with ocean views and restored habitat. Use designated paths.",
+      "tags": [
+        "ocean",
+        "hills",
+        "greenery"
+      ],
+      "featured": 9,
+      "sourceUrl": "https://www.nps.gov/goga/planyourvisit/moripoint.htm",
+      "photos": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Mori_Point_from_Pacifica_Beach_in_Pacifica_California_%289060304932%29.jpg/1280px-Mori_Point_from_Pacifica_Beach_in_Pacifica_California_%289060304932%29.jpg",
+          "author": "John Menard from Phoenix, USA",
+          "license": "CC BY-SA 2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mori_Point_from_Pacifica_Beach_in_Pacifica_California_(9060304932).jpg",
+          "caption": "Mori Point from Pacifica Beach in Pacifica California (9060304932)"
+        }
+      ]
+    },
+    {
+      "id": "mount-umunhum",
+      "name": "Mount Umunhum Summit",
+      "lat": 37.1606,
+      "lng": -121.8986,
+      "county": "Santa Clara",
+      "description": "A restored mountain summit with panoramic views, interpretive displays and an accessible summit pathway.",
+      "tags": [
+        "hills",
+        "skyline",
+        "greenery",
+        "ocean"
+      ],
+      "featured": 10,
+      "sourceUrl": "https://www.openspace.org/stories/seven-breathtaking-views",
+      "photos": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Mount_Umunhum_-_West_from_Mount_Umunhum_Rd.jpg/1280px-Mount_Umunhum_-_West_from_Mount_Umunhum_Rd.jpg",
+          "author": "Unixxx",
+          "license": "CC BY-SA 4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mount_Umunhum_-_West_from_Mount_Umunhum_Rd.jpg",
+          "caption": "Mount Umunhum - West from Mount Umunhum Rd"
+        }
+      ],
+      "directions": [
+        [
+          0,
+          360
+        ]
+      ]
+    },
+    {
+      "id": "hunters-point",
+      "name": "Hunters Point — Fremont Older",
+      "lat": 37.2885,
+      "lng": -122.0637,
+      "county": "Santa Clara",
+      "description": "An exposed hilltop in Fremont Older Preserve overlooking the Santa Clara Valley.",
+      "tags": [
+        "hills",
+        "skyline",
+        "greenery"
+      ],
+      "featured": 11,
+      "sourceUrl": "https://www.openspace.org/preserves/fremont-older-preserve",
+      "photos": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Hunters_Point_Pano2.jpg/1280px-Hunters_Point_Pano2.jpg",
+          "author": "Andrew Chen (Achen33)",
+          "license": "CC BY-SA 3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hunters_Point_Pano2.jpg",
+          "caption": "Hunters Point Pano2"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Panorama_from_Hunter%27s_Point%2C_Cupertino_%289072411051%29.jpg/1280px-Panorama_from_Hunter%27s_Point%2C_Cupertino_%289072411051%29.jpg",
+          "author": "Minyoung Choi from Cupertino, CA, USA",
+          "license": "CC BY-SA 2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panorama_from_Hunter%27s_Point,_Cupertino_(9072411051).jpg",
+          "caption": "Panorama from Hunter's Point, Cupertino (9072411051)"
+        }
+      ]
+    },
+    {
+      "id": "mount-diablo",
+      "name": "Mount Diablo Summit",
+      "lat": 37.8816,
+      "lng": -121.9142,
+      "county": "Contra Costa",
+      "description": "The summit can offer far-reaching views in every direction when the air is clear.",
+      "tags": [
+        "hills",
+        "greenery"
+      ],
+      "featured": 12,
+      "sourceUrl": "https://www.parks.ca.gov/?page_id=517",
+      "photos": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/San_Francisco_from_Mount_DIablo_-_panorama_Version_2_%2827375045484%29.jpg/1280px-San_Francisco_from_Mount_DIablo_-_panorama_Version_2_%2827375045484%29.jpg",
+          "author": "Bill Abbott",
+          "license": "CC BY-SA 2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:San_Francisco_from_Mount_DIablo_-_panorama_Version_2_(27375045484).jpg",
+          "caption": "San Francisco from Mount DIablo - panorama Version 2 (27375045484)"
+        }
+      ],
+      "directions": [
+        [
+          0,
+          360
+        ]
+      ]
+    },
+    {
+      "id": "inspiration-point",
+      "name": "Inspiration Point — Tilden",
+      "lat": 37.9056,
+      "lng": -122.2442,
+      "county": "Contra Costa",
+      "description": "A scenic starting point in the Berkeley hills, with rolling grasslands and views along Nimitz Way.",
+      "tags": [
+        "hills",
+        "greenery"
+      ],
+      "featured": 13,
+      "sourceUrl": "https://www.ebparks.org/parks/tilden",
+      "photos": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Inspiration_point_view_1.jpg/1280px-Inspiration_point_view_1.jpg",
+          "author": "Ijon",
+          "license": "CC BY-SA 4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Inspiration_point_view_1.jpg",
+          "caption": "Inspiration point view 1"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Inspiration_point_view_2.jpg/1280px-Inspiration_point_view_2.jpg",
+          "author": "Ijon",
+          "license": "CC BY-SA 4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Inspiration_point_view_2.jpg",
+          "caption": "Inspiration point view 2"
+        }
+      ]
+    },
+    {
+      "id": "mission-peak",
+      "name": "Mission Peak Summit",
+      "lat": 37.5125,
+      "lng": -121.8806,
+      "county": "Alameda",
+      "description": "A demanding summit outing rewarded with views of the South Bay and surrounding mountain ranges. Check park hours before visiting.",
+      "tags": [
+        "hills",
+        "skyline",
+        "greenery"
+      ],
+      "featured": 14,
+      "sourceUrl": "https://www.ebparks.org/parks/mission-peak",
+      "photos": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Mission_Peak_summit_ridge_viewed_from_the_east_%2810_April_2025%29.jpg/1280px-Mission_Peak_summit_ridge_viewed_from_the_east_%2810_April_2025%29.jpg",
+          "author": "Buidhe",
+          "license": "CC BY-SA 4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mission_Peak_summit_ridge_viewed_from_the_east_(10_April_2025).jpg",
+          "caption": "Mission Peak summit ridge viewed from the east (10 April 2025)"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Mission_Peak_summit_ridge_viewed_from_the_east_%2810_April_2025%29_2.jpg/1280px-Mission_Peak_summit_ridge_viewed_from_the_east_%2810_April_2025%29_2.jpg",
+          "author": "Buidhe",
+          "license": "CC BY-SA 4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mission_Peak_summit_ridge_viewed_from_the_east_(10_April_2025)_2.jpg",
+          "caption": "Mission Peak summit ridge viewed from the east (10 April 2025) 2"
+        }
+      ]
+    },
+    {
+      "id": "coyote-hills",
+      "name": "Coyote Hills — Bay View",
+      "lat": 37.5521,
+      "lng": -122.0927,
+      "county": "Alameda",
+      "description": "Low grassy hills beside the bay and marshlands, with broad water and East Bay views.",
+      "tags": [
+        "hills",
+        "greenery",
+        "bridges"
+      ],
+      "featured": 15,
+      "sourceUrl": "https://www.ebparks.org/parks/coyote-hills",
+      "photos": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Coyote_Hills_Fremont_April_2011.jpg/1280px-Coyote_Hills_Fremont_April_2011.jpg",
+          "author": "King of Hearts",
+          "license": "CC BY-SA 4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coyote_Hills_Fremont_April_2011.jpg",
+          "caption": "Coyote Hills Fremont April 2011"
+        }
+      ]
+    },
+    {
+      "id": "hawk-hill",
+      "name": "Hawk Hill",
+      "lat": 37.8268,
+      "lng": -122.4995,
+      "county": "Marin",
+      "description": "A Marin Headlands hilltop with coastal and Golden Gate scenery, also known for migrating raptors.",
+      "tags": [
+        "bridges",
+        "ocean",
+        "hills"
+      ],
+      "featured": 16,
+      "sourceUrl": "https://www.nps.gov/goga/planyourvisit/marin-headlands-scenic-vistas.htm",
+      "photos": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Golden_Gate_Bridge_and_San_Francisco_skyline_from_Hawk_Hill_at_Blue_Hour_dllu.jpg/1280px-Golden_Gate_Bridge_and_San_Francisco_skyline_from_Hawk_Hill_at_Blue_Hour_dllu.jpg",
+          "author": "Daniel L. Lu (user:dllu) Camera location37° 49′ 39.52″ N, 122° 29′ 56.17″ W View this and other nearby images on: OpenStreetMap 37.827644; -122.498935",
+          "license": "CC BY-SA 4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Golden_Gate_Bridge_and_San_Francisco_skyline_from_Hawk_Hill_at_Blue_Hour_dllu.jpg",
+          "caption": "Golden Gate Bridge and San Francisco skyline from Hawk Hill at Blue Hour dllu"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Golden_Gate_Bridge_seen_from_Hawk_Hill.jpg/1280px-Golden_Gate_Bridge_seen_from_Hawk_Hill.jpg",
+          "author": "Christoph Strässler",
+          "license": "CC BY-SA 2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Golden_Gate_Bridge_seen_from_Hawk_Hill.jpg",
+          "caption": "Golden Gate Bridge seen from Hawk Hill"
+        }
+      ]
+    },
+    {
+      "id": "gunsight-rock",
+      "name": "Gunsight Rock Overlook",
+      "lat": 38.487,
+      "lng": -122.567,
+      "county": "Sonoma",
+      "description": "A rocky overlook reached by the Hood Mountain trail network. Check current trails and closures before setting out.",
+      "tags": [
+        "hills",
+        "greenery"
+      ],
+      "featured": 17,
+      "sourceUrl": "https://parks.sonomacounty.ca.gov/Microsites/Regional%20Parks/Documents/Visit/Maps/Hood-Mountain-Park-Map.pdf",
+      "photos": []
+    },
+    {
+      "id": "westwood-hills",
+      "name": "Westwood Hills — Summit Vista",
+      "lat": 38.3046,
+      "lng": -122.3308,
+      "county": "Napa",
+      "description": "Oak woodland and meadow trails climb toward views over Napa. The park is open sunrise to sunset.",
+      "tags": [
+        "hills",
+        "greenery"
+      ],
+      "featured": 18,
+      "sourceUrl": "https://www.cityofnapa.org/DocumentCenter/View/9994/Westwood-Hills-Trail-Map",
+      "photos": []
+    },
+    {
+      "id": "lynch-canyon",
+      "name": "Lynch Canyon — Ridge View",
+      "lat": 38.175,
+      "lng": -122.235,
+      "county": "Solano",
+      "description": "Rolling grassland ridges and oak groves in a jointly managed open space. Confirm opening days before visiting.",
+      "tags": [
+        "hills",
+        "greenery"
+      ],
+      "featured": 19,
+      "sourceUrl": "https://www.solanocounty.gov/government/resource-management/solano-county-parks/lynch-canyon-open-space",
+      "photos": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Lynch_Road_in_Lynch_Canyon_Open_Space_2022-04-17_1556.jpg/1280px-Lynch_Road_in_Lynch_Canyon_Open_Space_2022-04-17_1556.jpg",
+          "author": "Lhimec",
+          "license": "CC0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lynch_Road_in_Lynch_Canyon_Open_Space_2022-04-17_1556.jpg",
+          "caption": "Lynch Road in Lynch Canyon Open Space 2022-04-17 1556"
+        }
+      ]
+    }
+  ],
+  "importStatus": {
+    "osmImported": 0,
+    "curatedCount": 20,
+    "endpoint": null,
+    "complete": false,
+    "note": "Overpass import was not completed in this environment. Curated official-source collection shown; no complete-coverage claim."
+  }
+}
