@@ -129,8 +129,66 @@ The portable build runs Vinext directly without a host `timeout` command. The ma
 
 Sunspot is a progressive web app (PWA). First launch offers optional location access, followed by three skippable preference questions: scenery, distance radius, and sorting priority. Preferences stay in local storage; coordinates stay in session memory. Returning users go directly to Discover. Use Preferences in the bottom navigation to change your choices.
 
-Distance limits use straight-line miles (10, 25, or 50). They apply only with an active location. Scenery preferences rank matches rather than excluding other views. The current collection covers the San Francisco Bay Area; an empty nearby search offers expanded discovery.
+Distance limits use straight-line miles (10, 25, or 50). They apply only with an active location. Scenery preferences rank matches rather than excluding other views. The current collection covers the Bay Area and the wider northern regional extract, including parts of Central and Eastern California; an empty nearby search offers expanded discovery.
 
 Use **Install app** in Discover, or the browser's install menu. On iPhone, open in Safari and choose **Share → Add to Home Screen**. Installation and location require HTTPS on a deployed host; localhost works for desktop development. A phone cannot reach a computer's `127.0.0.1` address. The app has a standalone manifest, home-screen icons, safe-area spacing, and an offline reconnect screen. Live viewpoints, images, and maps require a connection.
 
 Location recovery: device lookup first accepts a recent coarse fix, then retries unavailable/timed-out requests with fresh high-accuracy positioning (20-second timeout). Permission denial is not retried automatically. A watchdog releases the UI if a browser never calls back. Errors distinguish blocked permission, unavailable positioning, timeout, unsupported browser, and insecure connection. **Choose a city instead** works without device permission or an external geocoding service; results clearly use approximate city-center distances. Manually choosing a city takes precedence over pending device callbacks.
+
+## Viewpoint research and data pipeline
+
+Navigation and viewpoint changes use short fade/slide transitions, with a roughly half-second camera pan that preserves the current zoom. The map stays mounted while changing tabs or editing preferences. Reduced-motion preferences disable these animations. Previous/Next spot controls in the overview switch between the current search results.
+
+The basemap uses [OpenFreeMap](https://openfreemap.org/quick_start/) vector tiles through MapLibre GL, retaining Leaflet's markers and controls. Labels and roads render at the device's native pixel density. Cream, sage and muted water colors match Sunspot. Before dev/build, `scripts/copy-map-worker.mjs` copies the installed MapLibre worker, sourcemap and BSD license to `public/vendor/`. The worker loads unchanged with a version query; passing it through Vite's module-worker transform injects a browser HMR client and causes runtime errors. Attribution remains visible. A failed vector load or unavailable WebGL falls back to OpenStreetMap raster tiles without resetting pins or the camera. Camera movement follows selected viewpoints; hovering only highlights them.
+
+Vite's optional terminal console relay is disabled because its error forwarding can recursively reject while the HMR socket reconnects. Browser console diagnostics and the browser error overlay remain available.
+
+The catalog now separates agency-reviewed visitor profiles from community-mapped locations. Neither a mapped pin nor a reviewed page guarantees current public access. Hours are source text with research dates, never a live “open now” claim. Unknown facts stay null; conflicting source statements are labeled rather than silently resolved.
+
+Data files:
+
+- `data/curated-viewpoints.json`: manually reviewed destinations, route definitions, visitor facts and fact-level citations.
+- `data/mapped-viewpoints.json`: filtered public OpenStreetMap snapshot, original IDs/tags, extract date and scope. Private/no-access records are excluded where those tags are present. Untagged access stays unconfirmed.
+- `data/research/sources.json`: official-page titles, publishers, retrieval times and content fingerprints. Raw copyrighted pages and large downloads stay in ignored `work/viewpoint-research/`.
+- `data/research/coverage.json`: county-by-county counts, field completeness, duplicate merges and collection phases. Coverage remains explicitly incomplete.
+- `data/research/queue.json`: remaining fields to research, sorted with the nine Bay Area counties first, then the rest of Northern California. Southern California is the next queued phase.
+- `data/catalog.json`: generated app catalog. The list API omits detailed profiles; the detail endpoint supplies the full visitor information.
+- `data/viewpoint-names.json`: researched display names for previously unnamed published points, with original names, source links, nearby-feature evidence and the mapping snapshot date. Most are descriptive trail/park/landscape labels; they are not claimed as official viewpoint names. The overview makes that distinction and links to the naming sources. Names are applied after deduplication and never move coordinates or alter access facts. A later actual OSM name takes precedence over an older descriptive label.
+
+Run `npm run data:build` after editing reviewed data or replacing the mapped snapshot. This rebuilds deterministically without updating evidence dates. `npm run data:check-sources` reports fetch failures and changed page hashes into ignored `work/viewpoint-research/source-health.json`. Fetching a page is not equivalent to re-reviewing all its facts; dates are only updated after reading and reconciling evidence. The original seed importer refuses to overwrite the researched schema.
+
+To collect or refresh the regional discovery snapshot, use the standard-library collector (Python 3 and `curl`). It retrieves only the POI index from Geofabrik’s archive with HTTP ranges, verifies ZIP integrity, and hydrates discovered viewpoint nodes from the public OSM API in 150-node batches, with two workers and a pause between requests. Only selected location tags are retained; contributor identities are discarded. Use a separate cache directory for each region and collection date:
+
+```sh
+python3 scripts/collect-regional-viewpoints.py \
+  --region norcal \
+  --cache work/viewpoint-research/norcal-new-date \
+  --output data/mapped-viewpoints.json
+npm run data:build
+npm test
+npm run typecheck
+```
+
+`--offline` rebuilds from an existing matching cache without network access. `--supplement` can retain previously collected mapped ways (the current snapshot supplements the regional node index with mapped features from a San Francisco PBF extract). The region flag also supports `socal` for the next phase; that phase has not been collected yet. `scripts/extract-osm-viewpoints.py` remains available for local PBF files and requires a temporary Python environment with `osmium`.
+
+The boundary input is the [county GeoJSON distributed by Plotly](https://github.com/plotly/datasets/blob/master/geojson-counties-fips.json), derived from U.S. Census geography. Collection uses polygon containment rather than nearest-city guessing, retaining California points only. Simplified boundaries can omit borderline/coastal points. The regional scope follows [Geofabrik’s northern extract](https://download.geofabrik.de/north-america/us/california/norcal.html), including parts of Central and Eastern California. The discovery index contains mapped viewpoint points, not every overlook, summit or scenic trail; relations and newly mapped points after the index snapshot can be absent. Metadata can be stale or wrong. Primary-source research is still required before treating access, rules or an approach as confirmed.
+
+A route stores its named start and whether mileage is one-way, round-trip, a loop, a network total, or an unresolved basis. Preserve-wide trail mileage is not substituted for a viewpoint hike. Summit elevation and cumulative climbing gain are different fields. Walking-step estimates use **1,900–2,600 steps per mile**, rounded to hundreds; this is a planning assumption, not a measurement or fitness guarantee. No steps are estimated for an undefined route or ambiguous distance basis. Actual reported staircase counts have their own field. Accessible parking, an accessible short segment and accessibility of a whole hike are recorded separately.
+
+OpenStreetMap-derived records are attributed to **© OpenStreetMap contributors** and provided under [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/); retain attribution and the original record links. Photos retain their individual Commons credits/licenses. Agency prose is summarized into factual planning notes with links; the source articles and maps are not redistributed in the repository. Review changing fees, hours, permits, closures, fire restrictions and transport schedules before each trip.
+
+Some original approximate pins were reconciled with named mapped destinations during research; `data/research/coordinate-corrections.json` records the old and new coordinates and source. For guidebook itineraries the app links to published trailhead coordinates separately from the viewpoint location.
+
+### Required viewpoint previews
+
+The app catalog publishes **only viewpoints with a reviewed photo**. Source discovery inventories retain unpublished candidates for research, but they are excluded from the map, recommendations, search and detail API until a qualified preview is approved. `data:build` applies this rule on every rebuild, so a later regional import cannot silently reintroduce photo-less spots.
+
+- `data/viewpoint-photos.json` is the publication manifest: image credit, individual license/source links, source dimensions, actual delivered dimensions, review date, subject-match notes, file size and SHA-256.
+- `public/viewpoints/photos/` contains the actual JPEG, PNG or WebP previews, served with the app instead of depending on remote photo servers.
+- Every preview must decode successfully and have at least **1,600 pixels on the long edge and 900 on the short edge**, with the source meeting the same minimum. Wide panoramas may instead use at least **1,920 × 400 pixels** and are displayed in full in the overview; portraits also preserve their full frame. Small images are excluded; images are never enlarged to meet the threshold. Delivered previews are capped at 16 million pixels and 12 MB to avoid excessive phone memory use and downloads.
+- Photos are selected for the named viewpoint or the view at its mapped location. Coordinates and descriptive source metadata guide discovery; a subject review is required before publication. Nearby wildlife, signs, diagrams and unrelated landscape photos do not qualify.
+- `data/research/photo-exclusions.json` records candidates excluded from publication. Exclusion means no suitable preview was verified in this research pass; it does not claim that no photo exists anywhere.
+
+The repeatable discovery command is `python3 scripts/research-viewpoint-photos.py --mode all`, with resumable API responses and per-viewpoint search logs under ignored `work/photo-research/`. `--mode bulk-geo` groups coordinate queries while preserving each viewpoint's 150-metre search radius; it narrows fully covered batches when the service's result limit is reached. Run `scripts/finalize-photo-research.py` after discovery to reconcile coordinate metadata and write `data/research/photo-audit.json`, including incomplete searches. Prepare contact sheets with `scripts/prepare-photo-review.py --pending-only` and explicitly record approved selections with `scripts/publish-viewpoint-photos.py --approve <indices> --publish`; those two tools use Pillow for image decoding and contact-sheet review. Review indices refer to the current contact sheets. The publisher copies source pixels without upscaling or altering the photo. Run `npm run data:build`, `npm test`, and `npm run typecheck` after publishing the manifest. `npm run data:check-photos -- --origin=http://127.0.0.1:5173` also verifies every delivered asset's HTTP response, hash and actual dimensions. Tests verify the no-photo exclusion rule in both API routes.
+
+Google Maps preview photos are an allowed future source, but no Google Places API key is configured in this checkout. The supported [Place Photos service](https://developers.google.com/maps/documentation/places/web-service/place-photos) requires that key, fresh photo-resource retrieval, and author attribution; its photo names expire and cannot be cached. Google-hosted previews therefore need a separate live integration, rather than being copied into this Commons/local-asset manifest.

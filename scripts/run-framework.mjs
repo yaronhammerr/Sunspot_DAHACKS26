@@ -1,9 +1,13 @@
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { readExecutionProfile } from "./execution-profile.mjs";
+import { copyMapWorker } from "./copy-map-worker.mjs";
 
 const [command, ...args] = process.argv.slice(2);
 if (!["dev", "build"].includes(command)) throw new Error("Expected dev or build.");
+// Vite's module-worker transform adds its browser HMR client. MapLibre needs
+// the distributed worker unchanged, served from public/ in dev and production.
+copyMapWorker();
 const managedLinux = readExecutionProfile() === "managed-linux";
 
 if (managedLinux && command === "build") {

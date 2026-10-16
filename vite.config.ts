@@ -53,6 +53,10 @@ export default defineConfig(async ({ command }) => {
 
   return {
     server: {
+      // Vite 8's automatic console relay can recursively reject while its HMR
+      // socket reconnects. Browser console errors and the error overlay remain
+      // available; only forwarding those messages to the terminal is disabled.
+      forwardConsole: false,
       ...(managedLinux
         ? { host: "0.0.0.0", allowedHosts: ["terminal.local"] }
         : {}),
