@@ -727,5 +727,208 @@
     "retrievedAt": "2026-10-16T18:42:06.881336Z",
     "sha256": "c17b9d30abe408eac12dd00ca185985a60bc4143027d006c638baf6f4124be17",
     "kind": "official"
+  },
+  "visit-20261017-goga-hours": {
+    "id": "visit-20261017-goga-hours",
+    "url": "https://www.nps.gov/goga/planyourvisit/hours.htm",
+    "title": "GGNRA operating hours and seasons",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-17",
+    "kind": "official",
+    "sha256": "42eee4a293d1ff6df2ef07686584eae0286a71bde7c6f60e81e7717bd2b84b8a"
+  },
+  "visit-20261017-muir": {
+    "id": "visit-20261017-muir",
+    "url": "https://www.nps.gov/goga/planyourvisit/muirbeach.htm",
+    "title": "Muir Beach and Muir Beach Overlook",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-17",
+    "kind": "official",
+    "sha256": "f30ba48ad4fee45b607fbcb09576e7546c2c309c1e32a5b3524e061fa9b3d082"
+  },
+  "visit-20261017-lands-end": {
+    "id": "visit-20261017-lands-end",
+    "url": "https://www.nps.gov/goga/planyourvisit/landsend.htm",
+    "title": "Lands End visitor information",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-17",
+    "kind": "official",
+    "sha256": "3593d64e27a0bf2481abdfab6c4ef1c1f8ef88ee1a069e7e018ea0c522bd4fc0"
+  },
+  "visit-20261017-mori": {
+    "id": "visit-20261017-mori",
+    "url": "https://www.nps.gov/goga/planyourvisit/moripoint.htm",
+    "title": "Mori Point visitor information",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-17",
+    "kind": "official",
+    "sha256": "92c2ac6f3e162c0e1cdc531380608f3c482578a1f7b5c726ebfe65c8f7cf71dd"
+  },
+  "visit-20261017-fort-funston": {
+    "id": "visit-20261017-fort-funston",
+    "url": "https://www.nps.gov/goga/planyourvisit/fortfunston.htm",
+    "title": "Fort Funston visitor information",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-17",
+    "kind": "official",
+    "sha256": "71aac51cebb993e5fc57997aa672b1221ef942a41e07a023d1e6bc7df4e56f69"
+  },
+  "visit-20261017-windy": {
+    "id": "visit-20261017-windy",
+    "url": "https://www.openspace.org/preserves/windy-hill",
+    "title": "Windy Hill Preserve",
+    "publisher": "Midpeninsula Regional Open Space District",
+    "retrievedAt": "2026-10-17",
+    "kind": "official",
+    "sha256": "5c32fc95ecfc15b1753705309ae8ffce96aeb89c260b639401e9ba89331366ee"
+  },
+  "visit-20261017-russian-ridge": {
+    "id": "visit-20261017-russian-ridge",
+    "url": "https://www.openspace.org/preserves/russian-ridge",
+    "title": "Russian Ridge Preserve",
+    "publisher": "Midpeninsula Regional Open Space District",
+    "retrievedAt": "2026-10-17",
+    "kind": "official",
+    "sha256": "bd1e2bc690a6577f3835c273f456a8a7a02f44432c2066f9b5ad8286c1ce79b7"
+  },
+  "visit-20261017-fremont-older": {
+    "id": "visit-20261017-fremont-older",
+    "url": "https://www.openspace.org/preserves/fremont-older",
+    "title": "Fremont Older Preserve",
+    "publisher": "Midpeninsula Regional Open Space District",
+    "retrievedAt": "2026-10-17",
+    "kind": "official",
+    "sha256": "1c4cc1ab148f87fed89e20d78bb2ef7a58f9af379af266a57403070e2ff17e36"
+  },
+  "visit-20261017-devils-slide": {
+    "id": "visit-20261017-devils-slide",
+    "url": "https://www.smcgov.org/parks/devils-slide-trail",
+    "title": "Devil’s Slide Trail",
+    "publisher": "San Mateo County Parks",
+    "retrievedAt": "2026-10-17",
+    "kind": "official",
+    "sha256": "2c4546be41c9c5c178e76958c231e41c56f289c8a23c2553728a0602845b19b6"
+  },
+  "visit-20261017-chimney": {
+    "id": "visit-20261017-chimney",
+    "url": "https://www.nps.gov/pore/planyourvisit/chimney_rock.htm",
+    "title": "Chimney Rock visitor information",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-17",
+    "kind": "official",
+    "sha256": "4027e31a44bcae5106c807efb76919936e281ad3aa10d62687a7cadf20a56795"
+  },
+  "visit-20261017-lighthouse": {
+    "id": "visit-20261017-lighthouse",
+    "url": "https://www.nps.gov/pore/planyourvisit/lighthouse.htm",
+    "title": "Visit the Point Reyes Lighthouse",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-17",
+    "kind": "official",
+    "sha256": "a5c18574c39fd5979e9cd80a063bbe5d06702c6c2ae3f4c8068414ad9da0381a"
+  },
+  "visit-20261017-manzanita": {
+    "id": "visit-20261017-manzanita",
+    "url": "https://www.nps.gov/thingstodo/walkmanzanitalake.htm",
+    "title": "Walk Manzanita Lake Trail",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-17",
+    "kind": "official",
+    "sha256": "c3ac6bcdfc88ba0dc5e2c3462aa4735ffc4283f21144c8495139f49f7f5085eb"
+  },
+  "visit-20261017-bumpass": {
+    "id": "visit-20261017-bumpass",
+    "url": "https://www.nps.gov/thingstodo/hikebumpasshell.htm",
+    "title": "Hike to Bumpass Hell",
+    "publisher": "National Park Service",
+    "retrievedAt": "2026-10-17",
+    "kind": "official",
+    "sha256": "15c5b7e56c2fa3ff10ed440626daea8f00b15096c77c480e8556c282a63c90a7"
+  },
+  "visit-20261017-fitzgerald": {
+    "id": "visit-20261017-fitzgerald",
+    "url": "https://www.smcgov.org/parks/fitzgerald-marine-reserve",
+    "title": "Fitzgerald Marine Reserve",
+    "publisher": "San Mateo County Parks",
+    "retrievedAt": "2026-10-17",
+    "kind": "official",
+    "sha256": "bb551edd419e33810d7f46b1b2913a79f7e9872adf9df8b831ebe66ec9a1e66e"
+  },
+  "visit-20261017-pillar": {
+    "id": "visit-20261017-pillar",
+    "url": "https://www.smcgov.org/parks/pillar-point-bluff",
+    "title": "Pillar Point Bluff",
+    "publisher": "San Mateo County Parks",
+    "retrievedAt": "2026-10-17",
+    "kind": "official",
+    "sha256": "c6fb011e77be2bbb6633cf2b81f66d07b9925318e6056d9b17e5f3bbb9903ff0"
+  },
+  "visit-20261017-fitzgerald-brochure": {
+    "id": "visit-20261017-fitzgerald-brochure",
+    "url": "https://www.smcgov.org/media/157493/download?inline=",
+    "title": "Fitzgerald Marine Reserve and Pillar Point Bluff official map and guide",
+    "publisher": "San Mateo County Parks",
+    "retrievedAt": "2026-10-17",
+    "kind": "official"
+  },
+  "visit-20261017-montara": {
+    "id": "visit-20261017-montara",
+    "url": "https://www.parks.ca.gov/?page_id=532",
+    "title": "Montara State Beach",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-17",
+    "kind": "official",
+    "sha256": "735f20095ba5fd18a58c8a65666fdf8163e363b650508f1a881aa0a4fd4d76d3"
+  },
+  "visit-20261017-gray": {
+    "id": "visit-20261017-gray",
+    "url": "https://www.parks.ca.gov/?page_id=528",
+    "title": "Gray Whale Cove State Beach",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-17",
+    "kind": "official",
+    "sha256": "f0e9ec9aab847354775bbe6bc011f4e026de6e96cff014978c644db413166a97"
+  },
+  "visit-20261017-francis": {
+    "id": "visit-20261017-francis",
+    "url": "https://www.parks.ca.gov/?page_id=531",
+    "title": "Half Moon Bay State Beach",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-17",
+    "kind": "official",
+    "sha256": "a51163a7299a08da1e8ddbf722859f17b646fb91c3a80709fd937d98624e1301"
+  },
+  "visit-20261017-pacifica": {
+    "id": "visit-20261017-pacifica",
+    "url": "https://www.parks.ca.gov/?page_id=524",
+    "title": "Pacifica State Beach",
+    "publisher": "California State Parks",
+    "retrievedAt": "2026-10-17",
+    "kind": "official",
+    "sha256": "55ff4583e40a84c15b4625f9307ff9d9c4773dd0be28af9cd1bfe70f1a785844"
+  },
+  "visit-20261017-pacifica-city": {
+    "id": "visit-20261017-pacifica-city",
+    "url": "https://www.cityofpacifica.org/departments/parks-beaches-recreation/parks-and-beaches-locations-maps-safety-guides/pacifica-state-beach",
+    "title": "Pacifica State Beach city visitor information",
+    "publisher": "City of Pacifica",
+    "retrievedAt": "2026-10-17",
+    "kind": "official"
+  },
+  "visit-20261017-fitzgerald-bluff-coordinate": {
+    "id": "visit-20261017-fitzgerald-bluff-coordinate",
+    "title": "Fitzgerald Marine Reserve sign — geotagged coordinate reference",
+    "url": "https://commons.wikimedia.org/wiki/File:Fitzgerald_Marine_Reserve_sign.jpg",
+    "publisher": "Wikimedia Commons contributors",
+    "retrievedAt": "2026-10-17",
+    "kind": "community"
+  },
+  "visit-20261017-pillar-point-bluff-coordinate": {
+    "id": "visit-20261017-pillar-point-bluff-coordinate",
+    "title": "North Pillar Point Bluff looking South — geotagged coordinate reference",
+    "url": "https://commons.wikimedia.org/wiki/File:North_Pillar_Point_Bluff_looking_South.jpg",
+    "publisher": "Wikimedia Commons contributors",
+    "retrievedAt": "2026-10-17",
+    "kind": "community"
   }
 }

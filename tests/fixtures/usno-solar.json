@@ -1,0 +1,223 @@
+[
+  {
+    "name": "San Francisco",
+    "date": "2026-06-21",
+    "lat": 37.7749,
+    "lng": -122.4194,
+    "offset": -7,
+    "source": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-06-21&coords=37.7749%2C-122.4194&tz=-7&dst=false",
+    "response": {
+      "apiversion": "4.0.1",
+      "geometry": {
+        "coordinates": [
+          -122.4194,
+          37.7749
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "data": {
+          "closestphase": {
+            "day": 21,
+            "month": 6,
+            "phase": "First Quarter",
+            "time": "14:55",
+            "year": 2026
+          },
+          "curphase": "Waxing Crescent",
+          "day": 21,
+          "day_of_week": "Sunday",
+          "fracillum": "49%",
+          "isdst": false,
+          "label": null,
+          "month": 6,
+          "moondata": [
+            {
+              "phen": "Set",
+              "time": "00:46"
+            },
+            {
+              "phen": "Rise",
+              "time": "13:11"
+            },
+            {
+              "phen": "Upper Transit",
+              "time": "19:15"
+            }
+          ],
+          "sundata": [
+            {
+              "phen": "Begin Civil Twilight",
+              "time": "05:17"
+            },
+            {
+              "phen": "Rise",
+              "time": "05:48"
+            },
+            {
+              "phen": "Upper Transit",
+              "time": "13:12"
+            },
+            {
+              "phen": "Set",
+              "time": "20:35"
+            },
+            {
+              "phen": "End Civil Twilight",
+              "time": "21:06"
+            }
+          ],
+          "tz": -7.0,
+          "year": 2026
+        }
+      },
+      "type": "Feature"
+    }
+  },
+  {
+    "name": "Berkeley",
+    "date": "2026-12-21",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "offset": -8,
+    "source": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-21&coords=37.8715%2C-122.273&tz=-8&dst=false",
+    "response": {
+      "apiversion": "4.0.1",
+      "geometry": {
+        "coordinates": [
+          -122.273,
+          37.8715
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "data": {
+          "closestphase": {
+            "day": 23,
+            "month": 12,
+            "phase": "Full Moon",
+            "time": "17:28",
+            "year": 2026
+          },
+          "curphase": "Waxing Gibbous",
+          "day": 21,
+          "day_of_week": "Monday",
+          "fracillum": "93%",
+          "isdst": false,
+          "label": null,
+          "month": 12,
+          "moondata": [
+            {
+              "phen": "Set",
+              "time": "04:49"
+            },
+            {
+              "phen": "Rise",
+              "time": "14:29"
+            },
+            {
+              "phen": "Upper Transit",
+              "time": "22:13"
+            }
+          ],
+          "sundata": [
+            {
+              "phen": "Begin Civil Twilight",
+              "time": "06:52"
+            },
+            {
+              "phen": "Rise",
+              "time": "07:21"
+            },
+            {
+              "phen": "Upper Transit",
+              "time": "12:07"
+            },
+            {
+              "phen": "Set",
+              "time": "16:54"
+            },
+            {
+              "phen": "End Civil Twilight",
+              "time": "17:23"
+            }
+          ],
+          "tz": -8.0,
+          "year": 2026
+        }
+      },
+      "type": "Feature"
+    }
+  },
+  {
+    "name": "San Jose",
+    "date": "2026-03-08",
+    "lat": 37.3382,
+    "lng": -121.8863,
+    "offset": -7,
+    "source": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-03-08&coords=37.3382%2C-121.8863&tz=-7&dst=false",
+    "response": {
+      "apiversion": "4.0.1",
+      "geometry": {
+        "coordinates": [
+          -121.8863,
+          37.3382
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "data": {
+          "closestphase": {
+            "day": 11,
+            "month": 3,
+            "phase": "Last Quarter",
+            "time": "02:38",
+            "year": 2026
+          },
+          "curphase": "Waning Gibbous",
+          "day": 8,
+          "day_of_week": "Sunday",
+          "fracillum": "74%",
+          "isdst": false,
+          "label": null,
+          "month": 3,
+          "moondata": [
+            {
+              "phen": "Upper Transit",
+              "time": "04:51"
+            },
+            {
+              "phen": "Set",
+              "time": "09:48"
+            }
+          ],
+          "sundata": [
+            {
+              "phen": "Begin Civil Twilight",
+              "time": "07:03"
+            },
+            {
+              "phen": "Rise",
+              "time": "07:29"
+            },
+            {
+              "phen": "Upper Transit",
+              "time": "13:18"
+            },
+            {
+              "phen": "Set",
+              "time": "19:08"
+            },
+            {
+              "phen": "End Civil Twilight",
+              "time": "19:34"
+            }
+          ],
+          "tz": -7.0,
+          "year": 2026
+        }
+      },
+      "type": "Feature"
+    }
+  }
+]

@@ -1,15 +1,17 @@
 {
-  "asOf": "2026-10-16T18:42:06.881336Z",
+  "asOf": "2026-10-17",
   "coverage": {
-    "total": 510,
-    "officialProfiles": 62,
-    "communityMapped": 448,
-    "routeCount": 37,
-    "photoVerified": 510,
-    "discoveryInventory": 1501,
+    "total": 516,
+    "officialProfiles": 75,
+    "communityMapped": 441,
+    "routeCount": 42,
+    "photoVerified": 516,
+    "sceneryReviewed": 516,
+    "sceneryUnclassified": 6,
+    "discoveryInventory": 1507,
     "excludedWithoutPhoto": 991,
     "complete": false,
-    "note": "Only viewpoints with reviewed, high-resolution preview photos are published. Discovery records without a verified photo are excluded from the app. Official-source profiles and community-mapped locations are distinguished. Missing visitor details remain unknown. Check agency alerts and signs before travel."
+    "note": "Only viewpoints with reviewed, high-resolution preview photos and a recorded scenery review are published. Unconfirmed scenery is excluded from category filters. Official-source profiles and community-mapped locations are distinguished. Missing visitor details remain unknown. Check agency alerts and signs before travel."
   },
   "counties": [
     {
@@ -53,11 +55,11 @@
       "routes": 7,
       "withDistance": 5,
       "withElevationGain": 0,
-      "hours": 6,
+      "hours": 8,
       "fees": 0,
       "terrain": 9,
-      "accessibility": 4,
-      "facilities": 2,
+      "accessibility": 5,
+      "facilities": 4,
       "parking": 6
     },
     {
@@ -80,33 +82,33 @@
       "county": "San Francisco",
       "region": "bay-area",
       "total": 104,
-      "officialProfiles": 10,
-      "communityMapped": 94,
+      "officialProfiles": 14,
+      "communityMapped": 90,
       "routes": 2,
       "withDistance": 2,
       "withElevationGain": 0,
-      "hours": 6,
+      "hours": 10,
       "fees": 2,
-      "terrain": 9,
-      "accessibility": 5,
+      "terrain": 13,
+      "accessibility": 7,
       "facilities": 6,
-      "parking": 5
+      "parking": 6
     },
     {
       "county": "San Mateo",
       "region": "bay-area",
-      "total": 38,
-      "officialProfiles": 9,
+      "total": 44,
+      "officialProfiles": 15,
       "communityMapped": 29,
-      "routes": 5,
-      "withDistance": 4,
+      "routes": 7,
+      "withDistance": 5,
       "withElevationGain": 0,
-      "hours": 7,
-      "fees": 5,
-      "terrain": 6,
-      "accessibility": 2,
-      "facilities": 6,
-      "parking": 4
+      "hours": 13,
+      "fees": 7,
+      "terrain": 12,
+      "accessibility": 10,
+      "facilities": 12,
+      "parking": 11
     },
     {
       "county": "Santa Clara",
@@ -119,8 +121,8 @@
       "withElevationGain": 0,
       "hours": 3,
       "fees": 3,
-      "terrain": 1,
-      "accessibility": 0,
+      "terrain": 2,
+      "accessibility": 1,
       "facilities": 3,
       "parking": 3
     },
@@ -464,17 +466,17 @@
       "county": "Shasta",
       "region": "northern-california",
       "total": 25,
-      "officialProfiles": 2,
-      "communityMapped": 23,
-      "routes": 2,
-      "withDistance": 2,
+      "officialProfiles": 5,
+      "communityMapped": 20,
+      "routes": 5,
+      "withDistance": 5,
       "withElevationGain": 1,
       "hours": 0,
-      "fees": 1,
-      "terrain": 2,
-      "accessibility": 0,
-      "facilities": 0,
-      "parking": 0
+      "fees": 4,
+      "terrain": 5,
+      "accessibility": 4,
+      "facilities": 4,
+      "parking": 4
     },
     {
       "county": "Siskiyou",
@@ -564,9 +566,34 @@
       "sourceUrl": "https://www.openstreetmap.org/node/10682270352"
     },
     {
+      "keptId": "osm-node-11061015238",
+      "mappedId": "osm-node-11061015238",
+      "sourceUrl": "https://www.openstreetmap.org/node/11061015238"
+    },
+    {
+      "keptId": "osm-node-11061015239",
+      "mappedId": "osm-node-11061015239",
+      "sourceUrl": "https://www.openstreetmap.org/node/11061015239"
+    },
+    {
+      "keptId": "osm-node-11061015240",
+      "mappedId": "osm-node-11061015240",
+      "sourceUrl": "https://www.openstreetmap.org/node/11061015240"
+    },
+    {
       "keptId": "presidio-battery-east",
       "mappedId": "osm-node-11991078747",
       "sourceUrl": "https://www.openstreetmap.org/node/11991078747"
+    },
+    {
+      "keptId": "osm-node-13825881781",
+      "mappedId": "osm-node-13825881781",
+      "sourceUrl": "https://www.openstreetmap.org/node/13825881781"
+    },
+    {
+      "keptId": "osm-node-13825892193",
+      "mappedId": "osm-node-13825892193",
+      "sourceUrl": "https://www.openstreetmap.org/node/13825892193"
     },
     {
       "keptId": "osm-node-11370405017",
@@ -582,6 +609,11 @@
       "keptId": "tunnel-view",
       "mappedId": "osm-node-26637661",
       "sourceUrl": "https://www.openstreetmap.org/node/26637661"
+    },
+    {
+      "keptId": "osm-node-3101265351",
+      "mappedId": "osm-node-3101265351",
+      "sourceUrl": "https://www.openstreetmap.org/node/3101265351"
     },
     {
       "keptId": "glacier-point",
@@ -612,6 +644,11 @@
       "keptId": "osm-node-4001939909",
       "mappedId": "osm-node-4001939910",
       "sourceUrl": "https://www.openstreetmap.org/node/4001939910"
+    },
+    {
+      "keptId": "osm-node-4179665037",
+      "mappedId": "osm-node-4179665037",
+      "sourceUrl": "https://www.openstreetmap.org/node/4179665037"
     },
     {
       "keptId": "presidio-golden-gate-overlook",

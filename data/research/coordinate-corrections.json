@@ -88,5 +88,46 @@
     },
     "sourceUrl": "https://www.openstreetmap.org/node/331507160",
     "reason": "Matched the named destination and preserve to an independently identified OSM viewpoint; retain community-coordinate caveat."
+  },
+  {
+    "id": "mount-tamalpais",
+    "previous": {
+      "lat": 37.9235,
+      "lng": -122.5779,
+      "county": "Marin"
+    },
+    "replacement": {
+      "lat": 37.9290002,
+      "lng": -122.5778103,
+      "county": "Marin"
+    },
+    "sourceUrl": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5/query?f=json&where=gaz_id%3D222916&outFields=%2A&outSR=4326&returnGeometry=true",
+    "checkedAt": "2026-10-16T21:37:15.856151+00:00",
+    "reason": "The published East Peak pin was approximately 612 metres south of the USGS GNIS East Peak feature. Move it to the GNIS summit feature, preserving approximate-location and standing-position caveats. Terrain modelling exposed the mismatch; a DEM elevation alone did not establish the coordinate.",
+    "evidence": {
+      "attributes": {
+        "OBJECTID": 98720,
+        "gaz_id": 222916,
+        "gaz_name": "East Peak",
+        "gaz_featureclass": "Summit",
+        "fcode": 15048,
+        "state_alpha": "CA",
+        "county_name": "Marin",
+        "objectid_1": 1616227,
+        "isunknowncoords": 2
+      },
+      "geometry": {
+        "points": [
+          [
+            -122.57781025642736,
+            37.92900024606433
+          ],
+          [
+            -122.57770175700904,
+            37.92867114647178
+          ]
+        ]
+      }
+    }
   }
 ]

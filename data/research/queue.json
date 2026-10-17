@@ -1500,31 +1500,6 @@
     ]
   },
   {
-    "id": "osm-node-4179665037",
-    "name": "Eagle's Point Overlook",
-    "county": "San Francisco",
-    "region": "bay-area",
-    "priority": 1,
-    "status": "community-mapped",
-    "sourceUrl": "https://www.openstreetmap.org/node/4179665037",
-    "missing": [
-      "hours",
-      "fees",
-      "terrain",
-      "accessibility",
-      "facilities",
-      "parking",
-      "route-distance",
-      "route-elevation-gain",
-      "rule:dogs",
-      "rule:bicycles",
-      "rule:drones",
-      "rule:fires",
-      "rule:camping",
-      "rule:other"
-    ]
-  },
-  {
     "id": "osm-node-6824065902",
     "name": "Elephant Rock",
     "county": "Marin",
@@ -2257,31 +2232,6 @@
     "priority": 1,
     "status": "community-mapped",
     "sourceUrl": "https://www.openstreetmap.org/node/7229102994",
-    "missing": [
-      "hours",
-      "fees",
-      "terrain",
-      "accessibility",
-      "facilities",
-      "parking",
-      "route-distance",
-      "route-elevation-gain",
-      "rule:dogs",
-      "rule:bicycles",
-      "rule:drones",
-      "rule:fires",
-      "rule:camping",
-      "rule:other"
-    ]
-  },
-  {
-    "id": "osm-node-13825881781",
-    "name": "Lands End Overlook",
-    "county": "San Francisco",
-    "region": "bay-area",
-    "priority": 1,
-    "status": "community-mapped",
-    "sourceUrl": "https://www.openstreetmap.org/node/13825881781",
     "missing": [
       "hours",
       "fees",
@@ -3057,56 +3007,6 @@
     "priority": 1,
     "status": "community-mapped",
     "sourceUrl": "https://www.openstreetmap.org/node/3312985807",
-    "missing": [
-      "hours",
-      "fees",
-      "terrain",
-      "accessibility",
-      "facilities",
-      "parking",
-      "route-distance",
-      "route-elevation-gain",
-      "rule:dogs",
-      "rule:bicycles",
-      "rule:drones",
-      "rule:fires",
-      "rule:camping",
-      "rule:other"
-    ]
-  },
-  {
-    "id": "osm-node-3101265351",
-    "name": "Observation Deck",
-    "county": "San Francisco",
-    "region": "bay-area",
-    "priority": 1,
-    "status": "community-mapped",
-    "sourceUrl": "https://www.openstreetmap.org/node/3101265351",
-    "missing": [
-      "hours",
-      "fees",
-      "terrain",
-      "accessibility",
-      "facilities",
-      "parking",
-      "route-distance",
-      "route-elevation-gain",
-      "rule:dogs",
-      "rule:bicycles",
-      "rule:drones",
-      "rule:fires",
-      "rule:camping",
-      "rule:other"
-    ]
-  },
-  {
-    "id": "osm-node-13825892193",
-    "name": "Ocean Terrace Overlook",
-    "county": "San Francisco",
-    "region": "bay-area",
-    "priority": 1,
-    "status": "community-mapped",
-    "sourceUrl": "https://www.openstreetmap.org/node/13825892193",
     "missing": [
       "hours",
       "fees",
@@ -4668,30 +4568,6 @@
     ]
   },
   {
-    "id": "lands-end",
-    "name": "Lands End Lookout",
-    "county": "San Francisco",
-    "region": "bay-area",
-    "priority": 1,
-    "status": "official-source-reviewed",
-    "sourceUrl": "https://www.nps.gov/goga/planyourvisit/landsend.htm",
-    "missing": [
-      "hours",
-      "fees",
-      "accessibility",
-      "facilities",
-      "parking",
-      "route-distance",
-      "route-elevation-gain",
-      "rule:dogs",
-      "rule:bicycles",
-      "rule:drones",
-      "rule:fires",
-      "rule:camping",
-      "rule:other"
-    ]
-  },
-  {
     "id": "osm-node-11055875368",
     "name": "Lands End Trail Eagles Point, 916 El Camino Del Mar, San Francisco, CA 94121, USA",
     "county": "San Francisco",
@@ -4713,30 +4589,6 @@
       "rule:drones",
       "rule:fires",
       "rule:camping"
-    ]
-  },
-  {
-    "id": "mori-point",
-    "name": "Mori Point",
-    "county": "San Mateo",
-    "region": "bay-area",
-    "priority": 1,
-    "status": "official-source-reviewed",
-    "sourceUrl": "https://www.nps.gov/goga/planyourvisit/moripoint.htm",
-    "missing": [
-      "hours",
-      "fees",
-      "accessibility",
-      "facilities",
-      "parking",
-      "route-distance",
-      "route-elevation-gain",
-      "rule:dogs",
-      "rule:bicycles",
-      "rule:drones",
-      "rule:fires",
-      "rule:camping",
-      "rule:other"
     ]
   },
   {
@@ -4929,29 +4781,6 @@
     ]
   },
   {
-    "id": "muir-beach-overlook",
-    "name": "Muir Beach Overlook",
-    "county": "Marin",
-    "region": "bay-area",
-    "priority": 1,
-    "status": "official-source-reviewed",
-    "sourceUrl": "https://www.nps.gov/goga/planyourvisit/muirbeach.htm",
-    "missing": [
-      "fees",
-      "accessibility",
-      "facilities",
-      "parking",
-      "route-distance",
-      "route-elevation-gain",
-      "rule:dogs",
-      "rule:bicycles",
-      "rule:drones",
-      "rule:fires",
-      "rule:camping",
-      "rule:other"
-    ]
-  },
-  {
     "id": "presidio-pacific-overlook",
     "name": "Pacific Overlook",
     "county": "San Francisco",
@@ -5088,6 +4917,50 @@
     ]
   },
   {
+    "id": "osm-node-4179665037",
+    "name": "Eagle's Point Overlook",
+    "county": "San Francisco",
+    "region": "bay-area",
+    "priority": 1,
+    "status": "official-source-reviewed",
+    "sourceUrl": "https://www.openstreetmap.org/node/4179665037",
+    "missing": [
+      "fees",
+      "accessibility",
+      "facilities",
+      "parking",
+      "route-distance",
+      "route-elevation-gain",
+      "rule:dogs",
+      "rule:bicycles",
+      "rule:drones",
+      "rule:fires",
+      "rule:camping"
+    ]
+  },
+  {
+    "id": "osm-node-3101265351",
+    "name": "Fort Funston — Ocean Observation Deck",
+    "county": "San Francisco",
+    "region": "bay-area",
+    "priority": 1,
+    "status": "official-source-reviewed",
+    "sourceUrl": "https://www.openstreetmap.org/node/3101265351",
+    "missing": [
+      "hours",
+      "fees",
+      "facilities",
+      "route-distance",
+      "route-elevation-gain",
+      "rule:dogs",
+      "rule:bicycles",
+      "rule:drones",
+      "rule:fires",
+      "rule:camping",
+      "rule:other"
+    ]
+  },
+  {
     "id": "presidio-golden-gate-overlook",
     "name": "Golden Gate Overlook",
     "county": "San Francisco",
@@ -5176,25 +5049,25 @@
     ]
   },
   {
-    "id": "kirby-cove",
-    "name": "Kirby Cove",
-    "county": "Marin",
+    "id": "osm-node-13825881781",
+    "name": "Lands End Overlook",
+    "county": "San Francisco",
     "region": "bay-area",
     "priority": 1,
     "status": "official-source-reviewed",
-    "sourceUrl": "https://www.nps.gov/goga/planyourvisit/marin-headlands-scenic-vistas.htm",
+    "sourceUrl": "https://www.openstreetmap.org/node/13825881781",
     "missing": [
-      "hours",
       "fees",
       "accessibility",
       "facilities",
+      "parking",
+      "route-distance",
       "route-elevation-gain",
       "rule:dogs",
       "rule:bicycles",
       "rule:drones",
       "rule:fires",
-      "rule:camping",
-      "rule:other"
+      "rule:camping"
     ]
   },
   {
@@ -5217,6 +5090,28 @@
       "rule:fires",
       "rule:camping",
       "rule:other"
+    ]
+  },
+  {
+    "id": "osm-node-13825892193",
+    "name": "Ocean Terrace Overlook",
+    "county": "San Francisco",
+    "region": "bay-area",
+    "priority": 1,
+    "status": "official-source-reviewed",
+    "sourceUrl": "https://www.openstreetmap.org/node/13825892193",
+    "missing": [
+      "fees",
+      "accessibility",
+      "facilities",
+      "parking",
+      "route-distance",
+      "route-elevation-gain",
+      "rule:dogs",
+      "rule:bicycles",
+      "rule:drones",
+      "rule:fires",
+      "rule:camping"
     ]
   },
   {
@@ -5264,27 +5159,6 @@
     ]
   },
   {
-    "id": "chimney-rock",
-    "name": "Chimney Rock Overlook",
-    "county": "Marin",
-    "region": "bay-area",
-    "priority": 1,
-    "status": "official-source-reviewed",
-    "sourceUrl": "https://www.nps.gov/pore/planyourvisit/chimney_rock.htm",
-    "missing": [
-      "hours",
-      "fees",
-      "accessibility",
-      "facilities",
-      "route-elevation-gain",
-      "rule:bicycles",
-      "rule:drones",
-      "rule:fires",
-      "rule:camping",
-      "rule:other"
-    ]
-  },
-  {
     "id": "osm-way-28824850",
     "name": "Coit Tower",
     "county": "San Francisco",
@@ -5317,27 +5191,6 @@
       "accessibility",
       "facilities",
       "parking",
-      "route-elevation-gain",
-      "rule:dogs",
-      "rule:bicycles",
-      "rule:drones",
-      "rule:fires",
-      "rule:camping",
-      "rule:other"
-    ]
-  },
-  {
-    "id": "devils-slide",
-    "name": "Devil’s Slide Coastal Overlooks",
-    "county": "San Mateo",
-    "region": "bay-area",
-    "priority": 1,
-    "status": "official-source-reviewed",
-    "sourceUrl": "https://www.smcgov.org/parks/devils-slide-trail",
-    "missing": [
-      "hours",
-      "fees",
-      "accessibility",
       "route-elevation-gain",
       "rule:dogs",
       "rule:bicycles",
@@ -5390,6 +5243,69 @@
     ]
   },
   {
+    "id": "kirby-cove",
+    "name": "Kirby Cove",
+    "county": "Marin",
+    "region": "bay-area",
+    "priority": 1,
+    "status": "official-source-reviewed",
+    "sourceUrl": "https://www.nps.gov/goga/planyourvisit/marin-headlands-scenic-vistas.htm",
+    "missing": [
+      "fees",
+      "accessibility",
+      "facilities",
+      "route-elevation-gain",
+      "rule:dogs",
+      "rule:bicycles",
+      "rule:drones",
+      "rule:fires",
+      "rule:camping",
+      "rule:other"
+    ]
+  },
+  {
+    "id": "lands-end",
+    "name": "Lands End Lookout",
+    "county": "San Francisco",
+    "region": "bay-area",
+    "priority": 1,
+    "status": "official-source-reviewed",
+    "sourceUrl": "https://www.nps.gov/goga/planyourvisit/landsend.htm",
+    "missing": [
+      "fees",
+      "facilities",
+      "parking",
+      "route-distance",
+      "route-elevation-gain",
+      "rule:dogs",
+      "rule:bicycles",
+      "rule:drones",
+      "rule:fires",
+      "rule:camping"
+    ]
+  },
+  {
+    "id": "mori-point",
+    "name": "Mori Point",
+    "county": "San Mateo",
+    "region": "bay-area",
+    "priority": 1,
+    "status": "official-source-reviewed",
+    "sourceUrl": "https://www.nps.gov/goga/planyourvisit/moripoint.htm",
+    "missing": [
+      "hours",
+      "fees",
+      "route-distance",
+      "route-elevation-gain",
+      "rule:dogs",
+      "rule:bicycles",
+      "rule:drones",
+      "rule:fires",
+      "rule:camping",
+      "rule:other"
+    ]
+  },
+  {
     "id": "angel-island-livermore",
     "name": "Mount Livermore — Angel Island",
     "county": "Marin",
@@ -5408,6 +5324,27 @@
       "rule:fires",
       "rule:camping",
       "rule:other"
+    ]
+  },
+  {
+    "id": "muir-beach-overlook",
+    "name": "Muir Beach Overlook",
+    "county": "Marin",
+    "region": "bay-area",
+    "priority": 1,
+    "status": "official-source-reviewed",
+    "sourceUrl": "https://www.nps.gov/goga/planyourvisit/muirbeach.htm",
+    "missing": [
+      "fees",
+      "accessibility",
+      "parking",
+      "route-distance",
+      "route-elevation-gain",
+      "rule:dogs",
+      "rule:bicycles",
+      "rule:drones",
+      "rule:fires",
+      "rule:camping"
     ]
   },
   {
@@ -5733,6 +5670,44 @@
     ]
   },
   {
+    "id": "devils-slide",
+    "name": "Devil’s Slide Coastal Overlooks",
+    "county": "San Mateo",
+    "region": "bay-area",
+    "priority": 1,
+    "status": "official-source-reviewed",
+    "sourceUrl": "https://www.smcgov.org/parks/devils-slide-trail",
+    "missing": [
+      "hours",
+      "fees",
+      "route-elevation-gain",
+      "rule:dogs",
+      "rule:drones",
+      "rule:fires",
+      "rule:camping",
+      "rule:other"
+    ]
+  },
+  {
+    "id": "fitzgerald-bluff",
+    "name": "Fitzgerald Marine Reserve — Coastal Bluff",
+    "county": "San Mateo",
+    "region": "bay-area",
+    "priority": 1,
+    "status": "official-source-reviewed",
+    "sourceUrl": "https://www.smcgov.org/parks/fitzgerald-marine-reserve",
+    "missing": [
+      "fees",
+      "facilities",
+      "route-distance",
+      "route-elevation-gain",
+      "rule:bicycles",
+      "rule:drones",
+      "rule:fires",
+      "rule:camping"
+    ]
+  },
+  {
     "id": "mount-tamalpais",
     "name": "Mount Tamalpais — East Peak",
     "county": "Marin",
@@ -5752,6 +5727,40 @@
     ]
   },
   {
+    "id": "chimney-rock",
+    "name": "Chimney Rock Overlook",
+    "county": "Marin",
+    "region": "bay-area",
+    "priority": 1,
+    "status": "official-source-reviewed",
+    "sourceUrl": "https://www.nps.gov/pore/planyourvisit/chimney_rock.htm",
+    "missing": [
+      "hours",
+      "fees",
+      "route-elevation-gain",
+      "rule:bicycles",
+      "rule:fires",
+      "rule:camping"
+    ]
+  },
+  {
+    "id": "pillar-point-bluff",
+    "name": "Pillar Point Bluff — Pacific View",
+    "county": "San Mateo",
+    "region": "bay-area",
+    "priority": 1,
+    "status": "official-source-reviewed",
+    "sourceUrl": "https://www.smcgov.org/parks/pillar-point-bluff",
+    "missing": [
+      "fees",
+      "route-distance",
+      "route-elevation-gain",
+      "rule:drones",
+      "rule:fires",
+      "rule:camping"
+    ]
+  },
+  {
     "id": "point-reyes-lighthouse",
     "name": "Point Reyes Lighthouse Observation Deck",
     "county": "Marin",
@@ -5760,13 +5769,43 @@
     "status": "official-source-reviewed",
     "sourceUrl": "https://www.nps.gov/pore/planyourvisit/lighthouse.htm",
     "missing": [
-      "hours",
       "fees",
       "route-elevation-gain",
       "rule:bicycles",
       "rule:drones",
       "rule:fires",
       "rule:camping"
+    ]
+  },
+  {
+    "id": "pacifica-beach",
+    "name": "Pacifica State Beach — Linda Mar",
+    "county": "San Mateo",
+    "region": "bay-area",
+    "priority": 1,
+    "status": "official-source-reviewed",
+    "sourceUrl": "https://www.parks.ca.gov/?page_id=524",
+    "missing": [
+      "route-distance",
+      "route-elevation-gain",
+      "rule:bicycles",
+      "rule:drones",
+      "rule:camping"
+    ]
+  },
+  {
+    "id": "gray-whale-cove",
+    "name": "Gray Whale Cove — Bluff and Beach",
+    "county": "San Mateo",
+    "region": "bay-area",
+    "priority": 1,
+    "status": "official-source-reviewed",
+    "sourceUrl": "https://www.parks.ca.gov/?page_id=528",
+    "missing": [
+      "fees",
+      "route-distance",
+      "route-elevation-gain",
+      "rule:bicycles"
     ]
   },
   {
@@ -5782,6 +5821,21 @@
       "accessibility",
       "parking",
       "route-elevation-gain"
+    ]
+  },
+  {
+    "id": "montara-beach",
+    "name": "Montara State Beach — Pacific Shore",
+    "county": "San Mateo",
+    "region": "bay-area",
+    "priority": 1,
+    "status": "official-source-reviewed",
+    "sourceUrl": "https://www.parks.ca.gov/?page_id=532",
+    "missing": [
+      "fees",
+      "route-distance",
+      "route-elevation-gain",
+      "rule:bicycles"
     ]
   },
   {
@@ -5828,17 +5882,17 @@
     ]
   },
   {
-    "id": "hunters-point",
-    "name": "Hunters Point — Fremont Older",
-    "county": "Santa Clara",
+    "id": "francis-beach",
+    "name": "Francis Beach — Half Moon Bay",
+    "county": "San Mateo",
     "region": "bay-area",
     "priority": 1,
     "status": "official-source-reviewed",
-    "sourceUrl": "https://www.openspace.org/preserves/fremont-older-preserve",
+    "sourceUrl": "https://www.parks.ca.gov/?page_id=531",
     "missing": [
-      "terrain",
-      "accessibility",
-      "route-elevation-gain"
+      "route-elevation-gain",
+      "rule:bicycles",
+      "rule:fires"
     ]
   },
   {
@@ -5882,6 +5936,18 @@
     ]
   },
   {
+    "id": "hunters-point",
+    "name": "Hunters Point — Fremont Older",
+    "county": "Santa Clara",
+    "region": "bay-area",
+    "priority": 1,
+    "status": "official-source-reviewed",
+    "sourceUrl": "https://www.openspace.org/preserves/fremont-older-preserve",
+    "missing": [
+      "route-elevation-gain"
+    ]
+  },
+  {
     "id": "osm-node-1706585745",
     "name": "3 Shastas Viewpoint",
     "county": "Shasta",
@@ -5914,31 +5980,6 @@
     "priority": 2,
     "status": "community-mapped",
     "sourceUrl": "https://www.openstreetmap.org/node/358807753",
-    "missing": [
-      "hours",
-      "fees",
-      "terrain",
-      "accessibility",
-      "facilities",
-      "parking",
-      "route-distance",
-      "route-elevation-gain",
-      "rule:dogs",
-      "rule:bicycles",
-      "rule:drones",
-      "rule:fires",
-      "rule:camping",
-      "rule:other"
-    ]
-  },
-  {
-    "id": "osm-node-11061015239",
-    "name": "All peaks viewpoint",
-    "county": "Shasta",
-    "region": "northern-california",
-    "priority": 2,
-    "status": "community-mapped",
-    "sourceUrl": "https://www.openstreetmap.org/node/11061015239",
     "missing": [
       "hours",
       "fees",
@@ -6989,31 +7030,6 @@
     "priority": 2,
     "status": "community-mapped",
     "sourceUrl": "https://www.openstreetmap.org/node/6935679821",
-    "missing": [
-      "hours",
-      "fees",
-      "terrain",
-      "accessibility",
-      "facilities",
-      "parking",
-      "route-distance",
-      "route-elevation-gain",
-      "rule:dogs",
-      "rule:bicycles",
-      "rule:drones",
-      "rule:fires",
-      "rule:camping",
-      "rule:other"
-    ]
-  },
-  {
-    "id": "osm-node-11061015240",
-    "name": "Chaos Crags viewpoint",
-    "county": "Shasta",
-    "region": "northern-california",
-    "priority": 2,
-    "status": "community-mapped",
-    "sourceUrl": "https://www.openstreetmap.org/node/11061015240",
     "missing": [
       "hours",
       "fees",
@@ -10982,31 +10998,6 @@
     ]
   },
   {
-    "id": "osm-node-11061015238",
-    "name": "Sunset viewpoint",
-    "county": "Shasta",
-    "region": "northern-california",
-    "priority": 2,
-    "status": "community-mapped",
-    "sourceUrl": "https://www.openstreetmap.org/node/11061015238",
-    "missing": [
-      "hours",
-      "fees",
-      "terrain",
-      "accessibility",
-      "facilities",
-      "parking",
-      "route-distance",
-      "route-elevation-gain",
-      "rule:dogs",
-      "rule:bicycles",
-      "rule:drones",
-      "rule:fires",
-      "rule:camping",
-      "rule:other"
-    ]
-  },
-  {
     "id": "osm-node-5862575086",
     "name": "Swinging Bridge — Yosemite Falls View",
     "county": "Mariposa",
@@ -12359,27 +12350,6 @@
     ]
   },
   {
-    "id": "bumpass-hell",
-    "name": "Bumpass Hell Overlook and Boardwalk",
-    "county": "Shasta",
-    "region": "northern-california",
-    "priority": 2,
-    "status": "official-source-reviewed",
-    "sourceUrl": "https://www.nps.gov/lavo/planyourvisit/hiking_lassen_park.htm",
-    "missing": [
-      "hours",
-      "accessibility",
-      "facilities",
-      "parking",
-      "route-elevation-gain",
-      "rule:bicycles",
-      "rule:drones",
-      "rule:fires",
-      "rule:camping",
-      "rule:other"
-    ]
-  },
-  {
     "id": "sue-meg-headlands",
     "name": "Sue-meg — Coastal Headlands",
     "county": "Humboldt",
@@ -12437,6 +12407,71 @@
       "rule:fires",
       "rule:camping",
       "rule:other"
+    ]
+  },
+  {
+    "id": "bumpass-hell",
+    "name": "Bumpass Hell Overlook and Boardwalk",
+    "county": "Shasta",
+    "region": "northern-california",
+    "priority": 2,
+    "status": "official-source-reviewed",
+    "sourceUrl": "https://www.nps.gov/lavo/planyourvisit/hiking_lassen_park.htm",
+    "missing": [
+      "hours",
+      "route-elevation-gain",
+      "rule:bicycles",
+      "rule:drones",
+      "rule:fires",
+      "rule:camping"
+    ]
+  },
+  {
+    "id": "osm-node-11061015239",
+    "name": "All peaks viewpoint",
+    "county": "Shasta",
+    "region": "northern-california",
+    "priority": 2,
+    "status": "official-source-reviewed",
+    "sourceUrl": "https://www.openstreetmap.org/node/11061015239",
+    "missing": [
+      "hours",
+      "route-elevation-gain",
+      "rule:drones",
+      "rule:fires",
+      "rule:camping"
+    ]
+  },
+  {
+    "id": "osm-node-11061015240",
+    "name": "Chaos Crags viewpoint",
+    "county": "Shasta",
+    "region": "northern-california",
+    "priority": 2,
+    "status": "official-source-reviewed",
+    "sourceUrl": "https://www.openstreetmap.org/node/11061015240",
+    "missing": [
+      "hours",
+      "route-elevation-gain",
+      "rule:drones",
+      "rule:fires",
+      "rule:camping"
+    ]
+  },
+  {
+    "id": "osm-node-11061015238",
+    "name": "Sunset viewpoint",
+    "county": "Shasta",
+    "region": "northern-california",
+    "priority": 2,
+    "status": "official-source-reviewed",
+    "sourceUrl": "https://www.openstreetmap.org/node/11061015238",
+    "missing": [
+      "hours",
+      "route-elevation-gain",
+      "rule:drones",
+      "rule:fires",
+      "rule:camping"
     ]
   }
 ]

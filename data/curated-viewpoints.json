@@ -7,8 +7,8 @@
     "county": "Marin",
     "description": "Look across the Golden Gate Bridge toward San Francisco from this historic headlands overlook.",
     "tags": [
+      "bay",
       "bridges",
-      "ocean",
       "skyline"
     ],
     "featured": 0,
@@ -177,8 +177,7 @@
     "description": "The summit trails offer a sweeping, 360-degree perspective above San Francisco. Expect wind and fog.",
     "tags": [
       "skyline",
-      "hills",
-      "ocean"
+      "hills"
     ],
     "featured": 1,
     "sourceUrl": "https://www.sfrecpark.org/facilities/facility/details/Twin-Peaks-384",
@@ -443,7 +442,7 @@
     "region": "bay-area",
     "visit": {
       "reviewStatus": "official-source-reviewed",
-      "reviewedAt": "2026-10-16T18:24:43.672364Z",
+      "reviewedAt": "2026-10-17",
       "manager": {
         "value": "National Park Service",
         "status": "reported",
@@ -453,12 +452,13 @@
         "checkedAt": "2026-10-16T18:24:43.672364Z"
       },
       "hours": {
-        "value": "Closes one hour after sunset. Opening time not established from this source.",
+        "value": "6 am to one hour after sunset, according to the NPS area-hours listing; posted closures override regular hours.",
         "status": "reported",
         "sourceIds": [
-          "muir-hours"
+          "visit-20261017-muir",
+          "visit-20261017-goga-hours"
         ],
-        "checkedAt": "2026-10-16T18:42:06.881336Z"
+        "checkedAt": "2026-10-17"
       },
       "fees": {
         "value": null,
@@ -497,11 +497,13 @@
         "note": "Not established from the reviewed sources. Check with the land manager before visiting."
       },
       "facilities": {
-        "value": null,
-        "status": "unknown",
-        "sourceIds": [],
-        "checkedAt": null,
-        "note": "Not established from the reviewed sources. Check with the land manager before visiting."
+        "value": "Windy picnic area at the overlook. Beach facilities are at a separate location.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-muir",
+          "visit-20261017-goga-hours"
+        ],
+        "checkedAt": "2026-10-17"
       },
       "seasonalAccess": {
         "value": null,
@@ -511,12 +513,13 @@
         "note": "Not established from the reviewed sources. Check with the land manager before visiting."
       },
       "cautions": {
-        "value": "Very high cliffs, strong winds and unreliable cell reception. Stay on the signed overlook route.",
+        "value": "Isolated cliffs and exposed heights; keep to established paths and avoid cliff edges. Cell service is unreliable and rescue crews are farther away.",
         "status": "reported",
         "sourceIds": [
-          "muir-beach-official"
+          "visit-20261017-muir",
+          "visit-20261017-goga-hours"
         ],
-        "checkedAt": "2026-10-16T18:24:43.672364Z"
+        "checkedAt": "2026-10-17"
       },
       "rules": {
         "dogs": {
@@ -555,11 +558,13 @@
           "note": "Not established from the reviewed sources. Check with the land manager before visiting."
         },
         "other": {
-          "value": null,
-          "status": "unknown",
-          "sourceIds": [],
-          "checkedAt": null,
-          "note": "Not established from the reviewed sources. Check with the land manager before visiting."
+          "value": "Remain on established overlook paths. Muir Beach and the overlook are separate destinations; beach dog and fire rules do not establish permission at the overlook.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-muir",
+            "visit-20261017-goga-hours"
+          ],
+          "checkedAt": "2026-10-17"
         }
       },
       "routes": [
@@ -646,6 +651,24 @@
           "retrievedAt": "2026-10-16T18:42:06.881336Z",
           "sha256": "c17b9d30abe408eac12dd00ca185985a60bc4143027d006c638baf6f4124be17",
           "kind": "official"
+        },
+        {
+          "id": "visit-20261017-muir",
+          "url": "https://www.nps.gov/goga/planyourvisit/muirbeach.htm",
+          "title": "Muir Beach and Muir Beach Overlook",
+          "publisher": "National Park Service",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "f30ba48ad4fee45b607fbcb09576e7546c2c309c1e32a5b3524e061fa9b3d082"
+        },
+        {
+          "id": "visit-20261017-goga-hours",
+          "url": "https://www.nps.gov/goga/planyourvisit/hours.htm",
+          "title": "GGNRA operating hours and seasons",
+          "publisher": "National Park Service",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "42eee4a293d1ff6df2ef07686584eae0286a71bde7c6f60e81e7717bd2b84b8a"
         }
       ],
       "alertsUrl": "https://www.nps.gov/goga/planyourvisit/muirbeach.htm",
@@ -656,15 +679,14 @@
   {
     "id": "mount-tamalpais",
     "name": "Mount Tamalpais — East Peak",
-    "lat": 37.9235,
-    "lng": -122.5779,
+    "lat": 37.9290002,
+    "lng": -122.5778103,
     "county": "Marin",
     "description": "Enjoy Bay Area and Pacific vistas from the upper mountain and the Verna Dunshee Trail.",
     "tags": [
-      "ocean",
+      "skyline",
       "hills",
-      "greenery",
-      "skyline"
+      "greenery"
     ],
     "featured": 3,
     "sourceUrl": "https://www.parks.ca.gov/?page_id=471",
@@ -885,12 +907,22 @@
           "retrievedAt": "2026-10-16T18:24:34.232161Z",
           "sha256": "9fccdaf539cf8752692df3963fbcddb631a15b517d4148b902ba9c8919105620",
           "kind": "official"
+        },
+        {
+          "id": "mount-tamalpais-coordinate-usgs",
+          "title": "USGS GNIS East Peak, feature 222916",
+          "url": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5/query?f=json&where=gaz_id%3D222916&outFields=%2A&outSR=4326&returnGeometry=true",
+          "publisher": "U.S. Geological Survey",
+          "retrievedAt": "2026-10-16T21:37:15.856151+00:00",
+          "sha256": "57de2b3390d154e1754affd78d055e88746df639f05c98347f6e99f1cde7b8d8",
+          "kind": "official"
         }
       ],
       "alertsUrl": "https://www.parks.ca.gov/?page_id=471",
       "mapUrl": null,
-      "coordinateNote": "Approximate destination or preserve map location. Use the official map and signed access routes; this pin is not a surveyed trailhead."
-    }
+      "coordinateNote": "Approximate East Peak summit feature location from USGS GNIS, not the parking area or a surveyed trailhead. Follow the official map and signed access routes; nearby summit and trail positions can have different horizons."
+    },
+    "coordinateSourceUrl": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5/query?f=json&where=gaz_id%3D222916&outFields=%2A&outSR=4326&returnGeometry=true"
   },
   {
     "id": "lands-end",
@@ -924,21 +956,24 @@
     "region": "bay-area",
     "visit": {
       "reviewStatus": "official-source-reviewed",
-      "reviewedAt": "2026-10-16T18:24:33.098374Z",
+      "reviewedAt": "2026-10-17",
       "manager": {
         "value": "National Park Service",
         "status": "reported",
         "sourceIds": [
-          "lands-end"
+          "visit-20261017-lands-end",
+          "visit-20261017-goga-hours"
         ],
-        "checkedAt": "2026-10-16T18:24:33.098374Z"
+        "checkedAt": "2026-10-17"
       },
       "hours": {
-        "value": null,
-        "status": "unknown",
-        "sourceIds": [],
-        "checkedAt": null,
-        "note": "Not established from the reviewed sources. Check with the land manager before visiting."
+        "value": "6 am to one hour after sunset for the Lands End area; visitor-center hours and posted closures are separate.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-lands-end",
+          "visit-20261017-goga-hours"
+        ],
+        "checkedAt": "2026-10-17"
       },
       "fees": {
         "value": null,
@@ -962,19 +997,21 @@
         "note": "Not established from the reviewed sources. Check with the land manager before visiting."
       },
       "terrain": {
-        "value": "Coastal paths through rocky headlands.",
+        "value": "Coastal cliff trails with wooded stretches and exposed overlooks. Route surfaces and stairs vary.",
         "status": "reported",
         "sourceIds": [
-          "lands-end"
+          "visit-20261017-lands-end",
+          "visit-20261017-goga-hours"
         ],
-        "checkedAt": "2026-10-16T18:24:33.098374Z"
+        "checkedAt": "2026-10-17"
       },
       "accessibility": {
-        "value": null,
-        "status": "unknown",
-        "sourceIds": [],
-        "checkedAt": null,
-        "note": "Not established from the reviewed sources. Check with the land manager before visiting."
+        "value": "NPS identifies wheelchair-accessible trails beginning at Merrie Way parking lot. This does not mean every Coastal Trail section, stairway or beach access is accessible.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-lands-end"
+        ],
+        "checkedAt": "2026-10-17"
       },
       "facilities": {
         "value": null,
@@ -991,12 +1028,13 @@
         "note": "Not established from the reviewed sources. Check with the land manager before visiting."
       },
       "cautions": {
-        "value": "Check official trail conditions and remain behind barriers.",
+        "value": "Stay on designated trails and away from unstable cliff edges. Expect wind and fog.",
         "status": "reported",
         "sourceIds": [
-          "lands-end"
+          "visit-20261017-lands-end",
+          "visit-20261017-goga-hours"
         ],
-        "checkedAt": "2026-10-16T18:24:33.098374Z"
+        "checkedAt": "2026-10-17"
       },
       "rules": {
         "dogs": {
@@ -1035,11 +1073,13 @@
           "note": "Not established from the reviewed sources. Check with the land manager before visiting."
         },
         "other": {
-          "value": null,
-          "status": "unknown",
-          "sourceIds": [],
-          "checkedAt": null,
-          "note": "Not established from the reviewed sources. Check with the land manager before visiting."
+          "value": "Do not leave designated trails or approach cliff edges.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-lands-end",
+            "visit-20261017-goga-hours"
+          ],
+          "checkedAt": "2026-10-17"
         }
       },
       "routes": [],
@@ -1052,6 +1092,24 @@
           "retrievedAt": "2026-10-16T18:24:33.098374Z",
           "sha256": "3593d64e27a0bf2481abdfab6c4ef1c1f8ef88ee1a069e7e018ea0c522bd4fc0",
           "kind": "official"
+        },
+        {
+          "id": "visit-20261017-lands-end",
+          "url": "https://www.nps.gov/goga/planyourvisit/landsend.htm",
+          "title": "Lands End visitor information",
+          "publisher": "National Park Service",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "3593d64e27a0bf2481abdfab6c4ef1c1f8ef88ee1a069e7e018ea0c522bd4fc0"
+        },
+        {
+          "id": "visit-20261017-goga-hours",
+          "url": "https://www.nps.gov/goga/planyourvisit/hours.htm",
+          "title": "GGNRA operating hours and seasons",
+          "publisher": "National Park Service",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "42eee4a293d1ff6df2ef07686584eae0286a71bde7c6f60e81e7717bd2b84b8a"
         }
       ],
       "alertsUrl": "https://www.nps.gov/goga/planyourvisit/landsend.htm",
@@ -1067,7 +1125,6 @@
     "county": "San Francisco",
     "description": "A small hilltop above the Sunset District, with city and coastal scenery. Stay on paths to protect the fragile habitat.",
     "tags": [
-      "ocean",
       "skyline",
       "hills"
     ],
@@ -1479,7 +1536,7 @@
     "region": "bay-area",
     "visit": {
       "reviewStatus": "official-source-reviewed",
-      "reviewedAt": "2026-10-16T18:24:34.382297Z",
+      "reviewedAt": "2026-10-17",
       "manager": {
         "value": "National Park Service",
         "status": "reported",
@@ -1489,11 +1546,12 @@
         "checkedAt": "2026-10-16T18:24:43.768731Z"
       },
       "hours": {
-        "value": null,
-        "status": "unknown",
-        "sourceIds": [],
-        "checkedAt": null,
-        "note": "Not established from the reviewed sources. Check with the land manager before visiting."
+        "value": "Observation deck open until about 11:45 pm daily. The area west of the parking-roundabout gate closes midnight–6 am. Lighthouse stairs and visitor-center hours are separate and subject to staffing/weather.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-lighthouse"
+        ],
+        "checkedAt": "2026-10-17"
       },
       "fees": {
         "value": null,
@@ -1526,20 +1584,20 @@
         "checkedAt": "2026-10-16T18:24:43.768731Z"
       },
       "accessibility": {
-        "value": "About 400-foot accessible path from designated accessible parking to visitor center and upper observation deck.",
+        "value": "From the designated accessible parking area, an approximately 400-foot accessible path reaches the visitor center and upper observation deck. The lighthouse below requires 313 steps.",
         "status": "reported",
         "sourceIds": [
-          "point-reyes-lighthouse-guide"
+          "visit-20261017-lighthouse"
         ],
-        "checkedAt": "2026-10-16T18:24:43.768731Z"
+        "checkedAt": "2026-10-17"
       },
       "facilities": {
-        "value": "Restrooms at parking and near visitor center.",
+        "value": "Restrooms at the visitor parking lot and near the green garages are listed as open 6 am–midnight. A drinking-water filling station is near the garages.",
         "status": "reported",
         "sourceIds": [
-          "point-reyes-lighthouse-guide"
+          "visit-20261017-lighthouse"
         ],
-        "checkedAt": "2026-10-16T18:24:43.768731Z"
+        "checkedAt": "2026-10-17"
       },
       "seasonalAccess": {
         "value": "Check lighthouse stairway and visitor-center hours separately from upper-deck access.",
@@ -1550,21 +1608,21 @@
         "checkedAt": "2026-10-16T18:24:43.768731Z"
       },
       "cautions": {
-        "value": "High winds, fog and fragile cliffs. Lighthouse stairway closes when wind exceeds 40 mph.",
+        "value": "Stairs close when winds exceed 40 mph; the upper observation deck can remain available when stairs are closed. Cell service is minimal. Stay behind railings and off unstable bluffs.",
         "status": "reported",
         "sourceIds": [
-          "point-reyes-lighthouse-guide"
+          "visit-20261017-lighthouse"
         ],
-        "checkedAt": "2026-10-16T18:24:43.768731Z"
+        "checkedAt": "2026-10-17"
       },
       "rules": {
         "dogs": {
-          "value": "Pets restricted to parking and road east of the lot; not on lighthouse paths. Service-animal provisions apply.",
+          "value": "Pets may use the parking lot and Sir Francis Drake Boulevard east of it; otherwise they are prohibited in the lighthouse area. Working service dogs are excepted.",
           "status": "reported",
           "sourceIds": [
-            "point-reyes-lighthouse-guide"
+            "visit-20261017-lighthouse"
           ],
-          "checkedAt": "2026-10-16T18:24:43.768731Z"
+          "checkedAt": "2026-10-17"
         },
         "bicycles": {
           "value": null,
@@ -1595,12 +1653,12 @@
           "note": "Not established from the reviewed sources. Check with the land manager before visiting."
         },
         "other": {
-          "value": "Stay on paved service road; no off-trail access west of visitor parking. No smoking in lighthouse area.",
+          "value": "Stay on maintained paths. All off-trail areas west of the visitor parking lot are closed to entry. Smoking is prohibited in the lighthouse area.",
           "status": "reported",
           "sourceIds": [
-            "point-reyes-lighthouse-guide"
+            "visit-20261017-lighthouse"
           ],
-          "checkedAt": "2026-10-16T18:24:43.768731Z"
+          "checkedAt": "2026-10-17"
         }
       },
       "routes": [
@@ -1610,12 +1668,13 @@
           "start": "Main lighthouse visitor parking",
           "distanceType": "one-way",
           "distanceMiles": {
-            "value": 0.5,
+            "value": 0.45,
             "status": "reported",
             "sourceIds": [
-              "point-reyes-lighthouse"
+              "visit-20261017-lighthouse"
             ],
-            "checkedAt": "2026-10-16T18:24:34.382297Z"
+            "checkedAt": "2026-10-17",
+            "note": "NPS describes the mostly uphill walk from the main parking lot to the visitor center as 0.45 mile. This is one way and excludes the lighthouse stairs."
           },
           "elevationGainFeet": {
             "value": null,
@@ -1662,15 +1721,15 @@
           },
           "estimatedSteps": {
             "value": [
-              1000,
-              1300
+              855,
+              1170
             ],
             "status": "estimated",
             "sourceIds": [
-              "point-reyes-lighthouse"
+              "visit-20261017-lighthouse"
             ],
-            "checkedAt": "2026-10-16T18:24:34.382297Z",
-            "note": "Distance × 1,900–2,600 walking steps per mile; stride, slope and detours vary. Not a measured step count. Applies only to the distance and route basis shown."
+            "checkedAt": "2026-10-17",
+            "note": "0.45 mile × 1,900–2,600 steps/mile; approximate, excludes lighthouse stairs."
           }
         },
         {
@@ -1762,6 +1821,15 @@
           "retrievedAt": "2026-10-16T18:24:43.768731Z",
           "sha256": "a5c18574c39fd5979e9cd80a063bbe5d06702c6c2ae3f4c8068414ad9da0381a",
           "kind": "official"
+        },
+        {
+          "id": "visit-20261017-lighthouse",
+          "url": "https://www.nps.gov/pore/planyourvisit/lighthouse.htm",
+          "title": "Visit the Point Reyes Lighthouse",
+          "publisher": "National Park Service",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "a5c18574c39fd5979e9cd80a063bbe5d06702c6c2ae3f4c8068414ad9da0381a"
         }
       ],
       "alertsUrl": "https://www.nps.gov/pore/planyourvisit/lighthouse.htm",
@@ -1777,7 +1845,6 @@
     "county": "San Mateo",
     "description": "The summit gives a 360-degree panorama from San Francisco Bay to the Pacific Ocean.",
     "tags": [
-      "ocean",
       "hills",
       "greenery"
     ],
@@ -1801,7 +1868,7 @@
     "region": "bay-area",
     "visit": {
       "reviewStatus": "official-source-reviewed",
-      "reviewedAt": "2026-10-16T18:24:34.865045Z",
+      "reviewedAt": "2026-10-17",
       "manager": {
         "value": "Midpeninsula Regional Open Space District",
         "status": "reported",
@@ -1842,12 +1909,12 @@
         "note": "Not established from the reviewed sources. Check with the land manager before visiting."
       },
       "terrain": {
-        "value": "Open windy grassland ridges with forested approaches.",
+        "value": "Grassland ridges and redwood, fir and oak woodland. Summit access is distinct from the lower-preserve pond walk.",
         "status": "reported",
         "sourceIds": [
-          "windy-hill"
+          "visit-20261017-windy"
         ],
-        "checkedAt": "2026-10-16T18:24:34.865045Z"
+        "checkedAt": "2026-10-17"
       },
       "accessibility": {
         "value": null,
@@ -1881,20 +1948,20 @@
       },
       "rules": {
         "dogs": {
-          "value": "Dogs only on designated trails; leash required except specifically signed off-leash areas.",
+          "value": "Leashed dogs are permitted on designated trails only; consult the current trail map.",
           "status": "reported",
           "sourceIds": [
-            "windy-hill"
+            "visit-20261017-windy"
           ],
-          "checkedAt": "2026-10-16T18:24:34.865045Z"
+          "checkedAt": "2026-10-17"
         },
         "bicycles": {
-          "value": "Designated trails only; helmets required; obey speed limits and yield.",
+          "value": "Bicycles are permitted only on designated trails.",
           "status": "reported",
           "sourceIds": [
-            "windy-hill"
+            "visit-20261017-windy"
           ],
-          "checkedAt": "2026-10-16T18:24:34.865045Z"
+          "checkedAt": "2026-10-17"
         },
         "drones": {
           "value": "Drones and model aircraft prohibited.",
@@ -1916,9 +1983,9 @@
           "value": "No camping.",
           "status": "reported",
           "sourceIds": [
-            "windy-hill"
+            "visit-20261017-windy"
           ],
-          "checkedAt": "2026-10-16T18:24:34.865045Z"
+          "checkedAt": "2026-10-17"
         },
         "other": {
           "value": "Use designated trails; pack out litter. Groups of 20+ and some organized activities require a permit.",
@@ -2069,6 +2136,76 @@
             "note": "Distance × 1,900–2,600 walking steps per mile; stride, slope and detours vary. Not a measured step count. Applies only to the distance and route basis shown."
           },
           "notes": "Spring Ridge, Lost Trail and Hamm’s Gulch; includes summit."
+        },
+        {
+          "id": "anniversary-return-loop",
+          "name": "Anniversary Trail with disc-track return",
+          "start": "Skyline Boulevard Windy Hill parking area",
+          "distanceType": "loop",
+          "distanceMiles": {
+            "value": 1,
+            "status": "estimated",
+            "sourceIds": [
+              "visit-20261017-windy"
+            ],
+            "checkedAt": "2026-10-17"
+          },
+          "elevationGainFeet": {
+            "value": null,
+            "status": "unknown",
+            "sourceIds": [],
+            "checkedAt": null,
+            "note": "Cumulative route climbing gain was not established; point elevations and basin descents are not substituted."
+          },
+          "durationMinutes": {
+            "value": null,
+            "status": "unknown",
+            "sourceIds": [],
+            "checkedAt": null,
+            "note": "Not established from reviewed sources."
+          },
+          "terrain": {
+            "value": "Anniversary Trail, returning by the disc track beside Skyline Boulevard.",
+            "status": "reported",
+            "sourceIds": [
+              "visit-20261017-windy"
+            ],
+            "checkedAt": "2026-10-17"
+          },
+          "difficulty": {
+            "value": null,
+            "status": "unknown",
+            "sourceIds": [],
+            "checkedAt": null,
+            "note": "Not established from reviewed sources."
+          },
+          "accessibility": {
+            "value": null,
+            "status": "unknown",
+            "sourceIds": [],
+            "checkedAt": null,
+            "note": "Not established from reviewed sources."
+          },
+          "stairs": {
+            "value": null,
+            "status": "unknown",
+            "sourceIds": [],
+            "checkedAt": null,
+            "note": "Not established from reviewed sources."
+          },
+          "estimatedSteps": {
+            "value": [
+              1900,
+              2600
+            ],
+            "status": "estimated",
+            "sourceIds": [
+              "visit-20261017-windy"
+            ],
+            "checkedAt": "2026-10-17",
+            "note": "Calculated from distance at 1,900–2,600 steps per mile; stride, terrain, detours and stairs vary. Not a measured step count."
+          },
+          "notes": "Midpen describes this as approximately one mile. The 0.6-mile Anniversary Trail spans the two parking areas and has summit/overlook detours; this shorter loop is not the 7.2-mile Windy Hill Loop."
         }
       ],
       "sources": [
@@ -2097,6 +2234,15 @@
           "publisher": "OpenStreetMap contributors",
           "retrievedAt": "2026-10-16T18:40:21.952662Z",
           "kind": "community"
+        },
+        {
+          "id": "visit-20261017-windy",
+          "url": "https://www.openspace.org/preserves/windy-hill",
+          "title": "Windy Hill Preserve",
+          "publisher": "Midpeninsula Regional Open Space District",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "5c32fc95ecfc15b1753705309ae8ffce96aeb89c260b639401e9ba89331366ee"
         }
       ],
       "alertsUrl": "https://www.openspace.org/preserves/windy-hill",
@@ -2131,7 +2277,7 @@
     "region": "bay-area",
     "visit": {
       "reviewStatus": "official-source-reviewed",
-      "reviewedAt": "2026-10-16T18:24:34.322683Z",
+      "reviewedAt": "2026-10-17",
       "manager": {
         "value": "National Park Service",
         "status": "reported",
@@ -2155,11 +2301,12 @@
         "note": "Not established from the reviewed sources. Check with the land manager before visiting."
       },
       "parking": {
-        "value": null,
-        "status": "unknown",
-        "sourceIds": [],
-        "checkedAt": null,
-        "note": "Not established from the reviewed sources. Check with the land manager before visiting."
+        "value": "Parking is available on Mori Point Road or Bradford Way.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-mori"
+        ],
+        "checkedAt": "2026-10-17"
       },
       "elevationFeet": {
         "value": null,
@@ -2177,33 +2324,36 @@
         "checkedAt": "2026-10-16T18:24:34.322683Z"
       },
       "accessibility": {
-        "value": null,
-        "status": "unknown",
-        "sourceIds": [],
-        "checkedAt": null,
-        "note": "Not established from the reviewed sources. Check with the land manager before visiting."
-      },
-      "facilities": {
-        "value": null,
-        "status": "unknown",
-        "sourceIds": [],
-        "checkedAt": null,
-        "note": "Not established from the reviewed sources. Check with the land manager before visiting."
-      },
-      "seasonalAccess": {
-        "value": null,
-        "status": "unknown",
-        "sourceIds": [],
-        "checkedAt": null,
-        "note": "Not established from the reviewed sources. Check with the land manager before visiting."
-      },
-      "cautions": {
-        "value": "Stay on designated trails and protect sensitive habitat.",
+        "value": "Accessible trail and boardwalk features exist; bluff and summit routes have different grades and surfaces. Consult the NPS accessible-trails guide for the approach you choose.",
         "status": "reported",
         "sourceIds": [
-          "mori-point"
+          "visit-20261017-mori"
         ],
-        "checkedAt": "2026-10-16T18:24:34.322683Z"
+        "checkedAt": "2026-10-17"
+      },
+      "facilities": {
+        "value": "NPS lists accessible parking, trail, boardwalk and restrooms.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-mori"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "seasonalAccess": {
+        "value": "Wildflowers are typically most abundant in April and May; conditions vary by year.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-mori"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "cautions": {
+        "value": "Windy exposed bluffs: stay on designated trails and away from cliff edges.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-mori"
+        ],
+        "checkedAt": "2026-10-17"
       },
       "rules": {
         "dogs": {
@@ -2259,6 +2409,15 @@
           "retrievedAt": "2026-10-16T18:24:34.322683Z",
           "sha256": "92c2ac6f3e162c0e1cdc531380608f3c482578a1f7b5c726ebfe65c8f7cf71dd",
           "kind": "official"
+        },
+        {
+          "id": "visit-20261017-mori",
+          "url": "https://www.nps.gov/goga/planyourvisit/moripoint.htm",
+          "title": "Mori Point visitor information",
+          "publisher": "National Park Service",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "92c2ac6f3e162c0e1cdc531380608f3c482578a1f7b5c726ebfe65c8f7cf71dd"
         }
       ],
       "alertsUrl": "https://www.nps.gov/goga/planyourvisit/moripoint.htm",
@@ -2274,10 +2433,9 @@
     "county": "Santa Clara",
     "description": "A restored mountain summit with panoramic views, interpretive displays and an accessible summit pathway.",
     "tags": [
-      "hills",
       "skyline",
-      "greenery",
-      "ocean"
+      "hills",
+      "greenery"
     ],
     "featured": 10,
     "sourceUrl": "https://www.openspace.org/preserves/sierra-azul",
@@ -2601,8 +2759,8 @@
     "county": "Santa Clara",
     "description": "An exposed hilltop in Fremont Older Preserve overlooking the Santa Clara Valley.",
     "tags": [
-      "hills",
       "skyline",
+      "hills",
       "greenery"
     ],
     "featured": 11,
@@ -2626,7 +2784,7 @@
     "region": "bay-area",
     "visit": {
       "reviewStatus": "official-source-reviewed",
-      "reviewedAt": "2026-10-16T18:24:37.550628Z",
+      "reviewedAt": "2026-10-17",
       "manager": {
         "value": "Midpeninsula Regional Open Space District",
         "status": "reported",
@@ -2667,18 +2825,20 @@
         "note": "Not established from the reviewed sources. Check with the land manager before visiting."
       },
       "terrain": {
-        "value": null,
-        "status": "unknown",
-        "sourceIds": [],
-        "checkedAt": null,
-        "note": "Not established from the reviewed sources. Check with the land manager before visiting."
+        "value": "Hiking on designated preserve trails to a hilltop overlooking Santa Clara Valley. The roughly 900-foot hilltop height is not climbing gain.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-fremont-older"
+        ],
+        "checkedAt": "2026-10-17"
       },
       "accessibility": {
-        "value": null,
-        "status": "unknown",
-        "sourceIds": [],
-        "checkedAt": null,
-        "note": "Not established from the reviewed sources. Check with the land manager before visiting."
+        "value": "Midpen lists no easy-access trails at Fremont Older; do not assume a wheelchair-accessible approach.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-fremont-older"
+        ],
+        "checkedAt": "2026-10-17"
       },
       "facilities": {
         "value": "Designated parking; restrooms at listed access areas. Bring drinking water.",
@@ -2851,6 +3011,15 @@
           "publisher": "OpenStreetMap contributors",
           "retrievedAt": "2026-10-16T18:40:21.952662Z",
           "kind": "community"
+        },
+        {
+          "id": "visit-20261017-fremont-older",
+          "url": "https://www.openspace.org/preserves/fremont-older",
+          "title": "Fremont Older Preserve",
+          "publisher": "Midpeninsula Regional Open Space District",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "1c4cc1ab148f87fed89e20d78bb2ef7a58f9af379af266a57403070e2ff17e36"
         }
       ],
       "alertsUrl": "https://www.openspace.org/preserves/fremont-older-preserve",
@@ -3269,8 +3438,8 @@
     "county": "Alameda",
     "description": "A demanding summit outing rewarded with views of the South Bay and surrounding mountain ranges. Check park hours before visiting.",
     "tags": [
-      "hills",
       "skyline",
+      "hills",
       "greenery"
     ],
     "featured": 14,
@@ -3590,9 +3759,10 @@
     "county": "Alameda",
     "description": "Low grassy hills beside the bay and marshlands, with broad water and East Bay views.",
     "tags": [
+      "bay",
+      "bridges",
       "hills",
-      "greenery",
-      "bridges"
+      "greenery"
     ],
     "featured": 15,
     "sourceUrl": "https://www.ebparks.org/parks/coyote-hills",
@@ -3823,8 +3993,8 @@
     "county": "Marin",
     "description": "A Marin Headlands hilltop with coastal and Golden Gate scenery, also known for migrating raptors.",
     "tags": [
+      "bay",
       "bridges",
-      "ocean",
       "hills"
     ],
     "featured": 16,
@@ -4515,7 +4685,6 @@
     "county": "San Mateo",
     "tags": [
       "hills",
-      "ocean",
       "greenery"
     ],
     "description": "A ridge-top panorama across the Bay and Pacific from Russian Ridge.",
@@ -4525,7 +4694,7 @@
     "sourceUrl": "https://www.openspace.org/preserves/russian-ridge",
     "visit": {
       "reviewStatus": "official-source-reviewed",
-      "reviewedAt": "2026-10-16T18:24:04.416248Z",
+      "reviewedAt": "2026-10-17",
       "manager": {
         "value": "Midpeninsula Regional Open Space District",
         "status": "reported",
@@ -4551,12 +4720,12 @@
         "checkedAt": "2026-10-16T18:36:02.661122Z"
       },
       "parking": {
-        "value": "Main Russian Ridge lot at Skyline and Alpine Road; seasonal crowding.",
+        "value": "Use marked spaces only; spring peak periods can fill. The agency recommends carpooling or another preserve if full.",
         "status": "reported",
         "sourceIds": [
-          "russian-ridge"
+          "visit-20261017-russian-ridge"
         ],
-        "checkedAt": "2026-10-16T18:24:04.416248Z"
+        "checkedAt": "2026-10-17"
       },
       "elevationFeet": {
         "value": null,
@@ -4589,12 +4758,12 @@
         "checkedAt": "2026-10-16T18:24:04.416248Z"
       },
       "seasonalAccess": {
-        "value": "Mindego Hill area closes during Red Flag Warnings; off-trail travel restricted during wildflower season.",
+        "value": "The Mindego Hill area closes during National Weather Service Red Flag Warnings. Spring parking can fill on weekends, weekday evenings and holidays.",
         "status": "reported",
         "sourceIds": [
-          "russian-ridge"
+          "visit-20261017-russian-ridge"
         ],
-        "checkedAt": "2026-10-16T18:24:04.416248Z"
+        "checkedAt": "2026-10-17"
       },
       "cautions": {
         "value": "Variable cell service; poison oak, ticks and wildlife. Check fire and wet-weather closures.",
@@ -4646,12 +4815,12 @@
           "checkedAt": "2026-10-16T18:24:04.416248Z"
         },
         "other": {
-          "value": "Use designated trails; pack out litter. Groups of 20+ and some organized activities require a permit.",
+          "value": "Remain on established trails, including during wildflower season. Do not park outside marked spaces.",
           "status": "reported",
           "sourceIds": [
-            "russian-ridge"
+            "visit-20261017-russian-ridge"
           ],
-          "checkedAt": "2026-10-16T18:24:04.416248Z"
+          "checkedAt": "2026-10-17"
         }
       },
       "routes": [],
@@ -4673,6 +4842,15 @@
           "retrievedAt": "2026-10-16T18:24:04.416248Z",
           "sha256": "f9d53d2f47f6861d88e855caa75102af65d28f7abb3fb7f51c6e86643171da7c",
           "kind": "official"
+        },
+        {
+          "id": "visit-20261017-russian-ridge",
+          "url": "https://www.openspace.org/preserves/russian-ridge",
+          "title": "Russian Ridge Preserve",
+          "publisher": "Midpeninsula Regional Open Space District",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "bd1e2bc690a6577f3835c273f456a8a7a02f44432c2066f9b5ad8286c1ce79b7"
         }
       ],
       "alertsUrl": "https://www.openspace.org/preserves/russian-ridge",
@@ -5169,6 +5347,7 @@
     "lng": -122.1735,
     "county": "San Mateo",
     "tags": [
+      "water",
       "hills",
       "greenery"
     ],
@@ -5818,9 +5997,9 @@
     "lng": -122.004,
     "county": "Santa Clara",
     "tags": [
+      "skyline",
       "hills",
-      "greenery",
-      "skyline"
+      "greenery"
     ],
     "description": "Ridge scenery over Lexington Reservoir and the South Bay.",
     "featured": 26,
@@ -7268,6 +7447,7 @@
     "lng": -122.456853,
     "county": "San Francisco",
     "tags": [
+      "bay",
       "bridges",
       "skyline",
       "greenery"
@@ -7423,6 +7603,7 @@
     "lng": -122.45855,
     "county": "San Francisco",
     "tags": [
+      "bay",
       "skyline",
       "greenery"
     ],
@@ -7881,8 +8062,8 @@
     "lng": -122.476678,
     "county": "San Francisco",
     "tags": [
-      "bridges",
-      "ocean"
+      "bay",
+      "bridges"
     ],
     "description": "The two bridge towers align between historic cypress trees.",
     "featured": 37,
@@ -8034,8 +8215,8 @@
     "lng": -122.472131,
     "county": "San Francisco",
     "tags": [
-      "bridges",
-      "ocean"
+      "bay",
+      "bridges"
     ],
     "description": "Bridge-side paths and a historic battery frame Golden Gate views.",
     "featured": 38,
@@ -8197,7 +8378,7 @@
     "sourceUrl": "https://www.nps.gov/pore/planyourvisit/chimney_rock.htm",
     "visit": {
       "reviewStatus": "official-source-reviewed",
-      "reviewedAt": "2026-10-16T18:26:46.744471Z",
+      "reviewedAt": "2026-10-17",
       "manager": {
         "value": "National Park Service",
         "status": "reported",
@@ -8221,12 +8402,12 @@
         "note": "Not established from the reviewed sources. Check with the land manager before visiting."
       },
       "parking": {
-        "value": "Limited headland parking; narrow two-way approach road.",
+        "value": "The paved trailhead lot accommodates about 20 vehicles, with one van-accessible space. Do not park on the road shoulder or vegetation.",
         "status": "reported",
         "sourceIds": [
-          "chimney-rock"
+          "visit-20261017-chimney"
         ],
-        "checkedAt": "2026-10-16T18:26:46.744471Z"
+        "checkedAt": "2026-10-17"
       },
       "elevationFeet": {
         "value": null,
@@ -8244,18 +8425,20 @@
         "checkedAt": "2026-10-16T18:26:46.744471Z"
       },
       "accessibility": {
-        "value": null,
-        "status": "unknown",
-        "sourceIds": [],
-        "checkedAt": null,
-        "note": "Not established from the reviewed sources. Check with the land manager before visiting."
+        "value": "One van-accessible parking space. The separate Elephant Seal Overlook approach uses a degraded asphalt descent followed by a relatively flat rammed-earth trail; wheelchair users may need assistance. This does not establish accessibility of the Chimney Rock ridge trail.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-chimney"
+        ],
+        "checkedAt": "2026-10-17"
       },
       "facilities": {
-        "value": null,
-        "status": "unknown",
-        "sourceIds": [],
-        "checkedAt": null,
-        "note": "Not established from the reviewed sources. Check with the land manager before visiting."
+        "value": "Vault toilet at the parking lot; restrooms listed as available 6 am–midnight. No potable water or nearby food service at Chimney Rock.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-chimney"
+        ],
+        "checkedAt": "2026-10-17"
       },
       "seasonalAccess": {
         "value": null,
@@ -8265,21 +8448,21 @@
         "note": "Not established from the reviewed sources. Check with the land manager before visiting."
       },
       "cautions": {
-        "value": "Stay away from cliff edges; strong wind and fog. Vehicles/trailers over 24 feet combined are prohibited on access road.",
+        "value": "Unstable cliffs and fissures: remain on official trails, stay behind fences and never approach bluff edges. Bring water, layers and food; cell service can be absent.",
         "status": "reported",
         "sourceIds": [
-          "chimney-rock"
+          "visit-20261017-chimney"
         ],
-        "checkedAt": "2026-10-16T18:26:46.744471Z"
+        "checkedAt": "2026-10-17"
       },
       "rules": {
         "dogs": {
-          "value": "Dogs restricted to parking and road west of lot; not on trail. Service-animal provisions apply.",
+          "value": "Dogs may use the parking lot and Chimney Rock Road west of it; dogs are otherwise prohibited, with working service-dog exceptions.",
           "status": "reported",
           "sourceIds": [
-            "chimney-rock"
+            "visit-20261017-chimney"
           ],
-          "checkedAt": "2026-10-16T18:26:46.744471Z"
+          "checkedAt": "2026-10-17"
         },
         "bicycles": {
           "value": null,
@@ -8289,11 +8472,12 @@
           "note": "Not established from the reviewed sources. Check with the land manager before visiting."
         },
         "drones": {
-          "value": null,
-          "status": "unknown",
-          "sourceIds": [],
-          "checkedAt": null,
-          "note": "Not established from the reviewed sources. Check with the land manager before visiting."
+          "value": "Launching, landing or operating drones on NPS lands and waters in Point Reyes National Seashore is prohibited.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-chimney"
+          ],
+          "checkedAt": "2026-10-17"
         },
         "fires": {
           "value": null,
@@ -8310,11 +8494,12 @@
           "note": "Not established from the reviewed sources. Check with the land manager before visiting."
         },
         "other": {
-          "value": null,
-          "status": "unknown",
-          "sourceIds": [],
-          "checkedAt": null,
-          "note": "Not established from the reviewed sources. Check with the land manager before visiting."
+          "value": "Stay on designated trails and do not cross fences. Chimney Rock Road prohibits RVs and vehicle/trailer combinations longer than 24 feet.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-chimney"
+          ],
+          "checkedAt": "2026-10-17"
         }
       },
       "routes": [
@@ -8397,6 +8582,15 @@
           "retrievedAt": "2026-10-16T18:26:46.744471Z",
           "sha256": "4027e31a44bcae5106c807efb76919936e281ad3aa10d62687a7cadf20a56795",
           "kind": "official"
+        },
+        {
+          "id": "visit-20261017-chimney",
+          "url": "https://www.nps.gov/pore/planyourvisit/chimney_rock.htm",
+          "title": "Chimney Rock visitor information",
+          "publisher": "National Park Service",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "4027e31a44bcae5106c807efb76919936e281ad3aa10d62687a7cadf20a56795"
         }
       ],
       "alertsUrl": "https://www.nps.gov/pore/planyourvisit/chimney_rock.htm",
@@ -8411,6 +8605,7 @@
     "lng": -122.489,
     "county": "Marin",
     "tags": [
+      "bay",
       "bridges",
       "skyline",
       "hills"
@@ -8857,8 +9052,8 @@
     "lng": -122.49,
     "county": "Marin",
     "tags": [
-      "bridges",
-      "ocean"
+      "bay",
+      "bridges"
     ],
     "description": "A lower shoreline view beneath the Golden Gate Bridge.",
     "featured": 42,
@@ -8867,7 +9062,7 @@
     "sourceUrl": "https://www.nps.gov/goga/planyourvisit/marin-headlands-scenic-vistas.htm",
     "visit": {
       "reviewStatus": "official-source-reviewed",
-      "reviewedAt": "2026-10-16T18:26:47.419764Z",
+      "reviewedAt": "2026-10-17",
       "manager": {
         "value": "National Park Service",
         "status": "reported",
@@ -8877,11 +9072,12 @@
         "checkedAt": "2026-10-16T18:26:47.419764Z"
       },
       "hours": {
-        "value": null,
-        "status": "unknown",
-        "sourceIds": [],
-        "checkedAt": null,
-        "note": "Not established from the reviewed sources. Check with the land manager before visiting."
+        "value": "6 am to one hour after sunset for day visitors; registered campers with permits are excepted from these day-use hours.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-goga-hours"
+        ],
+        "checkedAt": "2026-10-17"
       },
       "fees": {
         "value": null,
@@ -9065,6 +9261,15 @@
           "retrievedAt": "2026-10-16T18:26:47.419764Z",
           "sha256": "209809ef3a6bc137f49b0a9be4a3dd0f039926cec509ba47f5d00e1eeee3faad",
           "kind": "official"
+        },
+        {
+          "id": "visit-20261017-goga-hours",
+          "url": "https://www.nps.gov/goga/planyourvisit/hours.htm",
+          "title": "GGNRA operating hours and seasons",
+          "publisher": "National Park Service",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "42eee4a293d1ff6df2ef07686584eae0286a71bde7c6f60e81e7717bd2b84b8a"
         }
       ],
       "alertsUrl": "https://www.nps.gov/goga/planyourvisit/marin-headlands-scenic-vistas.htm",
@@ -9080,7 +9285,7 @@
     "county": "Marin",
     "tags": [
       "ocean",
-      "bridges"
+      "hills"
     ],
     "description": "A rugged coastal viewing platform near the historic lighthouse.",
     "featured": 43,
@@ -9242,7 +9447,7 @@
     "sourceUrl": "https://www.smcgov.org/parks/devils-slide-trail",
     "visit": {
       "reviewStatus": "official-source-reviewed",
-      "reviewedAt": "2026-10-16T18:26:51.648087Z",
+      "reviewedAt": "2026-10-17",
       "manager": {
         "value": "County of San Mateo",
         "status": "reported",
@@ -9289,19 +9494,20 @@
         "checkedAt": "2026-10-16T18:26:51.648087Z"
       },
       "accessibility": {
-        "value": null,
-        "status": "unknown",
-        "sourceIds": [],
-        "checkedAt": null,
-        "note": "Not established from the reviewed sources. Check with the land manager before visiting."
-      },
-      "facilities": {
-        "value": "Benches, viewing scopes, interpretive signs, toilets and drinking fountains.",
+        "value": "Paved multi-use trail, with separate lanes for pedestrians and directional bicycle traffic. Pavement alone does not establish that every grade meets a visitor’s access needs.",
         "status": "reported",
         "sourceIds": [
-          "devil-slide"
+          "visit-20261017-devils-slide"
         ],
-        "checkedAt": "2026-10-16T18:26:51.648087Z"
+        "checkedAt": "2026-10-17"
+      },
+      "facilities": {
+        "value": "Benches, observation scopes, interpretation, pet-waste stations, bike racks, drinking fountains and restrooms.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-devils-slide"
+        ],
+        "checkedAt": "2026-10-17"
       },
       "seasonalAccess": {
         "value": null,
@@ -9326,11 +9532,12 @@
           "note": "Not established from the reviewed sources. Check with the land manager before visiting."
         },
         "bicycles": {
-          "value": null,
-          "status": "unknown",
-          "sourceIds": [],
-          "checkedAt": null,
-          "note": "Not established from the reviewed sources. Check with the land manager before visiting."
+          "value": "Use the signed directional bicycle lanes and share the trail with other users.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-devils-slide"
+          ],
+          "checkedAt": "2026-10-17"
         },
         "drones": {
           "value": null,
@@ -9441,6 +9648,15 @@
           "retrievedAt": "2026-10-16T18:26:51.648087Z",
           "sha256": "afc8428a314487c948c14d93612173ede4b00206e6dc2227baffec59266cf4df",
           "kind": "official"
+        },
+        {
+          "id": "visit-20261017-devils-slide",
+          "url": "https://www.smcgov.org/parks/devils-slide-trail",
+          "title": "Devil’s Slide Trail",
+          "publisher": "San Mateo County Parks",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "2c4546be41c9c5c178e76958c231e41c56f289c8a23c2553728a0602845b19b6"
         }
       ],
       "alertsUrl": "https://www.smcgov.org/parks/devils-slide-trail",
@@ -10715,9 +10931,10 @@
     "lng": -122.4324,
     "county": "Marin",
     "tags": [
+      "bay",
       "bridges",
       "skyline",
-      "ocean"
+      "hills"
     ],
     "description": "An island summit with views around San Francisco Bay.",
     "featured": 52,
@@ -12410,7 +12627,7 @@
     "sourceUrl": "https://www.nps.gov/lavo/planyourvisit/hiking_lassen_park.htm",
     "visit": {
       "reviewStatus": "official-source-reviewed",
-      "reviewedAt": "2026-10-16T18:26:47.354403Z",
+      "reviewedAt": "2026-10-17",
       "manager": {
         "value": "National Park Service",
         "status": "reported",
@@ -12435,11 +12652,12 @@
         "checkedAt": "2026-10-16T18:36:02.209853Z"
       },
       "parking": {
-        "value": null,
-        "status": "unknown",
-        "sourceIds": [],
-        "checkedAt": null,
-        "note": "Not established from the reviewed sources. Check with the land manager before visiting."
+        "value": "Trailhead parking is limited and often fills from mid-morning through early afternoon, especially on weekends.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-bumpass"
+        ],
+        "checkedAt": "2026-10-17"
       },
       "elevationFeet": {
         "value": null,
@@ -12457,26 +12675,28 @@
         "checkedAt": "2026-10-16T18:36:02.209853Z"
       },
       "accessibility": {
-        "value": null,
-        "status": "unknown",
-        "sourceIds": [],
-        "checkedAt": null,
-        "note": "Not established from the reviewed sources. Check with the land manager before visiting."
-      },
-      "facilities": {
-        "value": null,
-        "status": "unknown",
-        "sourceIds": [],
-        "checkedAt": null,
-        "note": "Not established from the reviewed sources. Check with the land manager before visiting."
-      },
-      "seasonalAccess": {
-        "value": "Hiking season generally May–October; snow closures often last into summer.",
+        "value": "The first mile is mostly about four feet wide with a mild slope. The descent into the basin is narrower and steeper with rocks/steps; do not treat the full boardwalk hike as accessible.",
         "status": "reported",
         "sourceIds": [
-          "lassen-trails"
+          "visit-20261017-bumpass"
         ],
-        "checkedAt": "2026-10-16T18:26:47.354403Z"
+        "checkedAt": "2026-10-17"
+      },
+      "facilities": {
+        "value": "Vault toilets at the trailhead only; no restrooms on the trail or in the basin. Carry drinking water.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-bumpass"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "seasonalAccess": {
+        "value": "High-elevation snow closes the trail through spring and often early summer; opening varies with snowpack. NPS describes late-summer/fall access. Check current trail and highway status.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-bumpass"
+        ],
+        "checkedAt": "2026-10-17"
       },
       "cautions": {
         "value": "Remain on boardwalk and designated paths in the hydrothermal basin. Snow can close access into summer.",
@@ -12488,12 +12708,12 @@
       },
       "rules": {
         "dogs": {
-          "value": "No pets on trail; qualifying service animals permitted.",
+          "value": "Pets are not permitted on park trails; service-animal exceptions apply.",
           "status": "reported",
           "sourceIds": [
-            "bumpass-hell-guide"
+            "visit-20261017-bumpass"
           ],
-          "checkedAt": "2026-10-16T18:36:02.209853Z"
+          "checkedAt": "2026-10-17"
         },
         "bicycles": {
           "value": null,
@@ -12524,11 +12744,12 @@
           "note": "Not established from the reviewed sources. Check with the land manager before visiting."
         },
         "other": {
-          "value": null,
-          "status": "unknown",
-          "sourceIds": [],
-          "checkedAt": null,
-          "note": "Not established from the reviewed sources. Check with the land manager before visiting."
+          "value": "Stay on established trails and boardwalks. Thin crust can hide acidic boiling water or mud; even cool hydrothermal water can irritate or burn skin.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-bumpass"
+          ],
+          "checkedAt": "2026-10-17"
         }
       },
       "routes": [
@@ -12550,23 +12771,24 @@
             "status": "unknown",
             "sourceIds": [],
             "checkedAt": null,
-            "note": "Not established from the reviewed sources. Check with the land manager before visiting."
+            "note": "The current source gives conflicting 200/300-foot basin descents; cumulative route elevation gain is not established."
           },
           "durationMinutes": {
-            "value": "About 120",
+            "value": "About 90–120 minutes in the NPS descriptions; allow extra time for stops.",
             "status": "reported",
             "sourceIds": [
-              "bumpass-hell-guide"
+              "visit-20261017-bumpass"
             ],
-            "checkedAt": "2026-10-16T18:36:02.209853Z"
+            "checkedAt": "2026-10-17"
           },
           "terrain": {
-            "value": "Hard-packed dirt and rock; last half-mile drops about 300 feet into basin and uses boardwalk.",
-            "status": "reported",
+            "value": "Packed gravel, dirt and rock, with a descent into the basin and boardwalks. The same NPS page describes the basin descent as 200 feet in its summary and 300 feet in its narrative.",
+            "status": "conflicting",
             "sourceIds": [
-              "bumpass-hell-guide"
+              "visit-20261017-bumpass"
             ],
-            "checkedAt": "2026-10-16T18:36:02.209853Z"
+            "checkedAt": "2026-10-17",
+            "note": "Conflicting descent descriptions are not cumulative round-trip climbing gain."
           },
           "difficulty": {
             "value": null,
@@ -12622,6 +12844,15 @@
           "retrievedAt": "2026-10-16T18:26:47.354403Z",
           "sha256": "5943f15a2f2327365546380ade8106db69c5af58cb996d210e801759ce8c4d49",
           "kind": "official"
+        },
+        {
+          "id": "visit-20261017-bumpass",
+          "url": "https://www.nps.gov/thingstodo/hikebumpasshell.htm",
+          "title": "Hike to Bumpass Hell",
+          "publisher": "National Park Service",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "15c5b7e56c2fa3ff10ed440626daea8f00b15096c77c480e8556c282a63c90a7"
         }
       ],
       "alertsUrl": "https://www.nps.gov/lavo/planyourvisit/hiking_lassen_park.htm",
@@ -12861,6 +13092,7 @@
     "lng": -120.11,
     "county": "El Dorado",
     "tags": [
+      "water",
       "hills",
       "greenery"
     ],
@@ -13702,6 +13934,7 @@
     "county": "Alameda",
     "region": "bay-area",
     "tags": [
+      "water",
       "hills",
       "greenery"
     ],
@@ -13825,7 +14058,7 @@
           "start": "Guidebook trailhead in Livermore (37.584269, -121.688953); see PDF page 11.",
           "distanceType": "loop",
           "distanceMiles": {
-            "value": 1.0,
+            "value": 1,
             "status": "reported",
             "sourceIds": [
               "ebrpd-2026"
@@ -13919,6 +14152,7 @@
     "county": "Alameda",
     "region": "bay-area",
     "tags": [
+      "bay",
       "bridges",
       "skyline"
     ],
@@ -14042,7 +14276,7 @@
           "start": "Guidebook trailhead in Albany (37.88865, -122.31632); see PDF page 14.",
           "distanceType": "round-trip",
           "distanceMiles": {
-            "value": 2.0,
+            "value": 2,
             "status": "reported",
             "sourceIds": [
               "ebrpd-2026"
@@ -14353,8 +14587,9 @@
     "county": "Contra Costa",
     "region": "bay-area",
     "tags": [
-      "hills",
-      "bridges"
+      "bay",
+      "bridges",
+      "hills"
     ],
     "featured": 71,
     "sourceUrl": "https://ebparks.org/parks/carquinez-strait",
@@ -14910,7 +15145,7 @@
           "start": "Guidebook trailhead in Oakland (37.81240, -122.17456); see PDF page 21.",
           "distanceType": "loop",
           "distanceMiles": {
-            "value": 5.0,
+            "value": 5,
             "status": "reported",
             "sourceIds": [
               "ebrpd-2026"
@@ -15004,8 +15239,8 @@
     "county": "Alameda",
     "region": "bay-area",
     "tags": [
-      "hills",
-      "skyline"
+      "skyline",
+      "hills"
     ],
     "featured": 74,
     "sourceUrl": "https://ebparks.org/parks/vargas-plateau",
@@ -15221,6 +15456,7 @@
     "county": "Alameda",
     "region": "bay-area",
     "tags": [
+      "water",
       "hills",
       "greenery"
     ],
@@ -15778,7 +16014,7 @@
           "start": "Guidebook trailhead in Berkeley (37.90598, -122.26106); see PDF page 27.",
           "distanceType": "round-trip",
           "distanceMiles": {
-            "value": 6.0,
+            "value": 6,
             "status": "reported",
             "sourceIds": [
               "ebrpd-2026"
@@ -16079,6 +16315,2814 @@
       "alertsUrl": "https://ebparks.org/parks/wildcat-canyon",
       "mapUrl": "https://www.ebparks.org/sites/default/files/TC-2026-Guidebook-web.pdf?v=2#page=28",
       "coordinateNote": "Pin marks the official guidebook’s trailhead GPS, not the viewpoint itself. Follow the named scenic route and official map."
+    }
+  },
+  {
+    "id": "osm-node-13825881781",
+    "name": "Lands End Overlook",
+    "lat": 37.7805604,
+    "lng": -122.5119942,
+    "county": "San Francisco",
+    "region": "bay-area",
+    "description": "A community-mapped viewpoint. Confirm public access, safe routes and current conditions with the land manager before visiting.",
+    "tags": [
+      "ocean"
+    ],
+    "featured": null,
+    "sourceUrl": "https://www.openstreetmap.org/node/13825881781",
+    "photos": [
+      {
+        "url": "/viewpoints/photos/3bd3bc8420133b63a70c.jpg",
+        "width": 1920,
+        "height": 1234,
+        "sourceWidth": 4608,
+        "sourceHeight": 2961,
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d8/2017_Sutro_Baths%2C_Seal_Rocks%2C_Cliff_House_and_stairs_overview.jpg",
+        "author": "Beyond My Ken",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017_Sutro_Baths,_Seal_Rocks,_Cliff_House_and_stairs_overview.jpg",
+        "caption": "2017 Sutro Baths, Seal Rocks, Cliff House and stairs overview.jpg",
+        "sha256": "3bd3bc8420133b63a70cd17943bb2da400978570d52e456c245fb1ab26664ee7",
+        "bytes": 721125,
+        "verification": {
+          "status": "verified",
+          "checkedAt": "2026-10-16",
+          "subjectNote": "Photo subject and source description reviewed against the named viewpoint."
+        }
+      }
+    ],
+    "visit": {
+      "reviewStatus": "official-source-reviewed",
+      "reviewedAt": "2026-10-17",
+      "manager": {
+        "value": "National Park Service",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-lands-end",
+          "visit-20261017-goga-hours"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "hours": {
+        "value": "6 am to one hour after sunset for the Lands End area; visitor-center hours and posted closures are separate.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-lands-end",
+          "visit-20261017-goga-hours"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "fees": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "parking": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "elevationFeet": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "terrain": {
+        "value": "Coastal cliff trails with wooded stretches and exposed overlooks. Route surfaces and stairs vary.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-lands-end",
+          "visit-20261017-goga-hours"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "accessibility": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "facilities": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "seasonalAccess": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "cautions": {
+        "value": "Stay on designated trails and away from unstable cliff edges. Expect wind and fog.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-lands-end",
+          "visit-20261017-goga-hours"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "rules": {
+        "dogs": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "bicycles": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "drones": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "fires": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "camping": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "other": {
+          "value": "Do not leave designated trails or approach cliff edges.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-lands-end",
+            "visit-20261017-goga-hours"
+          ],
+          "checkedAt": "2026-10-17"
+        }
+      },
+      "routes": [],
+      "sources": [
+        {
+          "id": "osm-node-13825881781",
+          "title": "OpenStreetMap community mapping",
+          "url": "https://www.openstreetmap.org/node/13825881781",
+          "publisher": "OpenStreetMap contributors",
+          "retrievedAt": "2026-10-16T18:40:21.952662Z",
+          "kind": "community"
+        },
+        {
+          "id": "visit-20261017-lands-end",
+          "url": "https://www.nps.gov/goga/planyourvisit/landsend.htm",
+          "title": "Lands End visitor information",
+          "publisher": "National Park Service",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "3593d64e27a0bf2481abdfab6c4ef1c1f8ef88ee1a069e7e018ea0c522bd4fc0"
+        },
+        {
+          "id": "visit-20261017-goga-hours",
+          "url": "https://www.nps.gov/goga/planyourvisit/hours.htm",
+          "title": "GGNRA operating hours and seasons",
+          "publisher": "National Park Service",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "42eee4a293d1ff6df2ef07686584eae0286a71bde7c6f60e81e7717bd2b84b8a"
+        }
+      ],
+      "alertsUrl": "https://www.nps.gov/goga/planyourvisit/landsend.htm",
+      "mapUrl": null,
+      "coordinateNote": "Community-mapped location. Public access and safe approach have not been independently confirmed."
+    },
+    "sceneryReview": {
+      "status": "classified",
+      "reviewedAt": "2026-10-17",
+      "note": "Reviewed scenery shown in the published preview against its cited subject and place context. Distant possible views and name-only keyword matches do not qualify.",
+      "evidence": {
+        "ocean": {
+          "sourceUrls": [
+            "https://www.openstreetmap.org/node/13825881781",
+            "https://commons.wikimedia.org/wiki/File:2017_Sutro_Baths,_Seal_Rocks,_Cliff_House_and_stairs_overview.jpg"
+          ],
+          "note": "Coastal beach, bluff or headland with the Pacific Ocean as a substantial view. A distant possible ocean sightline from an inland summit is insufficient. Reviewed preview subject: 2017 Sutro Baths, Seal Rocks, Cliff House and stairs overview.jpg"
+        }
+      }
+    }
+  },
+  {
+    "id": "osm-node-13825892193",
+    "name": "Ocean Terrace Overlook",
+    "lat": 37.7806293,
+    "lng": -122.5102913,
+    "county": "San Francisco",
+    "region": "bay-area",
+    "description": "A community-mapped viewpoint. Confirm public access, safe routes and current conditions with the land manager before visiting.",
+    "tags": [
+      "ocean"
+    ],
+    "featured": null,
+    "sourceUrl": "https://www.openstreetmap.org/node/13825892193",
+    "photos": [
+      {
+        "url": "/viewpoints/photos/2e814259f2e2b18c5829.jpg",
+        "width": 3815,
+        "height": 932,
+        "sourceWidth": 3815,
+        "sourceHeight": 932,
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/84/Lands_End_Lookout_pano.jpg",
+        "author": "Dicklyon",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lands_End_Lookout_pano.jpg",
+        "caption": "Lands End Lookout pano.jpg",
+        "sha256": "2e814259f2e2b18c5829c846774f1efcb5f0bb3188e91a6292186f009f363f10",
+        "bytes": 3233071,
+        "verification": {
+          "status": "verified",
+          "checkedAt": "2026-10-16",
+          "subjectNote": "Photo subject and source description reviewed against the named viewpoint."
+        },
+        "displayFit": "contain"
+      }
+    ],
+    "visit": {
+      "reviewStatus": "official-source-reviewed",
+      "reviewedAt": "2026-10-17",
+      "manager": {
+        "value": "National Park Service",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-lands-end",
+          "visit-20261017-goga-hours"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "hours": {
+        "value": "6 am to one hour after sunset for the Lands End area; visitor-center hours and posted closures are separate.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-lands-end",
+          "visit-20261017-goga-hours"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "fees": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "parking": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "elevationFeet": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "terrain": {
+        "value": "Coastal cliff trails with wooded stretches and exposed overlooks. Route surfaces and stairs vary.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-lands-end",
+          "visit-20261017-goga-hours"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "accessibility": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "facilities": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "seasonalAccess": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "cautions": {
+        "value": "Stay on designated trails and away from unstable cliff edges. Expect wind and fog.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-lands-end",
+          "visit-20261017-goga-hours"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "rules": {
+        "dogs": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "bicycles": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "drones": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "fires": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "camping": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "other": {
+          "value": "Do not leave designated trails or approach cliff edges.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-lands-end",
+            "visit-20261017-goga-hours"
+          ],
+          "checkedAt": "2026-10-17"
+        }
+      },
+      "routes": [],
+      "sources": [
+        {
+          "id": "osm-node-13825892193",
+          "title": "OpenStreetMap community mapping",
+          "url": "https://www.openstreetmap.org/node/13825892193",
+          "publisher": "OpenStreetMap contributors",
+          "retrievedAt": "2026-10-16T18:40:21.952662Z",
+          "kind": "community"
+        },
+        {
+          "id": "visit-20261017-lands-end",
+          "url": "https://www.nps.gov/goga/planyourvisit/landsend.htm",
+          "title": "Lands End visitor information",
+          "publisher": "National Park Service",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "3593d64e27a0bf2481abdfab6c4ef1c1f8ef88ee1a069e7e018ea0c522bd4fc0"
+        },
+        {
+          "id": "visit-20261017-goga-hours",
+          "url": "https://www.nps.gov/goga/planyourvisit/hours.htm",
+          "title": "GGNRA operating hours and seasons",
+          "publisher": "National Park Service",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "42eee4a293d1ff6df2ef07686584eae0286a71bde7c6f60e81e7717bd2b84b8a"
+        }
+      ],
+      "alertsUrl": "https://www.nps.gov/goga/planyourvisit/landsend.htm",
+      "mapUrl": null,
+      "coordinateNote": "Community-mapped location. Public access and safe approach have not been independently confirmed."
+    },
+    "sceneryReview": {
+      "status": "classified",
+      "reviewedAt": "2026-10-17",
+      "note": "Reviewed scenery shown in the published preview against its cited subject and place context. Distant possible views and name-only keyword matches do not qualify.",
+      "evidence": {
+        "ocean": {
+          "sourceUrls": [
+            "https://www.openstreetmap.org/node/13825892193",
+            "https://commons.wikimedia.org/wiki/File:Lands_End_Lookout_pano.jpg"
+          ],
+          "note": "Coastal beach, bluff or headland with the Pacific Ocean as a substantial view. A distant possible ocean sightline from an inland summit is insufficient. Reviewed preview subject: Lands End Lookout pano.jpg"
+        }
+      }
+    }
+  },
+  {
+    "id": "osm-node-4179665037",
+    "name": "Eagle's Point Overlook",
+    "lat": 37.7867323,
+    "lng": -122.494814,
+    "county": "San Francisco",
+    "region": "bay-area",
+    "description": "A community-mapped viewpoint. Confirm public access, safe routes and current conditions with the land manager before visiting.",
+    "tags": [
+      "ocean",
+      "bridges"
+    ],
+    "featured": null,
+    "sourceUrl": "https://www.openstreetmap.org/node/4179665037",
+    "photos": [
+      {
+        "url": "/viewpoints/photos/3167e2dcba437f3ab485.jpg",
+        "width": 3840,
+        "height": 1038,
+        "sourceWidth": 8415,
+        "sourceHeight": 2275,
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/80/Lands_End_Eagles_Point_%2830552644635%29.jpg",
+        "author": "Henry Wang from New York",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lands_End_Eagles_Point_(30552644635).jpg",
+        "caption": "Lands End Eagles Point (30552644635).jpg",
+        "sha256": "3167e2dcba437f3ab4855f8209c5ec163191ad3f37225f5b4ef1406a4f09ba1e",
+        "bytes": 897839,
+        "verification": {
+          "status": "verified",
+          "checkedAt": "2026-10-16",
+          "subjectNote": "Photo subject and source description reviewed against the named viewpoint."
+        },
+        "displayFit": "contain"
+      }
+    ],
+    "visit": {
+      "reviewStatus": "official-source-reviewed",
+      "reviewedAt": "2026-10-17",
+      "manager": {
+        "value": "National Park Service",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-lands-end",
+          "visit-20261017-goga-hours"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "hours": {
+        "value": "6 am to one hour after sunset for the Lands End area; visitor-center hours and posted closures are separate.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-lands-end",
+          "visit-20261017-goga-hours"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "fees": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "parking": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "elevationFeet": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "terrain": {
+        "value": "Coastal cliff trails with wooded stretches and exposed overlooks. Route surfaces and stairs vary.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-lands-end",
+          "visit-20261017-goga-hours"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "accessibility": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "facilities": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "seasonalAccess": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "cautions": {
+        "value": "Stay on designated trails and away from unstable cliff edges. Expect wind and fog.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-lands-end",
+          "visit-20261017-goga-hours"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "rules": {
+        "dogs": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "bicycles": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "drones": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "fires": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "camping": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "other": {
+          "value": "Do not leave designated trails or approach cliff edges.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-lands-end",
+            "visit-20261017-goga-hours"
+          ],
+          "checkedAt": "2026-10-17"
+        }
+      },
+      "routes": [],
+      "sources": [
+        {
+          "id": "osm-node-4179665037",
+          "title": "OpenStreetMap community mapping",
+          "url": "https://www.openstreetmap.org/node/4179665037",
+          "publisher": "OpenStreetMap contributors",
+          "retrievedAt": "2026-10-16T18:40:21.952662Z",
+          "kind": "community"
+        },
+        {
+          "id": "visit-20261017-lands-end",
+          "url": "https://www.nps.gov/goga/planyourvisit/landsend.htm",
+          "title": "Lands End visitor information",
+          "publisher": "National Park Service",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "3593d64e27a0bf2481abdfab6c4ef1c1f8ef88ee1a069e7e018ea0c522bd4fc0"
+        },
+        {
+          "id": "visit-20261017-goga-hours",
+          "url": "https://www.nps.gov/goga/planyourvisit/hours.htm",
+          "title": "GGNRA operating hours and seasons",
+          "publisher": "National Park Service",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "42eee4a293d1ff6df2ef07686584eae0286a71bde7c6f60e81e7717bd2b84b8a"
+        }
+      ],
+      "alertsUrl": "https://www.nps.gov/goga/planyourvisit/landsend.htm",
+      "mapUrl": null,
+      "coordinateNote": "Community-mapped location. Public access and safe approach have not been independently confirmed."
+    },
+    "sceneryReview": {
+      "status": "classified",
+      "reviewedAt": "2026-10-17",
+      "note": "Reviewed scenery shown in the published preview against its cited subject and place context. Distant possible views and name-only keyword matches do not qualify.",
+      "evidence": {
+        "ocean": {
+          "sourceUrls": [
+            "https://www.openstreetmap.org/node/4179665037",
+            "https://commons.wikimedia.org/wiki/File:Lands_End_Eagles_Point_(30552644635).jpg"
+          ],
+          "note": "Coastal beach, bluff or headland with the Pacific Ocean as a substantial view. A distant possible ocean sightline from an inland summit is insufficient. Reviewed preview subject: Lands End Eagles Point (30552644635).jpg"
+        },
+        "bridges": {
+          "sourceUrls": [
+            "https://www.openstreetmap.org/node/4179665037",
+            "https://commons.wikimedia.org/wiki/File:Lands_End_Eagles_Point_(30552644635).jpg"
+          ],
+          "note": "An actual bridge is a substantial visible subject. Natural rock arches and merely standing on a bridge are insufficient. Reviewed preview subject: Lands End Eagles Point (30552644635).jpg"
+        }
+      }
+    }
+  },
+  {
+    "id": "osm-node-3101265351",
+    "name": "Fort Funston — Ocean Observation Deck",
+    "lat": 37.7141735,
+    "lng": -122.5032578,
+    "county": "San Francisco",
+    "region": "bay-area",
+    "description": "Look over the Pacific from Fort Funston’s coastal bluffs. Paved loop trails and steep beach paths offer very different levels of access.",
+    "tags": [
+      "ocean"
+    ],
+    "featured": null,
+    "sourceUrl": "https://www.openstreetmap.org/node/3101265351",
+    "photos": [
+      {
+        "url": "/viewpoints/photos/090bbf607ad1935686e2.jpg",
+        "width": 1920,
+        "height": 1275,
+        "sourceWidth": 4193,
+        "sourceHeight": 2785,
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/13/Windsock_at_Fort_Funston_%2824690511884%29.jpg",
+        "author": "John Leszczynski from Washington, DC, USA",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Windsock_at_Fort_Funston_(24690511884).jpg",
+        "caption": "Windsock at Fort Funston (24690511884).jpg",
+        "sha256": "090bbf607ad1935686e205398c2a9767829cd2b0d5266c205a1910f42728f880",
+        "bytes": 662631,
+        "verification": {
+          "status": "verified",
+          "checkedAt": "2026-10-16",
+          "subjectNote": "Photo subject and source description reviewed against the named viewpoint."
+        }
+      }
+    ],
+    "visit": {
+      "reviewStatus": "official-source-reviewed",
+      "reviewedAt": "2026-10-17",
+      "manager": {
+        "value": "National Park Service",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-fort-funston"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "hours": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "fees": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "parking": {
+        "value": "Use the lot off Skyline Boulevard.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-fort-funston"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "elevationFeet": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "terrain": {
+        "value": "Coastal bluffs and dune terrain; paved loop trails differ from the steep, strenuous paths to the beach.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-fort-funston"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "accessibility": {
+        "value": "NPS describes the loop trails as paved and wheelchair-accessible. Trails down to the beach are not accessible.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-fort-funston"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "facilities": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "seasonalAccess": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "cautions": {
+        "value": "Dangerous surf and undertow; supervise children. Do not climb unstable bluffs or follow a pet onto a cliff.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-fort-funston"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "rules": {
+        "dogs": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "bicycles": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "drones": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "fires": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "camping": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "other": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        }
+      },
+      "routes": [],
+      "sources": [
+        {
+          "id": "osm-node-3101265351",
+          "title": "OpenStreetMap community mapping",
+          "url": "https://www.openstreetmap.org/node/3101265351",
+          "publisher": "OpenStreetMap contributors",
+          "retrievedAt": "2026-10-16T18:40:21.952662Z",
+          "kind": "community"
+        },
+        {
+          "id": "visit-20261017-fort-funston",
+          "url": "https://www.nps.gov/goga/planyourvisit/fortfunston.htm",
+          "title": "Fort Funston visitor information",
+          "publisher": "National Park Service",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "71aac51cebb993e5fc57997aa672b1221ef942a41e07a023d1e6bc7df4e56f69"
+        }
+      ],
+      "alertsUrl": "https://www.nps.gov/goga/planyourvisit/fortfunston.htm",
+      "mapUrl": null,
+      "coordinateNote": "Community-mapped location. Public access and safe approach have not been independently confirmed."
+    },
+    "sceneryReview": {
+      "status": "classified",
+      "reviewedAt": "2026-10-17",
+      "note": "Reviewed scenery shown in the published preview against its cited subject and place context. Distant possible views and name-only keyword matches do not qualify.",
+      "evidence": {
+        "ocean": {
+          "sourceUrls": [
+            "https://www.openstreetmap.org/node/3101265351",
+            "https://commons.wikimedia.org/wiki/File:Windsock_at_Fort_Funston_(24690511884).jpg"
+          ],
+          "note": "Coastal beach, bluff or headland with the Pacific Ocean as a substantial view. A distant possible ocean sightline from an inland summit is insufficient. Reviewed preview subject: Windsock at Fort Funston (24690511884).jpg"
+        }
+      }
+    }
+  },
+  {
+    "id": "osm-node-11061015238",
+    "name": "Sunset viewpoint",
+    "lat": 40.5318759,
+    "lng": -121.5645503,
+    "county": "Shasta",
+    "region": "northern-california",
+    "description": "A community-mapped viewpoint. Confirm public access, safe routes and current conditions with the land manager before visiting.",
+    "tags": [
+      "water",
+      "hills",
+      "greenery"
+    ],
+    "featured": null,
+    "sourceUrl": "https://www.openstreetmap.org/node/11061015238",
+    "photos": [
+      {
+        "url": "/viewpoints/photos/96253f8dd31c576c7433.jpg",
+        "width": 1920,
+        "height": 960,
+        "sourceWidth": 5376,
+        "sourceHeight": 2688,
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/11/360_Manzanita_Lake_Boat_Launch_%28de24fafe-247b-415c-ae14-1479c6eab16c%29.JPG",
+        "author": "Amanda Sweeney",
+        "license": "Public domain",
+        "licenseUrl": null,
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:360_Manzanita_Lake_Boat_Launch_(de24fafe-247b-415c-ae14-1479c6eab16c).JPG",
+        "caption": "360 Manzanita Lake Boat Launch (de24fafe-247b-415c-ae14-1479c6eab16c).JPG",
+        "sha256": "96253f8dd31c576c74337f27094948d3e0209c4eb3b873c9c36439d2f21cb42a",
+        "bytes": 548773,
+        "verification": {
+          "status": "verified",
+          "checkedAt": "2026-10-16",
+          "subjectNote": "Photo subject and source description reviewed against the named viewpoint."
+        }
+      }
+    ],
+    "visit": {
+      "reviewStatus": "official-source-reviewed",
+      "reviewedAt": "2026-10-17",
+      "manager": {
+        "value": "National Park Service",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "hours": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "fees": {
+        "value": "No separate trail activity fee; park admission or a valid pass is required.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "parking": {
+        "value": "Manzanita Lake boat-launch/picnic parking is generally easier than the often-full Loomis Plaza lot.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "elevationFeet": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "terrain": {
+        "value": "Firm dirt around the lake, with roots, exposed rocks and narrow sections.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "accessibility": {
+        "value": "The full loop is not recommended for wheelchairs or strollers. The picnic/boat-launch area provides a separate option for lake and sunset viewing.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "facilities": {
+        "value": "Restrooms at the boat launch and Loomis Plaza.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "seasonalAccess": {
+        "value": "The trail can be accessed year-round, but snow can remain through April. Snow/ice equipment may be useful when conditions require it.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "cautions": {
+        "value": "High elevation around 5,900 feet; carry water, use proper footwear and prepare for snow/ice. Do not feed wildlife.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "rules": {
+        "dogs": {
+          "value": "Pets are not permitted on park trails, including in carriers; service animals assisting a person with a disability are excepted.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-manzanita"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "bicycles": {
+          "value": "Bicycles are not permitted on park trails.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-manzanita"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "drones": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "fires": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "camping": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "other": {
+          "value": "Keep wildlife wild: never feed animals.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-manzanita"
+          ],
+          "checkedAt": "2026-10-17"
+        }
+      },
+      "routes": [
+        {
+          "id": "manzanita-lake-loop",
+          "name": "Manzanita Lake Loop",
+          "start": "Manzanita Lake picnic area/boat launch or Loomis Plaza",
+          "distanceType": "loop",
+          "distanceMiles": {
+            "value": 1.7,
+            "status": "reported",
+            "sourceIds": [
+              "visit-20261017-manzanita"
+            ],
+            "checkedAt": "2026-10-17"
+          },
+          "elevationGainFeet": {
+            "value": null,
+            "status": "unknown",
+            "sourceIds": [],
+            "checkedAt": null,
+            "note": "Cumulative route climbing gain was not established; point elevations and basin descents are not substituted."
+          },
+          "durationMinutes": {
+            "value": "About 60 minutes; NPS also lists a 30–90 minute range.",
+            "status": "reported",
+            "sourceIds": [
+              "visit-20261017-manzanita"
+            ],
+            "checkedAt": "2026-10-17"
+          },
+          "terrain": {
+            "value": "Firm dirt, tree roots, exposed rock and narrow sections.",
+            "status": "reported",
+            "sourceIds": [
+              "visit-20261017-manzanita"
+            ],
+            "checkedAt": "2026-10-17"
+          },
+          "difficulty": {
+            "value": null,
+            "status": "unknown",
+            "sourceIds": [],
+            "checkedAt": null,
+            "note": "Not established from reviewed sources."
+          },
+          "accessibility": {
+            "value": "Not recommended for wheelchairs or strollers; boat-launch/picnic viewing is a separate option.",
+            "status": "reported",
+            "sourceIds": [
+              "visit-20261017-manzanita"
+            ],
+            "checkedAt": "2026-10-17"
+          },
+          "stairs": {
+            "value": null,
+            "status": "unknown",
+            "sourceIds": [],
+            "checkedAt": null,
+            "note": "Not established from reviewed sources."
+          },
+          "estimatedSteps": {
+            "value": [
+              3230,
+              4420
+            ],
+            "status": "estimated",
+            "sourceIds": [
+              "visit-20261017-manzanita"
+            ],
+            "checkedAt": "2026-10-17",
+            "note": "Calculated from distance at 1,900–2,600 steps per mile; stride, terrain, detours and stairs vary. Not a measured step count."
+          },
+          "notes": "NPS describes elevation change as negligible; an exact numerical climbing gain is not supplied."
+        }
+      ],
+      "sources": [
+        {
+          "id": "osm-node-11061015238",
+          "title": "OpenStreetMap community mapping",
+          "url": "https://www.openstreetmap.org/node/11061015238",
+          "publisher": "OpenStreetMap contributors",
+          "retrievedAt": "2026-10-16T18:40:21.952662Z",
+          "kind": "community"
+        },
+        {
+          "id": "visit-20261017-manzanita",
+          "url": "https://www.nps.gov/thingstodo/walkmanzanitalake.htm",
+          "title": "Walk Manzanita Lake Trail",
+          "publisher": "National Park Service",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "c3ac6bcdfc88ba0dc5e2c3462aa4735ffc4283f21144c8495139f49f7f5085eb"
+        }
+      ],
+      "alertsUrl": "https://www.nps.gov/thingstodo/walkmanzanitalake.htm",
+      "mapUrl": null,
+      "coordinateNote": "Community-mapped location. Public access and safe approach have not been independently confirmed."
+    },
+    "sceneryReview": {
+      "status": "classified",
+      "reviewedAt": "2026-10-17",
+      "note": "Reviewed scenery shown in the published preview against its cited subject and place context. Distant possible views and name-only keyword matches do not qualify.",
+      "evidence": {
+        "water": {
+          "sourceUrls": [
+            "https://www.openstreetmap.org/node/11061015238",
+            "https://commons.wikimedia.org/wiki/File:360_Manzanita_Lake_Boat_Launch_(de24fafe-247b-415c-ae14-1479c6eab16c).JPG"
+          ],
+          "note": "A substantial lake, reservoir, river, creek or waterfall view. Dry salt flats, fossil falls and geothermal pools are excluded. Reviewed preview subject: 360 Manzanita Lake Boat Launch (de24fafe-247b-415c-ae14-1479c6eab16c).JPG"
+        },
+        "hills": {
+          "sourceUrls": [
+            "https://www.openstreetmap.org/node/11061015238",
+            "https://commons.wikimedia.org/wiki/File:360_Manzanita_Lake_Boat_Launch_(de24fafe-247b-415c-ae14-1479c6eab16c).JPG"
+          ],
+          "note": "A substantial hill, mountain, ridge or canyon landscape; not a word fragment in a place name. Reviewed preview subject: 360 Manzanita Lake Boat Launch (de24fafe-247b-415c-ae14-1479c6eab16c).JPG"
+        },
+        "greenery": {
+          "sourceUrls": [
+            "https://www.openstreetmap.org/node/11061015238",
+            "https://commons.wikimedia.org/wiki/File:360_Manzanita_Lake_Boat_Launch_(de24fafe-247b-415c-ae14-1479c6eab16c).JPG"
+          ],
+          "note": "Visible woodland, meadow, vegetation, garden or wetland habitat; a park address alone is insufficient. Reviewed preview subject: 360 Manzanita Lake Boat Launch (de24fafe-247b-415c-ae14-1479c6eab16c).JPG"
+        }
+      }
+    }
+  },
+  {
+    "id": "osm-node-11061015239",
+    "name": "All peaks viewpoint",
+    "lat": 40.5338615,
+    "lng": -121.5707516,
+    "county": "Shasta",
+    "region": "northern-california",
+    "description": "A community-mapped viewpoint. Confirm public access, safe routes and current conditions with the land manager before visiting.",
+    "tags": [
+      "water",
+      "hills",
+      "greenery"
+    ],
+    "featured": null,
+    "sourceUrl": "https://www.openstreetmap.org/node/11061015239",
+    "photos": [
+      {
+        "url": "/viewpoints/photos/ac146809bddec21d7030.jpg",
+        "width": 1920,
+        "height": 1135,
+        "sourceWidth": 3008,
+        "sourceHeight": 1778,
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Chaos_Crags_and_Lassen_Peak_at_Manzanita_Lake.jpg",
+        "author": "DimiTalen",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chaos_Crags_and_Lassen_Peak_at_Manzanita_Lake.jpg",
+        "caption": "Chaos Crags and Lassen Peak at Manzanita Lake.jpg",
+        "sha256": "ac146809bddec21d7030d61877c5ffc81e25b58099e11ebdc43d51283856da27",
+        "bytes": 602056,
+        "verification": {
+          "status": "verified",
+          "checkedAt": "2026-10-16",
+          "subjectNote": "Photo subject and source description reviewed against the named viewpoint."
+        }
+      }
+    ],
+    "visit": {
+      "reviewStatus": "official-source-reviewed",
+      "reviewedAt": "2026-10-17",
+      "manager": {
+        "value": "National Park Service",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "hours": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "fees": {
+        "value": "No separate trail activity fee; park admission or a valid pass is required.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "parking": {
+        "value": "Manzanita Lake boat-launch/picnic parking is generally easier than the often-full Loomis Plaza lot.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "elevationFeet": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "terrain": {
+        "value": "Firm dirt around the lake, with roots, exposed rocks and narrow sections.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "accessibility": {
+        "value": "The full loop is not recommended for wheelchairs or strollers. The picnic/boat-launch area provides a separate option for lake and sunset viewing.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "facilities": {
+        "value": "Restrooms at the boat launch and Loomis Plaza.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "seasonalAccess": {
+        "value": "The trail can be accessed year-round, but snow can remain through April. Snow/ice equipment may be useful when conditions require it.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "cautions": {
+        "value": "High elevation around 5,900 feet; carry water, use proper footwear and prepare for snow/ice. Do not feed wildlife.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "rules": {
+        "dogs": {
+          "value": "Pets are not permitted on park trails, including in carriers; service animals assisting a person with a disability are excepted.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-manzanita"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "bicycles": {
+          "value": "Bicycles are not permitted on park trails.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-manzanita"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "drones": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "fires": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "camping": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "other": {
+          "value": "Keep wildlife wild: never feed animals.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-manzanita"
+          ],
+          "checkedAt": "2026-10-17"
+        }
+      },
+      "routes": [
+        {
+          "id": "manzanita-lake-loop",
+          "name": "Manzanita Lake Loop",
+          "start": "Manzanita Lake picnic area/boat launch or Loomis Plaza",
+          "distanceType": "loop",
+          "distanceMiles": {
+            "value": 1.7,
+            "status": "reported",
+            "sourceIds": [
+              "visit-20261017-manzanita"
+            ],
+            "checkedAt": "2026-10-17"
+          },
+          "elevationGainFeet": {
+            "value": null,
+            "status": "unknown",
+            "sourceIds": [],
+            "checkedAt": null,
+            "note": "Cumulative route climbing gain was not established; point elevations and basin descents are not substituted."
+          },
+          "durationMinutes": {
+            "value": "About 60 minutes; NPS also lists a 30–90 minute range.",
+            "status": "reported",
+            "sourceIds": [
+              "visit-20261017-manzanita"
+            ],
+            "checkedAt": "2026-10-17"
+          },
+          "terrain": {
+            "value": "Firm dirt, tree roots, exposed rock and narrow sections.",
+            "status": "reported",
+            "sourceIds": [
+              "visit-20261017-manzanita"
+            ],
+            "checkedAt": "2026-10-17"
+          },
+          "difficulty": {
+            "value": null,
+            "status": "unknown",
+            "sourceIds": [],
+            "checkedAt": null,
+            "note": "Not established from reviewed sources."
+          },
+          "accessibility": {
+            "value": "Not recommended for wheelchairs or strollers; boat-launch/picnic viewing is a separate option.",
+            "status": "reported",
+            "sourceIds": [
+              "visit-20261017-manzanita"
+            ],
+            "checkedAt": "2026-10-17"
+          },
+          "stairs": {
+            "value": null,
+            "status": "unknown",
+            "sourceIds": [],
+            "checkedAt": null,
+            "note": "Not established from reviewed sources."
+          },
+          "estimatedSteps": {
+            "value": [
+              3230,
+              4420
+            ],
+            "status": "estimated",
+            "sourceIds": [
+              "visit-20261017-manzanita"
+            ],
+            "checkedAt": "2026-10-17",
+            "note": "Calculated from distance at 1,900–2,600 steps per mile; stride, terrain, detours and stairs vary. Not a measured step count."
+          },
+          "notes": "NPS describes elevation change as negligible; an exact numerical climbing gain is not supplied."
+        }
+      ],
+      "sources": [
+        {
+          "id": "osm-node-11061015239",
+          "title": "OpenStreetMap community mapping",
+          "url": "https://www.openstreetmap.org/node/11061015239",
+          "publisher": "OpenStreetMap contributors",
+          "retrievedAt": "2026-10-16T18:40:21.952662Z",
+          "kind": "community"
+        },
+        {
+          "id": "visit-20261017-manzanita",
+          "url": "https://www.nps.gov/thingstodo/walkmanzanitalake.htm",
+          "title": "Walk Manzanita Lake Trail",
+          "publisher": "National Park Service",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "c3ac6bcdfc88ba0dc5e2c3462aa4735ffc4283f21144c8495139f49f7f5085eb"
+        }
+      ],
+      "alertsUrl": "https://www.nps.gov/thingstodo/walkmanzanitalake.htm",
+      "mapUrl": null,
+      "coordinateNote": "Community-mapped location. Public access and safe approach have not been independently confirmed."
+    },
+    "sceneryReview": {
+      "status": "classified",
+      "reviewedAt": "2026-10-17",
+      "note": "Reviewed scenery shown in the published preview against its cited subject and place context. Distant possible views and name-only keyword matches do not qualify.",
+      "evidence": {
+        "water": {
+          "sourceUrls": [
+            "https://www.openstreetmap.org/node/11061015239",
+            "https://commons.wikimedia.org/wiki/File:Chaos_Crags_and_Lassen_Peak_at_Manzanita_Lake.jpg"
+          ],
+          "note": "A substantial lake, reservoir, river, creek or waterfall view. Dry salt flats, fossil falls and geothermal pools are excluded. Reviewed preview subject: Chaos Crags and Lassen Peak at Manzanita Lake.jpg"
+        },
+        "hills": {
+          "sourceUrls": [
+            "https://www.openstreetmap.org/node/11061015239",
+            "https://commons.wikimedia.org/wiki/File:Chaos_Crags_and_Lassen_Peak_at_Manzanita_Lake.jpg"
+          ],
+          "note": "A substantial hill, mountain, ridge or canyon landscape; not a word fragment in a place name. Reviewed preview subject: Chaos Crags and Lassen Peak at Manzanita Lake.jpg"
+        },
+        "greenery": {
+          "sourceUrls": [
+            "https://www.openstreetmap.org/node/11061015239",
+            "https://commons.wikimedia.org/wiki/File:Chaos_Crags_and_Lassen_Peak_at_Manzanita_Lake.jpg"
+          ],
+          "note": "Visible woodland, meadow, vegetation, garden or wetland habitat; a park address alone is insufficient. Reviewed preview subject: Chaos Crags and Lassen Peak at Manzanita Lake.jpg"
+        }
+      }
+    }
+  },
+  {
+    "id": "osm-node-11061015240",
+    "name": "Chaos Crags viewpoint",
+    "lat": 40.5330868,
+    "lng": -121.5709769,
+    "county": "Shasta",
+    "region": "northern-california",
+    "description": "A community-mapped viewpoint. Confirm public access, safe routes and current conditions with the land manager before visiting.",
+    "tags": [
+      "water",
+      "hills",
+      "greenery"
+    ],
+    "featured": null,
+    "sourceUrl": "https://www.openstreetmap.org/node/11061015240",
+    "photos": [
+      {
+        "url": "/viewpoints/photos/ac146809bddec21d7030.jpg",
+        "width": 1920,
+        "height": 1135,
+        "sourceWidth": 3008,
+        "sourceHeight": 1778,
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Chaos_Crags_and_Lassen_Peak_at_Manzanita_Lake.jpg",
+        "author": "DimiTalen",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chaos_Crags_and_Lassen_Peak_at_Manzanita_Lake.jpg",
+        "caption": "Chaos Crags and Lassen Peak at Manzanita Lake.jpg",
+        "sha256": "ac146809bddec21d7030d61877c5ffc81e25b58099e11ebdc43d51283856da27",
+        "bytes": 602056,
+        "verification": {
+          "status": "verified",
+          "checkedAt": "2026-10-16",
+          "subjectNote": "Photo subject and source description reviewed against the named viewpoint."
+        }
+      }
+    ],
+    "visit": {
+      "reviewStatus": "official-source-reviewed",
+      "reviewedAt": "2026-10-17",
+      "manager": {
+        "value": "National Park Service",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "hours": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "fees": {
+        "value": "No separate trail activity fee; park admission or a valid pass is required.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "parking": {
+        "value": "Manzanita Lake boat-launch/picnic parking is generally easier than the often-full Loomis Plaza lot.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "elevationFeet": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not researched. Confirm with the land manager before visiting."
+      },
+      "terrain": {
+        "value": "Firm dirt around the lake, with roots, exposed rocks and narrow sections.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "accessibility": {
+        "value": "The full loop is not recommended for wheelchairs or strollers. The picnic/boat-launch area provides a separate option for lake and sunset viewing.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "facilities": {
+        "value": "Restrooms at the boat launch and Loomis Plaza.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "seasonalAccess": {
+        "value": "The trail can be accessed year-round, but snow can remain through April. Snow/ice equipment may be useful when conditions require it.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "cautions": {
+        "value": "High elevation around 5,900 feet; carry water, use proper footwear and prepare for snow/ice. Do not feed wildlife.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-manzanita"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "rules": {
+        "dogs": {
+          "value": "Pets are not permitted on park trails, including in carriers; service animals assisting a person with a disability are excepted.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-manzanita"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "bicycles": {
+          "value": "Bicycles are not permitted on park trails.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-manzanita"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "drones": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "fires": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "camping": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not researched. Confirm with the land manager before visiting."
+        },
+        "other": {
+          "value": "Keep wildlife wild: never feed animals.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-manzanita"
+          ],
+          "checkedAt": "2026-10-17"
+        }
+      },
+      "routes": [
+        {
+          "id": "manzanita-lake-loop",
+          "name": "Manzanita Lake Loop",
+          "start": "Manzanita Lake picnic area/boat launch or Loomis Plaza",
+          "distanceType": "loop",
+          "distanceMiles": {
+            "value": 1.7,
+            "status": "reported",
+            "sourceIds": [
+              "visit-20261017-manzanita"
+            ],
+            "checkedAt": "2026-10-17"
+          },
+          "elevationGainFeet": {
+            "value": null,
+            "status": "unknown",
+            "sourceIds": [],
+            "checkedAt": null,
+            "note": "Cumulative route climbing gain was not established; point elevations and basin descents are not substituted."
+          },
+          "durationMinutes": {
+            "value": "About 60 minutes; NPS also lists a 30–90 minute range.",
+            "status": "reported",
+            "sourceIds": [
+              "visit-20261017-manzanita"
+            ],
+            "checkedAt": "2026-10-17"
+          },
+          "terrain": {
+            "value": "Firm dirt, tree roots, exposed rock and narrow sections.",
+            "status": "reported",
+            "sourceIds": [
+              "visit-20261017-manzanita"
+            ],
+            "checkedAt": "2026-10-17"
+          },
+          "difficulty": {
+            "value": null,
+            "status": "unknown",
+            "sourceIds": [],
+            "checkedAt": null,
+            "note": "Not established from reviewed sources."
+          },
+          "accessibility": {
+            "value": "Not recommended for wheelchairs or strollers; boat-launch/picnic viewing is a separate option.",
+            "status": "reported",
+            "sourceIds": [
+              "visit-20261017-manzanita"
+            ],
+            "checkedAt": "2026-10-17"
+          },
+          "stairs": {
+            "value": null,
+            "status": "unknown",
+            "sourceIds": [],
+            "checkedAt": null,
+            "note": "Not established from reviewed sources."
+          },
+          "estimatedSteps": {
+            "value": [
+              3230,
+              4420
+            ],
+            "status": "estimated",
+            "sourceIds": [
+              "visit-20261017-manzanita"
+            ],
+            "checkedAt": "2026-10-17",
+            "note": "Calculated from distance at 1,900–2,600 steps per mile; stride, terrain, detours and stairs vary. Not a measured step count."
+          },
+          "notes": "NPS describes elevation change as negligible; an exact numerical climbing gain is not supplied."
+        }
+      ],
+      "sources": [
+        {
+          "id": "osm-node-11061015240",
+          "title": "OpenStreetMap community mapping",
+          "url": "https://www.openstreetmap.org/node/11061015240",
+          "publisher": "OpenStreetMap contributors",
+          "retrievedAt": "2026-10-16T18:40:21.952662Z",
+          "kind": "community"
+        },
+        {
+          "id": "visit-20261017-manzanita",
+          "url": "https://www.nps.gov/thingstodo/walkmanzanitalake.htm",
+          "title": "Walk Manzanita Lake Trail",
+          "publisher": "National Park Service",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "c3ac6bcdfc88ba0dc5e2c3462aa4735ffc4283f21144c8495139f49f7f5085eb"
+        }
+      ],
+      "alertsUrl": "https://www.nps.gov/thingstodo/walkmanzanitalake.htm",
+      "mapUrl": null,
+      "coordinateNote": "Community-mapped location. Public access and safe approach have not been independently confirmed."
+    },
+    "sceneryReview": {
+      "status": "classified",
+      "reviewedAt": "2026-10-17",
+      "note": "Reviewed scenery shown in the published preview against its cited subject and place context. Distant possible views and name-only keyword matches do not qualify.",
+      "evidence": {
+        "water": {
+          "sourceUrls": [
+            "https://www.openstreetmap.org/node/11061015240",
+            "https://commons.wikimedia.org/wiki/File:Chaos_Crags_and_Lassen_Peak_at_Manzanita_Lake.jpg"
+          ],
+          "note": "A substantial lake, reservoir, river, creek or waterfall view. Dry salt flats, fossil falls and geothermal pools are excluded. Reviewed preview subject: Chaos Crags and Lassen Peak at Manzanita Lake.jpg"
+        },
+        "hills": {
+          "sourceUrls": [
+            "https://www.openstreetmap.org/node/11061015240",
+            "https://commons.wikimedia.org/wiki/File:Chaos_Crags_and_Lassen_Peak_at_Manzanita_Lake.jpg"
+          ],
+          "note": "A substantial hill, mountain, ridge or canyon landscape; not a word fragment in a place name. Reviewed preview subject: Chaos Crags and Lassen Peak at Manzanita Lake.jpg"
+        },
+        "greenery": {
+          "sourceUrls": [
+            "https://www.openstreetmap.org/node/11061015240",
+            "https://commons.wikimedia.org/wiki/File:Chaos_Crags_and_Lassen_Peak_at_Manzanita_Lake.jpg"
+          ],
+          "note": "Visible woodland, meadow, vegetation, garden or wetland habitat; a park address alone is insufficient. Reviewed preview subject: Chaos Crags and Lassen Peak at Manzanita Lake.jpg"
+        }
+      }
+    }
+  },
+  {
+    "id": "fitzgerald-bluff",
+    "name": "Fitzgerald Marine Reserve — Coastal Bluff",
+    "lat": 37.523541,
+    "lng": -122.515938,
+    "county": "San Mateo",
+    "region": "bay-area",
+    "description": "Coastal bluff trails overlook the Pacific and protected tidepools at Moss Beach. Tidepool visits depend on tides, waves and wildlife protection closures.",
+    "tags": [
+      "ocean",
+      "greenery"
+    ],
+    "featured": null,
+    "sourceUrl": "https://www.smcgov.org/parks/fitzgerald-marine-reserve",
+    "coordinateSourceUrl": "https://commons.wikimedia.org/wiki/File:Fitzgerald_Marine_Reserve_sign.jpg",
+    "photos": [],
+    "visit": {
+      "manager": {
+        "value": "San Mateo County Parks and California Department of Fish and Wildlife",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-fitzgerald",
+          "visit-20261017-fitzgerald-brochure"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "hours": {
+        "value": "Opens at 8 am; the seasonal closing time is posted on site.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-fitzgerald",
+          "visit-20261017-fitzgerald-brochure"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "fees": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+      },
+      "parking": {
+        "value": "Main entrance at 200 Nevada Avenue, Moss Beach; use the signed county parking and trail access.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-fitzgerald",
+          "visit-20261017-fitzgerald-brochure"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "elevationFeet": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+      },
+      "terrain": {
+        "value": "Bluff trails with stair access to the tidepools. Intertidal rocks can be wet and slippery.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-fitzgerald",
+          "visit-20261017-fitzgerald-brochure"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "accessibility": {
+        "value": "Tidepool access uses stairs and wet, uneven rocks. The reviewed guide does not establish a step-free tidepool route.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-fitzgerald",
+          "visit-20261017-fitzgerald-brochure"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "facilities": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+      },
+      "seasonalAccess": {
+        "value": "Tidepool exploration depends on low tide, wave conditions and posted wildlife closures. Check current county advisories.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-fitzgerald",
+          "visit-20261017-fitzgerald-brochure"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "cautions": {
+        "value": "Eroding bluffs, slippery rocks and changing tides. County guidance requires staying at least 300 feet from marine mammals. Do not approach seals or cross closures.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-fitzgerald",
+          "visit-20261017-fitzgerald-brochure"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "reviewStatus": "official-source-reviewed",
+      "reviewedAt": "2026-10-17",
+      "rules": {
+        "dogs": {
+          "value": "Leashed dogs are allowed only on Dardenelle Trail within Fitzgerald; dogs are not allowed in tidepool areas.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-fitzgerald",
+            "visit-20261017-fitzgerald-brochure"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "bicycles": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+        },
+        "drones": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+        },
+        "fires": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+        },
+        "camping": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+        },
+        "other": {
+          "value": "No collecting or fishing; leave rocks, shells, plants and animals undisturbed. No smoking in county parks. The reviewed county guide requires reservations for groups of 15 or more.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-fitzgerald",
+            "visit-20261017-fitzgerald-brochure"
+          ],
+          "checkedAt": "2026-10-17"
+        }
+      },
+      "routes": [],
+      "sources": [
+        {
+          "id": "visit-20261017-fitzgerald",
+          "url": "https://www.smcgov.org/parks/fitzgerald-marine-reserve",
+          "title": "Fitzgerald Marine Reserve",
+          "publisher": "San Mateo County Parks",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "bb551edd419e33810d7f46b1b2913a79f7e9872adf9df8b831ebe66ec9a1e66e"
+        },
+        {
+          "id": "visit-20261017-fitzgerald-brochure",
+          "url": "https://www.smcgov.org/media/157493/download?inline=",
+          "title": "Fitzgerald Marine Reserve and Pillar Point Bluff official map and guide",
+          "publisher": "San Mateo County Parks",
+          "retrievedAt": "2026-10-17",
+          "kind": "official"
+        },
+        {
+          "id": "visit-20261017-fitzgerald-bluff-coordinate",
+          "title": "Fitzgerald Marine Reserve sign — geotagged coordinate reference",
+          "url": "https://commons.wikimedia.org/wiki/File:Fitzgerald_Marine_Reserve_sign.jpg",
+          "publisher": "Wikimedia Commons contributors",
+          "retrievedAt": "2026-10-17",
+          "kind": "community"
+        }
+      ],
+      "alertsUrl": "https://www.smcgov.org/parks/fitzgerald-marine-reserve",
+      "mapUrl": null,
+      "coordinateNote": "Approximate reference at the reserve interpretation sign, from its geotagged Commons photo. Use the county map for the public approach; this is not a surveyed trailhead."
+    }
+  },
+  {
+    "id": "pillar-point-bluff",
+    "name": "Pillar Point Bluff — Pacific View",
+    "lat": 37.513778,
+    "lng": -122.511489,
+    "county": "San Mateo",
+    "region": "bay-area",
+    "description": "A coastal bluff view over the Pacific near the California Coastal Trail, with headland trails toward Half Moon Bay, Pillar Point Harbor and Mavericks.",
+    "tags": [
+      "ocean",
+      "greenery"
+    ],
+    "featured": null,
+    "sourceUrl": "https://www.smcgov.org/parks/pillar-point-bluff",
+    "coordinateSourceUrl": "https://commons.wikimedia.org/wiki/File:North_Pillar_Point_Bluff_looking_South.jpg",
+    "photos": [],
+    "visit": {
+      "manager": {
+        "value": "San Mateo County Parks",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-pillar",
+          "visit-20261017-fitzgerald-brochure"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "hours": {
+        "value": "Opens at 8 am; seasonal closing time is posted.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-pillar",
+          "visit-20261017-fitzgerald-brochure"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "fees": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+      },
+      "parking": {
+        "value": "Airport Street lot has about 10 spaces, including one ADA stall. Additional trailheads are at Ocean/Bernal and Alvarado/Bernal.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-pillar",
+          "visit-20261017-fitzgerald-brochure"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "elevationFeet": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+      },
+      "terrain": {
+        "value": "Dirt-packed Jean Lauer Trail and exposed bluff trails; protect erosion-prone edges.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-pillar",
+          "visit-20261017-fitzgerald-brochure"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "accessibility": {
+        "value": "ADA parking and restroom at Airport Street do not establish that every bluff trail is step-free or suitably graded.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-pillar",
+          "visit-20261017-fitzgerald-brochure"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "facilities": {
+        "value": "Single-stall ADA restroom, map kiosk, trash and recycling at the Airport Street lot.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-pillar",
+          "visit-20261017-fitzgerald-brochure"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "seasonalAccess": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+      },
+      "cautions": {
+        "value": "Bluffs erode and can collapse. Stay on designated trails and respect closures; the adjacent Air Force station is not public access.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-pillar",
+          "visit-20261017-fitzgerald-brochure"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "reviewStatus": "official-source-reviewed",
+      "reviewedAt": "2026-10-17",
+      "rules": {
+        "dogs": {
+          "value": "The county place page describes dogs on leash on Jean Lauer Trail; follow current signed dog-zone rules and do not take dogs into protected tidepool areas.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-pillar",
+            "visit-20261017-fitzgerald-brochure"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "bicycles": {
+          "value": "Jean Lauer Trail permits bicycles; follow signed trail-use restrictions.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-pillar",
+            "visit-20261017-fitzgerald-brochure"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "drones": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+        },
+        "fires": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+        },
+        "camping": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+        },
+        "other": {
+          "value": "Do not collect plants, animals, shells or rocks, and do not enter closed marine-protection areas.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-pillar",
+            "visit-20261017-fitzgerald-brochure"
+          ],
+          "checkedAt": "2026-10-17"
+        }
+      },
+      "routes": [],
+      "sources": [
+        {
+          "id": "visit-20261017-pillar",
+          "url": "https://www.smcgov.org/parks/pillar-point-bluff",
+          "title": "Pillar Point Bluff",
+          "publisher": "San Mateo County Parks",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "c6fb011e77be2bbb6633cf2b81f66d07b9925318e6056d9b17e5f3bbb9903ff0"
+        },
+        {
+          "id": "visit-20261017-fitzgerald-brochure",
+          "url": "https://www.smcgov.org/media/157493/download?inline=",
+          "title": "Fitzgerald Marine Reserve and Pillar Point Bluff official map and guide",
+          "publisher": "San Mateo County Parks",
+          "retrievedAt": "2026-10-17",
+          "kind": "official"
+        },
+        {
+          "id": "visit-20261017-pillar-point-bluff-coordinate",
+          "title": "North Pillar Point Bluff looking South — geotagged coordinate reference",
+          "url": "https://commons.wikimedia.org/wiki/File:North_Pillar_Point_Bluff_looking_South.jpg",
+          "publisher": "Wikimedia Commons contributors",
+          "retrievedAt": "2026-10-17",
+          "kind": "community"
+        }
+      ],
+      "alertsUrl": "https://www.smcgov.org/parks/pillar-point-bluff",
+      "mapUrl": null,
+      "coordinateNote": "Approximate northern-bluff viewpoint from the geotagged Commons photograph. The Airport Street lot is a separate trailhead; use the county map to choose a public approach."
+    }
+  },
+  {
+    "id": "montara-beach",
+    "name": "Montara State Beach — Pacific Shore",
+    "lat": 37.545454,
+    "lng": -122.51427,
+    "county": "San Mateo",
+    "region": "bay-area",
+    "description": "Pacific surf, a broad sandy shore and rocky headlands at Montara State Beach. Beach access is separate from the mountain trails east of Highway 1.",
+    "tags": [
+      "ocean"
+    ],
+    "featured": null,
+    "sourceUrl": "https://www.parks.ca.gov/?page_id=532",
+    "coordinateSourceUrl": "https://www.parks.ca.gov/?page_id=532",
+    "photos": [],
+    "visit": {
+      "manager": {
+        "value": "California State Parks",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-montara"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "hours": {
+        "value": "8 am to sunset.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-montara"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "fees": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+      },
+      "parking": {
+        "value": "Use signed beach access on the ocean side of Highway 1, near Second Street or the access about half a mile north.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-montara"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "elevationFeet": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+      },
+      "terrain": {
+        "value": "Sandy beach below bluffs, with staircase access. Nearby McNee Ranch mountain trails are a separate outing.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-montara"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "accessibility": {
+        "value": "The park describes staircase access; an accessible route to this beach viewpoint was not established.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-montara"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "facilities": {
+        "value": "Parking, restrooms and picnic areas are listed; drinking water is not available.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-montara"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "seasonalAccess": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+      },
+      "cautions": {
+        "value": "Cold water, rip currents and potentially dangerous surf. Do not treat a scenic beach listing as a swimming-safety assessment.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-montara"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "reviewStatus": "official-source-reviewed",
+      "reviewedAt": "2026-10-17",
+      "rules": {
+        "dogs": {
+          "value": "Dogs must be on a leash no longer than six feet.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-montara"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "bicycles": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+        },
+        "drones": {
+          "value": "Drones, model aircraft and gliders in flight are prohibited.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-montara"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "fires": {
+          "value": "Beach fires and fireworks are prohibited.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-montara"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "camping": {
+          "value": "No camping at this park.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-montara"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "other": {
+          "value": "Do not collect shells, driftwood or other natural features. Horses are not allowed west of Highway 1.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-montara"
+          ],
+          "checkedAt": "2026-10-17"
+        }
+      },
+      "routes": [],
+      "sources": [
+        {
+          "id": "visit-20261017-montara",
+          "url": "https://www.parks.ca.gov/?page_id=532",
+          "title": "Montara State Beach",
+          "publisher": "California State Parks",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "735f20095ba5fd18a58c8a65666fdf8163e363b650508f1a881aa0a4fd4d76d3"
+        }
+      ],
+      "alertsUrl": "https://www.parks.ca.gov/?page_id=532",
+      "mapUrl": null,
+      "coordinateNote": "Agency Google Maps destination coordinate for Montara State Beach; approximate park reference, not a surveyed overlook or trailhead."
+    }
+  },
+  {
+    "id": "gray-whale-cove",
+    "name": "Gray Whale Cove — Bluff and Beach",
+    "lat": 37.5635,
+    "lng": -122.513,
+    "county": "San Mateo",
+    "region": "bay-area",
+    "description": "A sheltered Pacific cove below steep coastal bluffs. The beach is reached by a long staircase and requires particular care around Highway 1.",
+    "tags": [
+      "ocean"
+    ],
+    "featured": null,
+    "sourceUrl": "https://www.parks.ca.gov/?page_id=528",
+    "coordinateSourceUrl": "https://www.parks.ca.gov/?page_id=528",
+    "photos": [],
+    "visit": {
+      "manager": {
+        "value": "California State Parks",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-gray"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "hours": {
+        "value": "8 am to sunset.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-gray"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "fees": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+      },
+      "parking": {
+        "value": "The only automobile parking is in the upper lot east of Highway 1. Reaching the ocean side requires a potentially dangerous highway crossing.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-gray"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "elevationFeet": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+      },
+      "terrain": {
+        "value": "Steep trail and a long staircase down to the sand; small picnic area on the bluff.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-gray"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "accessibility": {
+        "value": "The beach approach uses steep terrain and stairs; the reviewed source does not establish a step-free beach route.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-gray"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "facilities": {
+        "value": "Chemical toilets and trash receptacles are in the upper lot east of Highway 1. No toilets or trash pickup west of Highway 1; no drinking water.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-gray"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "seasonalAccess": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+      },
+      "cautions": {
+        "value": "Highway 1 crossing, steep stairs, unstable cliff edges, cold water and strong rip currents. Carry water and pack out trash.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-gray"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "reviewStatus": "official-source-reviewed",
+      "reviewedAt": "2026-10-17",
+      "rules": {
+        "dogs": {
+          "value": "No dogs on the beach. Dogs on trails east of Highway 1 require a leash no longer than six feet.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-gray"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "bicycles": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+        },
+        "drones": {
+          "value": "Drones, model aircraft and gliders in flight are prohibited.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-gray"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "fires": {
+          "value": "Beach fires and fireworks are prohibited.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-gray"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "camping": {
+          "value": "No camping.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-gray"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "other": {
+          "value": "Do not collect shells, driftwood or other natural beach features.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-gray"
+          ],
+          "checkedAt": "2026-10-17"
+        }
+      },
+      "routes": [],
+      "sources": [
+        {
+          "id": "visit-20261017-gray",
+          "url": "https://www.parks.ca.gov/?page_id=528",
+          "title": "Gray Whale Cove State Beach",
+          "publisher": "California State Parks",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "f0e9ec9aab847354775bbe6bc011f4e026de6e96cff014978c644db413166a97"
+        }
+      ],
+      "alertsUrl": "https://www.parks.ca.gov/?page_id=528",
+      "mapUrl": null,
+      "coordinateNote": "Agency Google Maps destination coordinate; approximate access reference, not a surveyed parking space or stair landing."
+    }
+  },
+  {
+    "id": "francis-beach",
+    "name": "Francis Beach — Half Moon Bay",
+    "lat": 37.4665,
+    "lng": -122.445,
+    "county": "San Mateo",
+    "region": "bay-area",
+    "description": "Broad Pacific beach views beside the Coastside Trail at Half Moon Bay State Beach, with dunes, picnic facilities and campground access at Francis Beach.",
+    "tags": [
+      "ocean"
+    ],
+    "featured": null,
+    "sourceUrl": "https://www.parks.ca.gov/?page_id=531",
+    "coordinateSourceUrl": "https://www.parks.ca.gov/?page_id=531",
+    "photos": [],
+    "visit": {
+      "manager": {
+        "value": "California State Parks",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-francis"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "hours": {
+        "value": "Day-use hours: 8 am to sunset. Campground access is separate.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-francis"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "fees": {
+        "value": "Published vehicle day-use fee is $10; other vehicle and service fees vary. Check current posted fees.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-francis"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "parking": {
+        "value": "Francis Beach access is at 95 Kelly Avenue. Other state-beach lots at Venice, Dunes and Roosevelt serve different access points.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-francis"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "elevationFeet": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+      },
+      "terrain": {
+        "value": "Sandy beach and dunes beside the paved Coastside Trail. A paved ramp approaches the sand at Francis Beach.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-francis"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "accessibility": {
+        "value": "A paved ramp leads to the sand; the visitor center is accessible. A free all-terrain beach wheelchair may be checked out at the Francis Beach entrance station, subject to availability.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-francis"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "facilities": {
+        "value": "Picnic area, restrooms, drinking water, showers, campground and visitor center. Visitor center typically operates weekends as weather and volunteers permit.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-francis"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "seasonalAccess": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+      },
+      "cautions": {
+        "value": "Cold Pacific water and strong rip currents. Plan for marine weather and confirm current beach conditions.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-francis"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "reviewStatus": "official-source-reviewed",
+      "reviewedAt": "2026-10-17",
+      "rules": {
+        "dogs": {
+          "value": "No dogs on the beaches. Leashed dogs are allowed in campground, picnic areas and Coastside Trail; leash limit six feet.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-francis"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "bicycles": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+        },
+        "drones": {
+          "value": "Drones, model aircraft and gliders in flight are prohibited.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-francis"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "fires": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+        },
+        "camping": {
+          "value": "Designated tent/RV camping is available at Francis Beach; reservations are strongly recommended.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-francis"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "other": {
+          "value": "Horse use is limited to the parallel dirt trail between Venice and Francis; horses are not permitted on the state beaches.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-francis"
+          ],
+          "checkedAt": "2026-10-17"
+        }
+      },
+      "routes": [
+        {
+          "id": "half-moon-bay-coastside-corridor",
+          "name": "Coastside Trail corridor beside state beaches",
+          "start": "Any signed state-beach trail access",
+          "distanceType": "network",
+          "distanceMiles": {
+            "value": 3,
+            "status": "reported",
+            "sourceIds": [
+              "visit-20261017-francis"
+            ],
+            "checkedAt": "2026-10-17"
+          },
+          "elevationGainFeet": {
+            "value": null,
+            "status": "unknown",
+            "sourceIds": [],
+            "checkedAt": null,
+            "note": "Cumulative route climbing gain was not established; point elevations and basin descents are not substituted."
+          },
+          "durationMinutes": {
+            "value": null,
+            "status": "unknown",
+            "sourceIds": [],
+            "checkedAt": null,
+            "note": "Not established from reviewed sources."
+          },
+          "terrain": {
+            "value": "Paved coastal multi-use corridor.",
+            "status": "reported",
+            "sourceIds": [
+              "visit-20261017-francis"
+            ],
+            "checkedAt": "2026-10-17"
+          },
+          "difficulty": {
+            "value": null,
+            "status": "unknown",
+            "sourceIds": [],
+            "checkedAt": null,
+            "note": "Not established from reviewed sources."
+          },
+          "accessibility": {
+            "value": null,
+            "status": "unknown",
+            "sourceIds": [],
+            "checkedAt": null,
+            "note": "Not established from reviewed sources."
+          },
+          "stairs": {
+            "value": null,
+            "status": "unknown",
+            "sourceIds": [],
+            "checkedAt": null,
+            "note": "Not established from reviewed sources."
+          },
+          "estimatedSteps": {
+            "value": null,
+            "status": "unknown",
+            "sourceIds": [],
+            "checkedAt": null,
+            "note": "No confirmed, complete route distance."
+          },
+          "notes": "The source describes a three-mile stretch beside several beaches, not a complete out-and-back or loop. Return distance, endpoint choices and beach detours are not included; excluded from complete-hike matching."
+        }
+      ],
+      "sources": [
+        {
+          "id": "visit-20261017-francis",
+          "url": "https://www.parks.ca.gov/?page_id=531",
+          "title": "Half Moon Bay State Beach",
+          "publisher": "California State Parks",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "a51163a7299a08da1e8ddbf722859f17b646fb91c3a80709fd937d98624e1301"
+        }
+      ],
+      "alertsUrl": "https://www.parks.ca.gov/?page_id=531",
+      "mapUrl": null,
+      "coordinateNote": "Agency Google Maps destination for Half Moon Bay State Beach; approximate park reference. Francis Beach visitor facilities are at 95 Kelly Avenue."
+    }
+  },
+  {
+    "id": "pacifica-beach",
+    "name": "Pacifica State Beach — Linda Mar",
+    "lat": 37.597359,
+    "lng": -122.502863,
+    "county": "San Mateo",
+    "region": "bay-area",
+    "description": "A wide crescent of Pacific shoreline at Linda Mar, with an ocean-side recreation trail and views toward Pedro Point.",
+    "tags": [
+      "ocean"
+    ],
+    "featured": null,
+    "sourceUrl": "https://www.parks.ca.gov/?page_id=524",
+    "coordinateSourceUrl": "https://www.parks.ca.gov/?page_id=524",
+    "photos": [],
+    "visit": {
+      "manager": {
+        "value": "California State Parks; the City of Pacifica publishes local beach operations and rules.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-pacifica",
+          "visit-20261017-pacifica-city"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "hours": {
+        "value": "Published hours conflict: State Parks says day use until sundown; the city page lists beach/lot access 5 am–10:30 pm during daylight-saving time and 5 am–7 pm in fall/winter. Follow current posted signs.",
+        "status": "conflicting",
+        "sourceIds": [
+          "visit-20261017-pacifica",
+          "visit-20261017-pacifica-city"
+        ],
+        "checkedAt": "2026-10-17",
+        "note": "No single closing time is asserted when the land-manager publications disagree."
+      },
+      "fees": {
+        "value": "State Parks currently publishes a $9 vehicle day-use fee. Check city/parking signs for the applicable charge and duration.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-pacifica",
+          "visit-20261017-pacifica-city"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "parking": {
+        "value": "State Parks describes parking just south of Crespi Drive off Highway 1. Check posted lot hours and restrictions.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-pacifica",
+          "visit-20261017-pacifica-city"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "elevationFeet": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+      },
+      "terrain": {
+        "value": "Sandy ocean beach beside an ocean-side recreation trail. The reviewed pages do not establish the surface or grade of every trail section.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-pacifica",
+          "visit-20261017-pacifica-city"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "accessibility": {
+        "value": "State Parks lists wheelchair-accessible facilities; exact beach-surface access at this reference pin is not established.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-pacifica",
+          "visit-20261017-pacifica-city"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "facilities": {
+        "value": "Ocean-side recreation trail, restrooms, showers and drinking water are listed. The city lists restroom hours separately from beach hours.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-pacifica",
+          "visit-20261017-pacifica-city"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "seasonalAccess": {
+        "value": null,
+        "status": "unknown",
+        "sourceIds": [],
+        "checkedAt": null,
+        "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+      },
+      "cautions": {
+        "value": "Confirm posted beach and parking hours: the city and state visitor pages disagree. Observe surf conditions and keep clear of wildlife.",
+        "status": "reported",
+        "sourceIds": [
+          "visit-20261017-pacifica",
+          "visit-20261017-pacifica-city"
+        ],
+        "checkedAt": "2026-10-17"
+      },
+      "reviewStatus": "official-source-reviewed",
+      "reviewedAt": "2026-10-17",
+      "rules": {
+        "dogs": {
+          "value": "Dogs must remain on leash; owners must clean up after them.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-pacifica",
+            "visit-20261017-pacifica-city"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "bicycles": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+        },
+        "drones": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+        },
+        "fires": {
+          "value": "City rules prohibit fires and barbecue grills.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-pacifica",
+            "visit-20261017-pacifica-city"
+          ],
+          "checkedAt": "2026-10-17"
+        },
+        "camping": {
+          "value": null,
+          "status": "unknown",
+          "sourceIds": [],
+          "checkedAt": null,
+          "note": "Not established from the reviewed sources. Confirm with the land manager before visiting."
+        },
+        "other": {
+          "value": "City rules prohibit smoking on the beach/in parking/restrooms, alcohol and glass containers, and disturbing wildlife.",
+          "status": "reported",
+          "sourceIds": [
+            "visit-20261017-pacifica",
+            "visit-20261017-pacifica-city"
+          ],
+          "checkedAt": "2026-10-17"
+        }
+      },
+      "routes": [],
+      "sources": [
+        {
+          "id": "visit-20261017-pacifica",
+          "url": "https://www.parks.ca.gov/?page_id=524",
+          "title": "Pacifica State Beach",
+          "publisher": "California State Parks",
+          "retrievedAt": "2026-10-17",
+          "kind": "official",
+          "sha256": "55ff4583e40a84c15b4625f9307ff9d9c4773dd0be28af9cd1bfe70f1a785844"
+        },
+        {
+          "id": "visit-20261017-pacifica-city",
+          "url": "https://www.cityofpacifica.org/departments/parks-beaches-recreation/parks-and-beaches-locations-maps-safety-guides/pacifica-state-beach",
+          "title": "Pacifica State Beach city visitor information",
+          "publisher": "City of Pacifica",
+          "retrievedAt": "2026-10-17",
+          "kind": "official"
+        }
+      ],
+      "alertsUrl": "https://www.parks.ca.gov/?page_id=524",
+      "mapUrl": null,
+      "coordinateNote": "Agency Google Maps destination for Pacifica State Beach; approximate beach access reference, not a surveyed viewpoint or parking stall."
     }
   }
 ]

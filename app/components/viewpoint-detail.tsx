@@ -1,24 +1,37 @@
 "use client";
+import { prefersReducedMotion } from "../../lib/motion";
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, Camera, ChevronLeft, ChevronRight, Map as MapIcon, MapPin, Navigation, X } from "lucide-react";
+import { ArrowUpRight, Camera, ChevronLeft, ChevronRight, Map as MapIcon, MapPin, MessageCircle, Navigation, X } from "lucide-react";
 import type { Viewpoint } from "../../lib/types";
 import ViewPhoto from "./view-photo";
 import ViewpointName from "./viewpoint-name";
 import VisitDetails from "./visit-details";
+import VisitSnapshot from "./visit-snapshot";
 import { useAnimatedViewpoint } from "./use-motion";
+import SunsetSummary from "./sunset-summary";
+import type { Forecast, TerrainData } from "../../lib/forecast-types";
+import { forecastRangeEnd } from "../../lib/weather";
+import DateTimeFields from "./date-time-fields";
+import CommunityReviews from "./community-reviews";
+import { usePhotoScroll } from "./use-photo-scroll";
+import { sceneryLabel } from "../../lib/discovery";
 
 type Props = {
   viewpoint: Viewpoint; visible?: boolean; onClose: () => void;
   previous?: Viewpoint; next?: Viewpoint; position?: string;
   onNavigate?: (viewpoint: Viewpoint) => void;
+  timeRevision: number; selectedTime: number; now: number; forecast: Forecast | null; terrain: TerrainData | null;
+  onTimeSelect: (time: number) => void; onNow: () => void;
 };
-export default function ViewpointDetail({ viewpoint, visible = true, onClose, previous, next, position, onNavigate }: Props) {
+export default function ViewpointDetail({ viewpoint, visible = true, onClose, previous, next, position, onNavigate, timeRevision, selectedTime, now, forecast, terrain, onTimeSelect, onNow }: Props) {
   const { displayed, phase } = useAnimatedViewpoint(viewpoint);
   const [detailError, setDetailError] = useState<string | null>(null);
   const [settledId, setSettledId] = useState<string | null>(null);
   const [loaded, setLoaded] = useState<Viewpoint | null>(null), [active, setActive] = useState(0);
   const place = loaded?.id === displayed.id ? loaded : displayed;
   const dialog = useRef<HTMLDivElement>(null), backdrop = useRef<HTMLDivElement>(null), carousel = useRef<HTMLDivElement>(null), close = useRef<HTMLButtonElement>(null), onCloseRef = useRef(onClose);
+  const content = useRef<HTMLDivElement>(null), hero = useRef<HTMLDivElement>(null), sheet = useRef<HTMLDivElement>(null);
+  const heroCovered = usePhotoScroll(displayed.id, backdrop, content, hero, sheet);
   onCloseRef.current = onClose;
   useEffect(() => {
     const prior = document.activeElement as HTMLElement | null, overflow = document.body.style.overflow;
@@ -29,6 +42,7 @@ export default function ViewpointDetail({ viewpoint, visible = true, onClose, pr
     if (!visible) return;
     close.current?.focus({ preventScroll: true });
     const keydown = (e: KeyboardEvent) => {
+      if (e.defaultPrevented || (e.target instanceof Element && e.target.closest(".sunspot-select-menu"))) return;
       if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); onCloseRef.current(); return; }
       if (e.key === "Tab") {
         const items = [...(dialog.current?.querySelectorAll<HTMLElement>('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex="0"]') ?? [])].filter(item => item.getClientRects().length && !item.closest("[inert]"));
@@ -59,15 +73,22 @@ export default function ViewpointDetail({ viewpoint, visible = true, onClose, pr
   }, [displayed.id]);
   const photos = place.photos;
   const photoIndex = Math.min(active, Math.max(0, photos.length - 1));
-  const go = (index: number) => carousel.current?.scrollTo({ left: index * carousel.current.clientWidth, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+  const go = (index: number) => carousel.current?.scrollTo({ left: index * carousel.current.clientWidth, behavior: prefersReducedMotion() ? "instant" : "smooth" });
   return <div className="modal-backdrop" ref={backdrop} data-motion={visible ? "enter" : "exit"} inert={!visible} onMouseDown={e => { if (e.target === e.currentTarget) onClose(); }}>
     <div className="detail-dialog" ref={dialog} role="dialog" aria-modal="true" aria-labelledby="detail-title" aria-hidden={!visible}>
+      <div className="detail-toolbar">
       <button ref={close} className="close-dialog icon-button" onClick={onClose} aria-label="Close viewpoint details"><X size={20} /></button>
       {onNavigate && <nav className="detail-spot-navigation" aria-label="Switch viewpoint"><button disabled={!previous} onClick={() => previous && onNavigate(previous)} aria-label={previous ? `Previous viewpoint: ${previous.name}` : "Previous viewpoint"}><ChevronLeft size={16} /><span>Previous spot</span></button><span aria-live="polite">{position}</span><button disabled={!next} onClick={() => next && onNavigate(next)} aria-label={next ? `Next viewpoint: ${next.name}` : "Next viewpoint"}><span>Next spot</span><ChevronRight size={16} /></button></nav>}
-      <div className="detail-place-content" key={place.id} data-motion={phase}>
-        <header className="detail-overview-header"><div className="eyebrow orange"><MapPin size={14} />{place.county.replace(/ County$/, "")} County · {place.region === "bay-area" ? "Bay Area" : "Northern California"}</div><h2 id="detail-title">{place.name}</h2><nav className="detail-map-actions" aria-label="Open this viewpoint in a map"><a className="google-maps-button" href={`https://www.google.com/maps/search/?api=1&query=${place.lat},${place.lng}`} target="_blank" rel="noopener noreferrer"><Navigation size={17} /><span>Open in Google Maps</span><ArrowUpRight size={16} /></a><a className="apple-maps-button" href={`https://maps.apple.com/place?coordinate=${place.lat},${place.lng}&name=${encodeURIComponent(place.name)}`} target="_blank" rel="noopener noreferrer"><MapIcon size={17} /><span>Open in Apple Maps</span><ArrowUpRight size={16} /></a></nav></header>
-        <div className="detail-gallery"><div className="photo-carousel" ref={carousel} onScroll={e => { const el = e.currentTarget; if (el.clientWidth) setActive(Math.max(0, Math.min(photos.length - 1, Math.round(el.scrollLeft / el.clientWidth)))); }} onKeyDown={e => { if (e.key === "ArrowLeft" || e.key === "ArrowRight") { e.preventDefault(); go(Math.max(0, Math.min(photos.length - 1, photoIndex + (e.key === "ArrowRight" ? 1 : -1)))); } }} tabIndex={0} aria-label="Viewpoint photos; swipe to see more">{photos.length ? photos.map((p, i) => <ViewPhoto key={`${p.url}-${i}`} photo={p} name={place.name} className="detail-photo" eager />) : <ViewPhoto name={place.name} className="detail-photo" />}</div>{photos.length > 1 && <><button className="gallery-prev icon-button" onClick={() => go(Math.max(0, photoIndex - 1))} disabled={photoIndex === 0} aria-label="Previous photo"><ChevronLeft size={22} /></button><button className="gallery-next icon-button" onClick={() => go(Math.min(photos.length - 1, photoIndex + 1))} disabled={photoIndex === photos.length - 1} aria-label="Next photo"><ChevronRight size={22} /></button><span className="gallery-count"><Camera size={13} />{photoIndex + 1} / {photos.length}</span></>}</div>
-        <div className="detail-body"><div className="detail-tags">{place.tags.map(t => <span key={t}>{t.charAt(0).toUpperCase() + t.slice(1)}</span>)}</div><p className="detail-description">{place.description}</p><ViewpointName context={place.nameContext} />{place.visit ? <VisitDetails profile={place.visit} /> : <p className="detail-loading" role="status">{detailError === place.id ? "Trip-planning details couldn’t load. Check the location source before visiting." : settledId === place.id ? "Trip-planning details aren’t available yet. Check the location source before visiting." : "Loading trip-planning details…"}</p>}<div className="detail-coordinates">{place.lat.toFixed(5)}° N, {Math.abs(place.lng).toFixed(5)}° W<a href={place.sourceUrl} target="_blank" rel="noreferrer">View location source <ArrowUpRight size={12} /></a></div>{photos.length > 0 && <div className="photo-credits"><h3><Camera size={14} /> Behind the view</h3>{photos.length > 1 && <div className="gallery-thumbnails">{photos.map((p, i) => <button key={`${p.url}-${i}`} onClick={() => go(i)} className={photoIndex === i ? "active" : ""} aria-label={`See photo ${i + 1}`} aria-pressed={photoIndex === i}><ViewPhoto photo={p} name={place.name} /></button>)}</div>}<p>{photos[photoIndex]?.caption && <>{photos[photoIndex].caption}<br /></>}Photo by {photos[photoIndex]?.author} · {photos[photoIndex]?.license} <a href={photos[photoIndex]?.sourceUrl} target="_blank" rel="noreferrer">Original & license <ArrowUpRight size={11} /></a></p></div>}</div>
+      </div>
+      <div ref={content} className="detail-place-content" key={place.id} data-motion={phase}>
+        <div ref={hero} className="detail-gallery detail-hero" inert={heroCovered} aria-hidden={heroCovered}><div className="photo-carousel" ref={carousel} onScroll={e => { const el = e.currentTarget; if (el.clientWidth) setActive(Math.max(0, Math.min(photos.length - 1, Math.round(el.scrollLeft / el.clientWidth)))); }} onKeyDown={e => { if (e.key === "ArrowLeft" || e.key === "ArrowRight") { e.preventDefault(); go(Math.max(0, Math.min(photos.length - 1, photoIndex + (e.key === "ArrowRight" ? 1 : -1)))); } }} tabIndex={0} aria-label="Viewpoint photos; swipe to see more">{photos.length ? photos.map((p, i) => <ViewPhoto key={`${p.url}-${i}`} photo={p} name={place.name} className="detail-photo" eager />) : <ViewPhoto name={place.name} className="detail-photo" />}</div>{photos.length > 1 && <><button className="gallery-prev icon-button" onClick={() => go(Math.max(0, photoIndex - 1))} disabled={photoIndex === 0} aria-label="Previous photo"><ChevronLeft size={22} /></button><button className="gallery-next icon-button" onClick={() => go(Math.min(photos.length - 1, photoIndex + 1))} disabled={photoIndex === photos.length - 1} aria-label="Next photo"><ChevronRight size={22} /></button><span className="gallery-count"><Camera size={13} />{photoIndex + 1} / {photos.length}</span></>}</div>
+        <div ref={sheet} className="detail-overview-sheet">
+        <header className="detail-overview-header"><div className="eyebrow orange"><MapPin size={14} />{place.county.replace(/ County$/, "")} County · {place.region === "bay-area" ? "Bay Area" : "Northern California"}</div><h2 id="detail-title">{place.name}</h2><nav className="detail-map-actions" aria-label="Open this viewpoint in a map"><a className="google-maps-button" href={`https://www.google.com/maps/search/?api=1&query=${place.lat},${place.lng}`} target="_blank" rel="noopener noreferrer"><Navigation size={17} /><span>Open in Google Maps</span><ArrowUpRight size={16} /></a><a className="apple-maps-button" href={`https://maps.apple.com/place?coordinate=${place.lat},${place.lng}&name=${encodeURIComponent(place.name)}`} target="_blank" rel="noopener noreferrer"><MapIcon size={17} /><span>Open in Apple Maps</span><ArrowUpRight size={16} /></a></nav><button className="community-jump" onClick={() => dialog.current?.querySelector(".community-reviews")?.scrollIntoView({ behavior: prefersReducedMotion() ? "instant" : "smooth", block: "start" })}><MessageCircle size={13} />Visitor notes & ratings</button></header>
+        <div className="detail-introduction"><p className="detail-description">{place.description}</p><div className="detail-tags">{place.tags.map(t => <span key={t}>{sceneryLabel(t)}</span>)}</div><ViewpointName context={place.nameContext} /></div>
+        {place.visit ? <VisitSnapshot profile={place.visit} /> : <p className="detail-loading visit-summary-loading" role="status">{detailError === place.id ? "Visit details couldn’t load. Walking effort and access need confirmation." : settledId === place.id ? "Walking effort and access details aren’t confirmed for this spot." : "Loading walking and access details…"}</p>}
+        <SunsetSummary place={place} selected={selectedTime} now={now} forecast={forecast} terrain={terrain} controls={<div className="detail-time-control"><DateTimeFields revision={timeRevision} selected={selectedTime} now={now} end={forecastRangeEnd(forecast, now)} onSelect={onTimeSelect} /><button onClick={onNow}>Return to now</button></div>} />
+        <div className="detail-body">{place.visit && <details className="visit-full-details"><summary>Routes, access & sources</summary><div className="visit-guide-content"><VisitDetails profile={place.visit} /></div></details>}<CommunityReviews viewpointId={place.id} /><div className="detail-coordinates">{place.lat.toFixed(5)}° N, {Math.abs(place.lng).toFixed(5)}° W<a href={place.sourceUrl} target="_blank" rel="noreferrer">View location source <ArrowUpRight size={12} /></a></div>{photos.length > 0 && <div className="photo-credits"><h3><Camera size={14} /> Behind the view</h3>{photos.length > 1 && <div className="gallery-thumbnails">{photos.map((p, i) => <button key={`${p.url}-${i}`} onClick={() => go(i)} className={photoIndex === i ? "active" : ""} aria-label={`See photo ${i + 1}`} aria-pressed={photoIndex === i}><ViewPhoto photo={p} name={place.name} /></button>)}</div>}<p>{photos[photoIndex]?.caption && <>{photos[photoIndex].caption}<br /></>}Photo by {photos[photoIndex]?.author} · {photos[photoIndex]?.license} <a href={photos[photoIndex]?.sourceUrl} target="_blank" rel="noreferrer">Original & license <ArrowUpRight size={11} /></a></p></div>}</div>
+        </div>
       </div>
     </div>
   </div>;

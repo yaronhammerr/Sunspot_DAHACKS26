@@ -41,11 +41,20 @@ export function localRecommendations(ranked: Viewpoint[], location: MapLocation 
 
 export function mapFramePoints(views: Viewpoint[], location: MapLocation | null, searching = false): MapLocation[] {
   const points = views.slice(0, 3).map(({ lat, lng }) => ({ lat, lng }));
+  // Explicit filters explore the results, even when the user's location is
+  // distant. Keep a compact group around a real recommendation; do not frame
+  // an empty midpoint between the user and unrelated, scattered destinations.
+  if (searching) return points.filter(p => distanceMiles(points[0], p) <= 25);
   if (!location) return points;
   if (!points.length) return [location];
   const nearby = points.some(p => distanceMiles(location, p) <= 80);
-  // Visitors outside coverage open on their own location. An explicit search
-  // can explore another area without fitting a cross-country map.
-  if (!nearby) return searching ? points : [location];
+  // Without explicit filters, visitors outside coverage open on their own
+  // location instead of fitting a cross-country map.
+  if (!nearby) return [location];
   return [location, ...points];
+}
+
+/** A visible card is always the destination, never the center between pins. */
+export function visibleRecommendation(views: Viewpoint[], ids: string[]) {
+  return views.find(v => ids.includes(v.id)) ?? null;
 }

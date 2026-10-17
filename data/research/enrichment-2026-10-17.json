@@ -1,0 +1,255 @@
+{
+  "reviewedAt": "2026-10-17",
+  "newViewpoints": [
+    "fitzgerald-bluff",
+    "pillar-point-bluff",
+    "montara-beach",
+    "gray-whale-cove",
+    "francis-beach",
+    "pacifica-beach"
+  ],
+  "enrichedExisting": [
+    {
+      "id": "muir-beach-overlook",
+      "fields": [
+        "hours",
+        "facilities",
+        "cautions",
+        "rules.other"
+      ]
+    },
+    {
+      "id": "lands-end",
+      "fields": [
+        "manager",
+        "hours",
+        "terrain",
+        "cautions",
+        "rules.other",
+        "accessibility"
+      ]
+    },
+    {
+      "id": "osm-node-13825881781",
+      "fields": [
+        "manager",
+        "hours",
+        "terrain",
+        "cautions",
+        "rules.other"
+      ]
+    },
+    {
+      "id": "osm-node-13825892193",
+      "fields": [
+        "manager",
+        "hours",
+        "terrain",
+        "cautions",
+        "rules.other"
+      ]
+    },
+    {
+      "id": "osm-node-4179665037",
+      "fields": [
+        "manager",
+        "hours",
+        "terrain",
+        "cautions",
+        "rules.other"
+      ]
+    },
+    {
+      "id": "mori-point",
+      "fields": [
+        "parking",
+        "facilities",
+        "accessibility",
+        "cautions",
+        "seasonalAccess"
+      ]
+    },
+    {
+      "id": "kirby-cove",
+      "fields": [
+        "hours"
+      ]
+    },
+    {
+      "id": "borel-hill",
+      "fields": [
+        "seasonalAccess",
+        "parking",
+        "rules.other"
+      ]
+    },
+    {
+      "id": "hunters-point",
+      "fields": [
+        "accessibility",
+        "terrain"
+      ]
+    },
+    {
+      "id": "windy-hill",
+      "fields": [
+        "terrain",
+        "rules.dogs",
+        "rules.bicycles",
+        "rules.camping",
+        "routes:anniversary-return-loop"
+      ]
+    },
+    {
+      "id": "devils-slide",
+      "fields": [
+        "facilities",
+        "accessibility",
+        "rules.bicycles"
+      ]
+    },
+    {
+      "id": "point-reyes-lighthouse",
+      "fields": [
+        "hours",
+        "accessibility",
+        "facilities",
+        "cautions",
+        "rules.dogs",
+        "rules.other",
+        "routes:upper-observation-deck-approach"
+      ]
+    },
+    {
+      "id": "chimney-rock",
+      "fields": [
+        "parking",
+        "facilities",
+        "accessibility",
+        "cautions",
+        "rules.dogs",
+        "rules.drones",
+        "rules.other"
+      ]
+    },
+    {
+      "id": "bumpass-hell",
+      "fields": [
+        "parking",
+        "facilities",
+        "accessibility",
+        "seasonalAccess",
+        "rules.dogs",
+        "rules.other",
+        "routes:bumpass-hell-trail"
+      ]
+    },
+    {
+      "id": "osm-node-3101265351",
+      "fields": [
+        "manager",
+        "terrain",
+        "parking",
+        "accessibility",
+        "cautions"
+      ]
+    },
+    {
+      "id": "osm-node-11061015238",
+      "fields": [
+        "manager",
+        "fees",
+        "parking",
+        "terrain",
+        "accessibility",
+        "facilities",
+        "seasonalAccess",
+        "cautions",
+        "rules.dogs",
+        "rules.bicycles",
+        "rules.other",
+        "routes:manzanita-lake-loop"
+      ]
+    },
+    {
+      "id": "osm-node-11061015239",
+      "fields": [
+        "manager",
+        "fees",
+        "parking",
+        "terrain",
+        "accessibility",
+        "facilities",
+        "seasonalAccess",
+        "cautions",
+        "rules.dogs",
+        "rules.bicycles",
+        "rules.other",
+        "routes:manzanita-lake-loop"
+      ]
+    },
+    {
+      "id": "osm-node-11061015240",
+      "fields": [
+        "manager",
+        "fees",
+        "parking",
+        "terrain",
+        "accessibility",
+        "facilities",
+        "seasonalAccess",
+        "cautions",
+        "rules.dogs",
+        "rules.bicycles",
+        "rules.other",
+        "routes:manzanita-lake-loop"
+      ]
+    }
+  ],
+  "newSources": [
+    "visit-20261017-goga-hours",
+    "visit-20261017-muir",
+    "visit-20261017-lands-end",
+    "visit-20261017-mori",
+    "visit-20261017-fort-funston",
+    "visit-20261017-windy",
+    "visit-20261017-russian-ridge",
+    "visit-20261017-fremont-older",
+    "visit-20261017-devils-slide",
+    "visit-20261017-chimney",
+    "visit-20261017-lighthouse",
+    "visit-20261017-manzanita",
+    "visit-20261017-bumpass",
+    "visit-20261017-fitzgerald",
+    "visit-20261017-pillar",
+    "visit-20261017-fitzgerald-brochure",
+    "visit-20261017-montara",
+    "visit-20261017-gray",
+    "visit-20261017-francis",
+    "visit-20261017-pacifica",
+    "visit-20261017-pacifica-city",
+    "visit-20261017-fitzgerald-bluff-coordinate",
+    "visit-20261017-pillar-point-bluff-coordinate"
+  ],
+  "notes": [
+    "Only reviewed source-backed facts were updated; unknowns remain null.",
+    "Scenery is a reviewed editorial classification, not a weather, access or live-visibility guarantee.",
+    "Official-source coordinates are approximate park reference pins; two county coastal points retain explicitly cited Commons coordinate context.",
+    "New complete routes use reported route length; steps are visibly estimated. Network lengths are excluded from hike matching.",
+    "Conflicting Pacifica hours and Bumpass Hell descent descriptions remain visible."
+  ],
+  "summary": {
+    "catalogBefore": 510,
+    "catalogAfter": 516,
+    "newViewpoints": 6,
+    "enrichedExisting": 18,
+    "newlyFilledExistingFacts": 76,
+    "changedExistingFacts": 22,
+    "existingFieldReviews": 106,
+    "newSourcePages": 23,
+    "sceneryLabelsChangedOnExisting": 461,
+    "unclassifiedAllViewsOnly": 6,
+    "agencySourcePages": 21,
+    "coordinateReferencePages": 2
+  }
+}

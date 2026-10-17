@@ -1,5 +1,11 @@
 import type { Viewpoint } from "./types";
-export const SCENERY = ["ocean", "skyline", "bridges", "hills", "greenery"] as const;
+export const SCENERY = ["ocean", "bay", "water", "skyline", "bridges", "hills", "greenery"] as const;
+export const SCENERY_LABELS: Record<string, string> = { ocean: "Ocean", bay: "Bay & harbor", water: "Lakes & rivers", skyline: "Skyline", bridges: "Bridges", hills: "Hills", greenery: "Greenery" };
+export const sceneryLabel = (tag: string) => SCENERY_LABELS[tag] ?? tag;
+/** Category chips are hard filters, even when preferences rank other scenery. */
+export function filterScenery(viewpoints: Viewpoint[], scenery: string) {
+  return scenery ? viewpoints.filter(viewpoint => viewpoint.tags.includes(scenery)) : viewpoints;
+}
 export function distanceMiles(a: {lat:number;lng:number}, b:{lat:number;lng:number}) {
   const rad = Math.PI/180;
   const dlat=(b.lat-a.lat)*rad, dlon=(b.lng-a.lng)*rad;

@@ -45,6 +45,25 @@ export async function findDeviceLocation(geo: Pick<Geolocation, "getCurrentPosit
   }
 }
 
+/** Reuse a successful fix for this session; opening controls never re-prompts. */
+export function createDeviceLocationSession() {
+  let cached: SearchLocation | null = null, pending: Promise<SearchLocation> | null = null, generation = 0;
+  return {
+    find(geo: Pick<Geolocation, "getCurrentPosition"> | undefined, secure: boolean, onRetry: () => void = () => {}) {
+      if (cached) return Promise.resolve(cached);
+      if (pending) return pending;
+      const requestGeneration = generation;
+      const request = findDeviceLocation(geo, secure, onRetry).then(found => {
+        if (generation === requestGeneration) cached = found;
+        return found;
+      }).finally(() => { if (pending === request) pending = null; });
+      pending = request;
+      return request;
+    },
+    clear() { generation++; cached = null; pending = null; },
+  };
+}
+
 // Approximate city centers, used only after an explicit choice, never as device coordinates.
 export const CALIFORNIA_CITIES: (SearchLocation & { label: string })[] = [
   { label: "Berkeley", lat: 37.8715, lng: -122.2730 },

@@ -1,16 +1,23 @@
 "use client";
-import { useEffect, useRef, useState, type PointerEvent } from "react";
+import { prefersReducedMotion } from "../../lib/motion";
+import { useEffect, useReducer, useRef, useState, type PointerEvent } from "react";
 import { LocateFixed, Minus, Plus } from "lucide-react";
 import type { Viewpoint } from "../../lib/types";
-import { mapFocusOffset, mapFramePoints, mapViewportPadding, viewpointPanOptions, type MapLocation } from "../../lib/map-experience";
+import { mapFocusOffset, mapFramePoints, mapViewportPadding, viewpointPanOptions, visibleRecommendation, type MapLocation } from "../../lib/map-experience";
 import type * as Leaflet from "leaflet";
+import { addForecastLayer, type MapForecastState } from "../../lib/map-forecast-layer";
+import { terrainState } from "../../lib/terrain";
+import { sunPreviewViewpoint } from "../../lib/sun-preview";
+import { EMPTY_MAP_PREVIEW, mapPreviewReducer, mapPreviewZoom, restoreMapPreviewCamera } from "../../lib/map-preview";
+import MapSpotPreview from "./map-spot-preview";
 
 type Props = {
   viewpoints: Viewpoint[]; recommendations: Viewpoint[]; highlightedIds: string[];
   activeId: string | null; focusedId?: string | null; onSelect: (v: Viewpoint) => void; location: MapLocation | null;
-  onLocate: () => void; locating: boolean; searching: boolean; expanded: boolean;
+  onLocate: () => void; locating: boolean; locationAccess: boolean; searching: boolean; expanded: boolean;
+  forecastState: Omit<MapForecastState, "selected">; onCenter: (point: MapLocation) => void;
 };
-export default function ViewpointMap({ viewpoints, recommendations, highlightedIds, activeId, focusedId, onSelect, location, onLocate, locating, searching, expanded }: Props) {
+export default function ViewpointMap({ viewpoints, recommendations, highlightedIds, activeId, focusedId, onSelect, location, onLocate, locating, locationAccess, searching, expanded, forecastState, onCenter }: Props) {
   const container = useRef<HTMLDivElement>(null);
   const mapRef = useRef<Leaflet.Map | null>(null), layerRef = useRef<Leaflet.LayerGroup | null>(null);
   const leafletRef = useRef<typeof Leaflet | null>(null), markers = useRef(new Map<string, Leaflet.CircleMarker>());
@@ -20,10 +27,36 @@ export default function ViewpointMap({ viewpoints, recommendations, highlightedI
   const focusTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastVisible = useRef("");
   const lastRecommendations = useRef(recommendations);
+  const forecastLayer = useRef<ReturnType<typeof addForecastLayer> | null>(null), centerCallback = useRef(onCenter);
+  centerCallback.current = onCenter;
   const [ready, setReady] = useState(false), [error, setError] = useState(false), [tilesFailed, setTilesFailed] = useState(false);
   const [zoom, setZoom] = useState(12);
+  const [previewState, dispatchPreview] = useReducer(mapPreviewReducer, EMPTY_MAP_PREVIEW);
+  const previewStateRef = useRef(previewState); previewStateRef.current = previewState;
+  const hoverExit = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const cardId = previewState.hoveredId ?? previewState.pinnedId;
+  const card = viewpoints.find(v => v.id === cardId) ?? null;
+  const preview = sunPreviewViewpoint(viewpoints, focusedId, previewState.hoveredId, previewState.pinnedId ?? activeId);
+  const locateLabel = location ? "Back to my location" : locating ? "Finding your location…" : locationAccess ? "Retry device location" : "Find my location";
+  const keepPreview = () => { if (hoverExit.current !== null) clearTimeout(hoverExit.current); hoverExit.current = null; };
+  const leavePreview = (id: string) => {
+    keepPreview();
+    hoverExit.current = setTimeout(() => { hoverExit.current = null; dispatchPreview({ type: "leave", id }); }, 180);
+  };
+  const closePreview = () => {
+    keepPreview(); cancelFocus();
+    const returnView = previewStateRef.current.returnView;
+    dispatchPreview({ type: "close" });
+    const map = mapRef.current;
+    if (map && returnView) {
+      if (animation.current !== null) cancelAnimationFrame(animation.current);
+      animation.current = null;
+      restoreMapPreviewCamera(map, returnView, prefersReducedMotion());
+      targetZoom.current = returnView.zoom;
+    }
+  };
   selectRef.current = onSelect;
-  const reducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reducedMotion = () => prefersReducedMotion();
   const padding = () => {
     const home = container.current?.closest(".map-home");
     const mapBox = container.current?.getBoundingClientRect();
@@ -58,6 +91,10 @@ export default function ViewpointMap({ viewpoints, recommendations, highlightedI
         wheelPxPerZoomLevel: 110, zoomAnimation: true,
       }).setView([37.77, -122.43], 12);
       mapRef.current = map; layerRef.current = L.layerGroup().addTo(map);
+      map.on("click", closePreview);
+      map.on("keydown", event => { if (event.originalEvent.key === "Escape") closePreview(); });
+      forecastLayer.current = addForecastLayer(L, map);
+      map.on("moveend", () => { const p = map.getCenter(); centerCallback.current({ lat: p.lat, lng: p.lng }); });
       // Load the vector renderer only on the client, after Leaflet is ready.
       import("../../lib/map-basemap").then(({ addBasemap }) => {
         if (!cancelled) removeBasemap = addBasemap(L, map, setTilesFailed);
@@ -79,10 +116,12 @@ export default function ViewpointMap({ viewpoints, recommendations, highlightedI
     }).catch(() => { if (!cancelled) setError(true); });
     return () => {
       cancelled = true;
+      keepPreview();
       cancelFocus();
       if (animation.current !== null) cancelAnimationFrame(animation.current);
       animation.current = null; drag.current = null;
       removeBasemap?.();
+      forecastLayer.current?.remove(); forecastLayer.current = null;
       mapRef.current?.remove(); mapRef.current = null; markers.current.clear();
       layerRef.current = null; leafletRef.current = null;
     };
@@ -91,12 +130,24 @@ export default function ViewpointMap({ viewpoints, recommendations, highlightedI
     const L = leafletRef.current, layer = layerRef.current;
     if (!ready || !L || !layer) return;
     layer.clearLayers(); markers.current.clear();
+    dispatchPreview({ type: "reconcile", ids: viewpoints.map(v => v.id) });
     for (const v of viewpoints) {
-      const label = document.createElement("span"); label.textContent = v.name;
       const marker = L.circleMarker([v.lat, v.lng], {
-        radius: 5, fillColor: "#a78c6b", color: "#fffaf3", weight: 2, fillOpacity: .9,
-      }).bindTooltip(label, { direction: "top", className: "spot-tooltip" });
-      marker.on("click", () => selectRef.current(v));
+        radius: 5, fillColor: "#a78c6b", color: "#fffaf3", weight: 2, fillOpacity: .9, bubblingMouseEvents: false,
+      });
+      marker.on("click", () => {
+        keepPreview(); cancelFocus();
+        const alreadyPinned = previewStateRef.current.pinnedId === v.id;
+        if (alreadyPinned) { closePreview(); return; }
+        const map = mapRef.current;
+        if (!map) return;
+        map.stop();
+        const center = map.getCenter();
+        dispatchPreview({ type: "pin", id: v.id, view: { lat: center.lat, lng: center.lng, zoom: map.getZoom() } });
+        focusPoint(v, mapPreviewZoom(map.getZoom(), map.getMaxZoom()));
+      });
+      marker.on("mouseover", () => { keepPreview(); dispatchPreview({ type: "hover", id: v.id }); });
+      marker.on("mouseout", () => leavePreview(v.id));
       marker.addTo(layer); markers.current.set(v.id, marker);
     }
     if (location) {
@@ -105,16 +156,24 @@ export default function ViewpointMap({ viewpoints, recommendations, highlightedI
         .bindTooltip(location.label ? `Near ${location.label} (city center)` : "Your location").addTo(layer);
     }
   }, [ready, viewpoints, location]);
-  // Hover only highlights a pin. Camera movement is reserved for selection.
+  // Hover previews the sun and highlights a pin; only selection moves the camera.
   useEffect(() => {
     const highlighted = new Set(highlightedIds);
     for (const [id, marker] of markers.current) {
-      const active = id === activeId, shown = highlighted.has(id);
+      const active = id === preview?.id, shown = highlighted.has(id);
       marker.setStyle({ radius: active ? 13 : shown ? 10 : 5, fillColor: active ? "#392115" : shown ? "#dc632d" : "#a78c6b", weight: active ? 4 : shown ? 3 : 2, fillOpacity: shown || active ? 1 : .8 });
       if (shown || active) marker.bringToFront();
-      if (active) marker.openTooltip(); else marker.closeTooltip();
     }
-  }, [ready, viewpoints, location, highlightedIds, activeId]);
+  }, [ready, viewpoints, location, highlightedIds, preview?.id]);
+  useEffect(() => {
+    if (!ready) return;
+    forecastLayer.current?.update({ ...forecastState, selected: preview });
+    for (const v of viewpoints) {
+      const state = terrainState(v, forecastState.time, forecastState.terrain?.profiles[v.id]);
+      const blocked = state.state === "blocked";
+      markers.current.get(v.id)?.setStyle({ dashArray: blocked ? "3 3" : undefined, color: blocked ? "#694d6e" : "#fffaf3" });
+    }
+  }, [ready, forecastState, viewpoints, preview]);
   useEffect(() => {
     if (!ready || !focusedId) return;
     const target = viewpoints.find(v => v.id === focusedId);
@@ -130,23 +189,29 @@ export default function ViewpointMap({ viewpoints, recommendations, highlightedI
     if (!points.length) return;
     const bounds = L.latLngBounds(points.map(p => [p.lat, p.lng] as [number, number]));
     const size = map.getSize();
-    const options = { ...mapViewportPadding(size.x, size.y, padding()), maxZoom: points.length === 1 ? 12 : 14, animate: frameRef.current && !reducedMotion(), duration: .55 };
+    const safe = mapViewportPadding(size.x, size.y, padding());
+    const options = { ...safe, maxZoom: points.length === 1 ? 12 : 14, animate: frameRef.current && !reducedMotion(), duration: .55 };
+    cancelFocus(); keepPreview(); dispatchPreview({ type: "close" });
     map.stop();
-    if (options.animate) map.flyToBounds(bounds, options); else map.fitBounds(bounds, options);
+    if (searching && recommendations[0]) {
+      const inset = L.point(safe.paddingTopLeft).add(L.point(safe.paddingBottomRight));
+      const zoom = Math.max(10, Math.min(options.maxZoom, map.getBoundsZoom(bounds, false, inset)));
+      focusPoint(recommendations[0], zoom);
+    } else if (options.animate) map.flyToBounds(bounds, options); else map.fitBounds(bounds, options);
     frameRef.current = true;
   }, [ready, recommendations, location, searching]);
   useEffect(() => {
     const map = mapRef.current, L = leafletRef.current;
-    const next = highlightedIds.join("|");
-    if (lastRecommendations.current !== recommendations) { lastRecommendations.current = recommendations; lastVisible.current = next; return; }
+    const next = recommendations.filter(v => highlightedIds.includes(v.id)).map(v => v.id).join("|");
+    // The carousel reports its first measured cards one frame after its data
+    // changes. That reset must not override the new category's camera target.
+    if (lastRecommendations.current !== recommendations) { lastRecommendations.current = recommendations; lastVisible.current = ""; return; }
     if (!ready || !map || !L || !next) return;
     const changed = !!lastVisible.current && next !== lastVisible.current;
     lastVisible.current = next;
     if (!changed) return;
-    const shown = recommendations.filter(v => highlightedIds.includes(v.id));
-    if (!shown.length) return;
-    const center = L.latLngBounds(shown.map(v => [v.lat, v.lng] as [number, number])).getCenter();
-    focusPoint({ lat: center.lat, lng: center.lng });
+    const shown = visibleRecommendation(recommendations, highlightedIds);
+    if (shown) focusPoint(shown);
   }, [ready, recommendations, highlightedIds]);
   const smoothZoom = (delta: number) => {
     const map = mapRef.current; if (!map) return;
@@ -172,13 +237,15 @@ export default function ViewpointMap({ viewpoints, recommendations, highlightedI
   const endDrag = () => { if (!drag.current) return; drag.current = null; mapRef.current?.dragging.enable(); };
   return <div className={`map-shell immersive-map ${expanded ? "map-expanded" : ""}`}>
     <div className="leaflet-map" ref={container} role="region" aria-label={`Interactive map of ${viewpoints.length} viewpoints. Drag to pan; pinch, scroll, or Shift-drag vertically to zoom.`}
-      onPointerDownCapture={startDrag}
+      onPointerLeave={() => { const id = previewStateRef.current.hoveredId; if (id) leavePreview(id); }} onPointerDownCapture={startDrag}
       onPointerMoveCapture={e => { if (drag.current && e.pointerId === drag.current.pointer) { e.preventDefault(); e.stopPropagation(); dragZoom(drag.current.zoom + (drag.current.y - e.clientY) / 90); } }}
       onPointerUpCapture={endDrag} onPointerCancel={endDrag} onLostPointerCapture={endDrag} />
+    <MapSpotPreview map={mapRef.current} viewpoint={card} sunViewpoint={preview} time={forecastState.time} location={location} pinned={card?.id === previewState.pinnedId}
+      onEnter={keepPreview} onLeave={leavePreview} onClose={closePreview} onOpen={v => selectRef.current(v)} />
     {!ready && <div className="map-loading" role="status">{error ? "The map couldn’t load. You can still explore the spots below." : "Finding a fresh perspective…"}</div>}
     {tilesFailed && <p className="tile-notice" role="status">Map tiles are unavailable. Your spots are still here; reconnect to see the map.</p>}
     <div className="map-tools" aria-label="Map controls">
-      <button className="recenter-map" disabled={locating || !ready} title={location ? "Back to my location" : "Find my location"} aria-label={location ? "Back to my location" : "Find my location"} onClick={() => {
+      <button className="recenter-map" disabled={locating || !ready} title={locateLabel} aria-label={locateLabel} onClick={() => {
         const map = mapRef.current; cancelFocus();
         if (location && map) focusPoint(location, Math.max(12, map.getZoom())); else onLocate();
       }}><LocateFixed size={20} /></button>

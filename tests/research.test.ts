@@ -59,6 +59,9 @@ test("duplicate matching preserves nearby distinct overlooks and rejects private
   assert.equal(result.viewpoints.length, 1);
   assert.equal(result.merges.length, 1);
   assert.equal(result.viewpoints[0].id, "official");
+  const enriched = { ...base, id: "osm-node-2", name: "Researched coastal name" };
+  const original = { ...match, id: "osm-node-2", name: "Unnamed mapped overlook — Marin (2)" };
+  assert.equal(assemble([enriched], { viewpoints: [original] }).viewpoints.length, 1, "reviewed mapped IDs cannot be duplicated by their original unnamed row");
 });
 test("old or unverified facts are marked for rechecking", () => {
   const now = Date.parse("2026-10-16T00:00:00Z");

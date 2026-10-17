@@ -1,0 +1,77 @@
+[
+  {
+    "name": "San Francisco",
+    "lat": 37.7749,
+    "lng": -122.4194,
+    "instant": "2026-06-21T19:00:00Z",
+    "source": "https://aa.usno.navy.mil/api/celnav?date=2026-06-21&time=19%3A00%3A00&coords=37.7749%2C-122.4194",
+    "sun": [
+      {
+        "almanac_data": {
+          "dec": 23.437247,
+          "gha": 104.529653,
+          "hc": 69.033344,
+          "zn": 128.033098
+        },
+        "altitude_corrections": {
+          "isCorrected": true,
+          "pa": 0.000855,
+          "refr": -0.006435,
+          "sd": 0.262324,
+          "sum": 0.256744
+        },
+        "object": "Sun"
+      }
+    ]
+  },
+  {
+    "name": "Berkeley",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "instant": "2026-12-21T20:00:00Z",
+    "source": "https://aa.usno.navy.mil/api/celnav?date=2026-12-21&time=20%3A00%3A00&coords=37.8715%2C-122.273",
+    "sun": [
+      {
+        "almanac_data": {
+          "dec": -23.43741,
+          "gha": 120.442436,
+          "hc": 28.666951,
+          "zn": 178.085804
+        },
+        "altitude_corrections": {
+          "isCorrected": true,
+          "pa": 0.002172,
+          "refr": -0.030488,
+          "sd": 0.270981,
+          "sum": 0.242665
+        },
+        "object": "Sun"
+      }
+    ]
+  },
+  {
+    "name": "San Jose",
+    "lat": 37.3382,
+    "lng": -121.8863,
+    "instant": "2026-03-08T22:00:00Z",
+    "source": "https://aa.usno.navy.mil/api/celnav?date=2026-03-08&time=22%3A00%3A00&coords=37.3382%2C-121.8863",
+    "sun": [
+      {
+        "almanac_data": {
+          "dec": -4.612634,
+          "gha": 147.34349,
+          "hc": 41.818479,
+          "zn": 215.092053
+        },
+        "altitude_corrections": {
+          "isCorrected": true,
+          "pa": 0.001827,
+          "refr": -0.018676,
+          "sd": 0.268533,
+          "sum": 0.251684
+        },
+        "object": "Sun"
+      }
+    ]
+  }
+]

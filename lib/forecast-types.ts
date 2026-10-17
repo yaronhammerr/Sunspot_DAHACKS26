@@ -1,0 +1,6 @@
+export type ForecastHour = { time: number; cloud: number | null; low: number | null; mid: number | null; high: number | null; visibility: number | null; precipitation: number | null; direct: number | null };
+export type ForecastCell = { id: string; lat: number; lng: number; modelLat: number; modelLng: number; hours: ForecastHour[] };
+export type Forecast = { version: 1; fetchedAt: number; source: "Open-Meteo · NOAA GFS/HRRR seamless"; resolution: "Hourly · regional 0.3° sample grid"; cells: ForecastCell[]; stale: boolean; cache: "edge" | "process"; error?: string };
+export type ForecastResponse = { forecast: Forecast | null; error?: string; retryAt?: number };
+export type TerrainProfile = { elevation: number; lat?: number; lng?: number; groundSource?: { sourceUrl: string; rasterId: number; nativeResolution: number; checkedAt: string }; angles: (number | null)[]; coverage: "complete" | "partial"; validFraction: number };
+export type TerrainData = { version: 1; generatedAt: string; source: string; resolutionMeters: number; bearingStep: number; observerHeightMeters: number; maxDistanceMeters: number; refraction: string; bounds: number[]; profiles: Record<string, TerrainProfile>; unavailable: Record<string, string>; checks?: unknown[] };

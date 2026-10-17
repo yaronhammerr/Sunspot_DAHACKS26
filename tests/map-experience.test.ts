@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { localRecommendations, mapFramePoints, mapFocusOffset, mapViewportPadding, viewpointPanOptions } from "../lib/map-experience";
+import { localRecommendations, mapFramePoints, mapFocusOffset, mapViewportPadding, viewpointPanOptions, visibleRecommendation } from "../lib/map-experience";
 import type { Viewpoint } from "../lib/types";
 const origin = { lat: 37.77, lng: -122.43 };
 const spot = (id: string, lat: number): Viewpoint => ({ id, name: id, lat, lng: origin.lng, county: "Test", description: "", tags: [], photos: [], featured: null, sourceUrl: "" });
@@ -29,6 +29,18 @@ test("outside coverage opens on the user, while an explicit distant search frame
   assert.deepEqual(mapFramePoints(views, outside, true), [{ lat: 37.8, lng: origin.lng }]);
   assert.deepEqual(mapFramePoints([], origin), [origin]);
   assert.deepEqual(mapFramePoints([], null), []);
+});
+test("category framing excludes the user's location and distant pins instead of an empty midpoint", () => {
+  const coast = spot("coast", 37.1), nearby = spot("nearby", 37.2), distant = spot("distant", 40);
+  assert.deepEqual(mapFramePoints([coast, nearby, distant], origin, true), [coast, nearby].map(({ lat, lng }) => ({ lat, lng })));
+  assert.deepEqual(mapFramePoints([distant], origin, true), [{ lat: distant.lat, lng: distant.lng }]);
+  assert.deepEqual(mapFramePoints([], origin, true), [], "empty filters must not move the user to an unrelated place");
+});
+test("carousel camera targets an actual visible recommendation and ignores stale category IDs", () => {
+  const a = spot("a", 37.8), b = spot("b", 40), c = spot("c", 41);
+  assert.equal(visibleRecommendation([a, b, c], ["b", "c"]), b);
+  assert.equal(visibleRecommendation([b, c], ["old-category", "a"]), null);
+  assert.equal(visibleRecommendation([a, b, c], ["c", "b"]), b);
 });
 test("focused pins sit between floating controls and cards, even on short screens", () => {
   assert.deepEqual(mapFocusOffset(1000, 800, { paddingTopLeft: [28, 180], paddingBottomRight: [72, 350] }), [-22, -85]);

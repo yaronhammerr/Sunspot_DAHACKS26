@@ -7,6 +7,7 @@ import { resolve } from 'node:path';
 import { createHash } from 'node:crypto';
 import { applyPhotoPolicy, imageDimensions, PHOTO_POLICY } from './photo-policy.mjs';
 import { applyViewpointNames } from './viewpoint-names.mjs';
+import { applySceneryPolicy } from './scenery-policy.mjs';
 const root = new URL('../', import.meta.url);
 const read = async name => JSON.parse(await readFile(new URL(name, root), 'utf8'));
 export const unknown = (note = 'Not researched. Confirm with the land manager before visiting.') => ({ value: null, status: 'unknown', sourceIds: [], checkedAt: null, note });
@@ -18,15 +19,6 @@ export function samePlace(a,b) {
   const aw=words(a.name),bw=words(b.name);
   const shorter=aw.length<=bw.length?aw:bw,longer=aw.length<=bw.length?bw:aw;
   return shorter.length>0 && shorter.every(w=>longer.includes(w));
-}
-function scenery(tags) {
-  const text=[tags.name,tags.description].filter(Boolean).join(' ').toLowerCase();const out=[];
-  if(/ocean|coast|pacific|beach|sea cliff/.test(text))out.push('ocean');
-  if(/bridge|golden gate/.test(text))out.push('bridges');
-  if(/skyline|downtown/.test(text))out.push('skyline');
-  if(/hill|mount|peak|ridge|summit/.test(text))out.push('hills');
-  if(/forest|wood|tree|park|preserve|garden/.test(text))out.push('greenery');
-  return out;
 }
 export function mappedViewpoint(row, snapshot) {
   const t=row.tags, source={id:row.id,title:'OpenStreetMap community mapping',url:row.sourceUrl,publisher:'OpenStreetMap contributors',retrievedAt:snapshot.retrievedAt,kind:'community'};
@@ -43,13 +35,15 @@ export function mappedViewpoint(row, snapshot) {
   if(t.seasonal)visit.seasonalAccess=fact(`Mapped seasonal access: ${t.seasonal}`);
   if(t.ele && /^-?\d+(\.\d+)?\s*(m|ft|feet)?$/.test(t.ele)) { const feet=/ft|feet/.test(t.ele);visit.elevationFeet=fact(Math.round(parseFloat(t.ele)*(feet?1:3.28084)),`Mapped point elevation (${t.ele}${feet?'':' metres'}), converted to feet. This is not route elevation gain.`); }
   const facilities=['toilets','drinking_water','bench','shelter','parking'].filter(k=>t[k]).map(k=>`${k.replaceAll('_',' ')}: ${t[k]}`);if(facilities.length)visit.facilities=fact(facilities.join('; '));
-  return {id:row.id,name:row.name,lat:row.lat,lng:row.lng,county:row.county,region:row.region,description:'A community-mapped viewpoint. Confirm public access, safe routes and current conditions with the land manager before visiting.',tags:scenery(t),featured:null,sourceUrl:row.sourceUrl,photos:[],visit};
+  return {id:row.id,name:row.name,lat:row.lat,lng:row.lng,county:row.county,region:row.region,description:'A community-mapped viewpoint. Confirm public access, safe routes and current conditions with the land manager before visiting.',tags:[],featured:null,sourceUrl:row.sourceUrl,photos:[],visit};
 }
 export function assemble(curated,snapshot) {
   const result=structuredClone(curated),merges=[];
   for(const row of snapshot.viewpoints) {
     if(['private','no'].includes(row.tags.access)||row.tags.foot==='no')continue;
-    const match=result.find(v=>samePlace(v,row));
+    // A reviewed profile can enrich an existing mapped ID without duplicating
+    // its original unnamed discovery record.
+    const match=result.find(v=>v.id===row.id || samePlace(v,row));
     if(match){merges.push({keptId:match.id,mappedId:row.id,sourceUrl:row.sourceUrl});continue;}
     result.push(mappedViewpoint(row,snapshot));
   }
@@ -68,7 +62,8 @@ async function main(){
   const photoManifest=await read('data/viewpoint-photos.json');
   const {viewpoints:photoBacked,excluded}=applyPhotoPolicy(inventory,photoManifest);
   const names=await read('data/viewpoint-names.json');
-  const viewpoints=applyViewpointNames(photoBacked,names);
+  const sceneryManifest=await read('data/viewpoint-scenery.json');
+  const viewpoints=applySceneryPolicy(applyViewpointNames(photoBacked,names),sceneryManifest);
   if(!viewpoints.length)throw new Error('No viewpoints have verified preview photos. Review the photo manifest before building.');
   for(const photo of viewpoints.flatMap(v=>v.photos)) {
     const file=await readFile(new URL('public'+photo.url,root));
@@ -77,7 +72,7 @@ async function main(){
     if(dimensions.width!==photo.width || dimensions.height!==photo.height)throw new Error(`Photo dimensions do not match verified pixels: ${photo.url}`);
   }
   const counties=coverageFor(viewpoints);
-  const coverage={total:viewpoints.length,officialProfiles:viewpoints.filter(v=>v.visit.reviewStatus==='official-source-reviewed').length,communityMapped:viewpoints.filter(v=>v.visit.reviewStatus==='community-mapped').length,routeCount:viewpoints.reduce((n,v)=>n+v.visit.routes.length,0),photoVerified:viewpoints.length,discoveryInventory:inventory.length,excludedWithoutPhoto:excluded.length,complete:false,note:'Only viewpoints with reviewed, high-resolution preview photos are published. Discovery records without a verified photo are excluded from the app. Official-source profiles and community-mapped locations are distinguished. Missing visitor details remain unknown. Check agency alerts and signs before travel.'};
+  const coverage={total:viewpoints.length,officialProfiles:viewpoints.filter(v=>v.visit.reviewStatus==='official-source-reviewed').length,communityMapped:viewpoints.filter(v=>v.visit.reviewStatus==='community-mapped').length,routeCount:viewpoints.reduce((n,v)=>n+v.visit.routes.length,0),photoVerified:viewpoints.length,sceneryReviewed:viewpoints.length,sceneryUnclassified:viewpoints.filter(v=>!v.tags.length).length,discoveryInventory:inventory.length,excludedWithoutPhoto:excluded.length,complete:false,note:'Only viewpoints with reviewed, high-resolution preview photos and a recorded scenery review are published. Unconfirmed scenery is excluded from category filters. Official-source profiles and community-mapped locations are distinguished. Missing visitor details remain unknown. Check agency alerts and signs before travel.'};
   const evidenceDates=viewpoints.flatMap(v=>v.visit.sources.map(s=>s.retrievedAt));
   const result={schemaVersion:3,importedAt:[snapshot.retrievedAt,...evidenceDates,photoManifest.checkedAt].sort().at(-1),counties:counties.map(c=>c.county),sources:[{name:'OpenStreetMap contributors · ODbL',url:'https://www.openstreetmap.org/copyright'},{name:'Geofabrik Northern California extract',url:snapshot.extractUrl},{name:'Official park sources, per fact in viewpoint details',url:'https://www.nps.gov/'},{name:'Wikimedia Commons · individual photo licenses',url:'https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia'}],coverage,viewpoints,importStatus:{complete:false,scope:snapshot.scope,dataTimestamp:snapshot.dataTimestamp,mergedDuplicates:merges.length,photoCheckedAt:photoManifest.checkedAt,photoPolicy:PHOTO_POLICY}};
   const queue=viewpoints.map(v=>({id:v.id,name:v.name,county:v.county,region:v.region,priority:v.region==='bay-area'?1:2,status:v.visit.reviewStatus,sourceUrl:v.sourceUrl,missing:[...core.filter(k=>v.visit[k].value===null),...(!v.visit.routes.some(r=>r.distanceMiles.value!==null)?['route-distance']:[]),...(!v.visit.routes.some(r=>r.elevationGainFeet.value!==null)?['route-elevation-gain']:[]),...Object.entries(v.visit.rules).filter(([,f])=>f.value===null).map(([k])=>`rule:${k}`)]})).sort((a,b)=>a.priority-b.priority||b.missing.length-a.missing.length||a.name.localeCompare(b.name));

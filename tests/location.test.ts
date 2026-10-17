@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { findDeviceLocation, LocationError } from "../lib/location";
+import { createDeviceLocationSession, findDeviceLocation, LocationError } from "../lib/location";
 
 function mockGeo(results: (number | { lat: number; lng: number })[]) {
   const options: PositionOptions[] = [];
@@ -18,6 +18,30 @@ test("successful device location resolves coordinates with no extra request", as
   const { geo, options } = mockGeo([point]);
   assert.deepEqual(await findDeviceLocation(geo, true), point);
   assert.equal(options.length, 1);
+});
+test("enabled device location is reused across controls until explicitly cleared", async () => {
+  const session = createDeviceLocationSession(), { geo, options } = mockGeo([point, { lat: 38, lng: -122 }]);
+  assert.deepEqual(await session.find(geo, true), point);
+  assert.deepEqual(await session.find(geo, true), point);
+  assert.deepEqual(await session.find(geo, true), point);
+  assert.equal(options.length, 1);
+  session.clear();
+  assert.deepEqual(await session.find(geo, true), { lat: 38, lng: -122 });
+  assert.equal(options.length, 2);
+});
+test("simultaneous location controls share one request and cleared late fixes are not cached", async () => {
+  const session = createDeviceLocationSession();
+  let calls = 0, resolvePosition!: PositionCallback;
+  const geo = { getCurrentPosition(success: PositionCallback) { calls++; resolvePosition = success; } };
+  const first = session.find(geo, true), second = session.find(geo, true);
+  assert.equal(calls, 1);
+  session.clear();
+  resolvePosition({ coords: { latitude: point.lat, longitude: point.lng } } as GeolocationPosition);
+  await Promise.all([first, second]);
+  const next = session.find(geo, true);
+  assert.equal(calls, 2);
+  resolvePosition({ coords: { latitude: 38, longitude: -122 } } as GeolocationPosition);
+  assert.deepEqual(await next, { lat: 38, lng: -122 });
 });
 for (const code of [2, 3]) test(`provider error ${code} retries a fresh high-accuracy fix`, async () => {
   const { geo, options } = mockGeo([code, point]);

@@ -1,0 +1,260 @@
+{
+  "source": "USGS Elevation Point Query Service",
+  "documentationUrl": "https://apps.nationalmap.gov/epqs/",
+  "rasterSha256": "d3e8a1284d7b97c31e2d553114ec3f80356b198c490b748f7d8fd16470472492",
+  "points": [
+    {
+      "key": "twin-peaks",
+      "kind": "observer",
+      "viewpointId": "twin-peaks",
+      "lat": 37.7544,
+      "lng": -122.4477,
+      "sourceUrl": "https://epqs.nationalmap.gov/v1/json?x=-122.4477&y=37.7544&wkid=4326&units=Meters&includeDate=true",
+      "response": {
+        "location": {
+          "x": -122.4477,
+          "y": 37.7544,
+          "spatialReference": {
+            "wkid": 4326,
+            "latestWkid": 4326
+          }
+        },
+        "locationId": 0,
+        "value": "250.198059082",
+        "rasterId": 66659,
+        "resolution": 1,
+        "attributes": {
+          "AcquisitionDate": "3/4/2023"
+        }
+      },
+      "checkedAt": "2026-10-16T21:37:28.657999+00:00",
+      "pointElevationMeters": 250.198059082,
+      "rasterElevationMeters": 249.70489501953125,
+      "rasterMinusPointMeters": -0.49
+    },
+    {
+      "key": "twin-peaks-ray",
+      "kind": "ray",
+      "viewpointId": "twin-peaks",
+      "lat": 37.7540472063411,
+      "lng": -122.44726151245733,
+      "bearing": 135.5,
+      "distanceMeters": 55,
+      "sourceUrl": "https://epqs.nationalmap.gov/v1/json?x=-122.44726151245733&y=37.7540472063411&wkid=4326&units=Meters&includeDate=true",
+      "response": {
+        "location": {
+          "x": -122.44726151245733,
+          "y": 37.7540472063411,
+          "spatialReference": {
+            "wkid": 4326,
+            "latestWkid": 4326
+          }
+        },
+        "locationId": 0,
+        "value": "256.653350830",
+        "rasterId": 66659,
+        "resolution": 1,
+        "attributes": {
+          "AcquisitionDate": "3/4/2023"
+        }
+      },
+      "checkedAt": "2026-10-16T21:38:04.851752+00:00",
+      "pointElevationMeters": 256.65335083,
+      "rasterElevationMeters": 258.58685302734375,
+      "rasterMinusPointMeters": 1.93,
+      "pointQuerySampleAngleDegrees": 4.941,
+      "rasterSampleAngleDegrees": 7.439,
+      "note": "Angle to this single sampled point, with Earth curvature and 1.7 metre observer height. The finer point query is not a survey of the whole ray or the true maximum horizon."
+    },
+    {
+      "key": "muir-beach-overlook",
+      "kind": "observer",
+      "viewpointId": "muir-beach-overlook",
+      "lat": 37.8636,
+      "lng": -122.5868,
+      "sourceUrl": "https://epqs.nationalmap.gov/v1/json?x=-122.5868&y=37.8636&wkid=4326&units=Meters&includeDate=true",
+      "response": {
+        "location": {
+          "x": -122.5868,
+          "y": 37.8636,
+          "spatialReference": {
+            "wkid": 4326,
+            "latestWkid": 4326
+          }
+        },
+        "locationId": 0,
+        "value": "133.503845215",
+        "rasterId": 84452,
+        "resolution": 1,
+        "attributes": {
+          "AcquisitionDate": "3/2/2018"
+        }
+      },
+      "checkedAt": "2026-10-16T21:37:29.255670+00:00",
+      "pointElevationMeters": 133.503845215,
+      "rasterElevationMeters": 121.27960205078125,
+      "rasterMinusPointMeters": -12.22
+    },
+    {
+      "key": "muir-beach-overlook-ray",
+      "kind": "ray",
+      "viewpointId": "muir-beach-overlook",
+      "lat": 37.863949753193346,
+      "lng": -122.58635697641331,
+      "bearing": 45,
+      "distanceMeters": 55,
+      "sourceUrl": "https://epqs.nationalmap.gov/v1/json?x=-122.58635697641331&y=37.863949753193346&wkid=4326&units=Meters&includeDate=true",
+      "response": {
+        "location": {
+          "x": -122.58635697641331,
+          "y": 37.863949753193346,
+          "spatialReference": {
+            "wkid": 4326,
+            "latestWkid": 4326
+          }
+        },
+        "locationId": 0,
+        "value": "147.558593750",
+        "rasterId": 84452,
+        "resolution": 1,
+        "attributes": {
+          "AcquisitionDate": "3/2/2018"
+        }
+      },
+      "checkedAt": "2026-10-16T21:38:06.476283+00:00",
+      "pointElevationMeters": 147.55859375,
+      "rasterElevationMeters": 138.24420166015625,
+      "rasterMinusPointMeters": -9.31,
+      "pointQuerySampleAngleDegrees": 12.66,
+      "rasterSampleAngleDegrees": 15.511,
+      "note": "Angle to this single sampled point, with Earth curvature and 1.7 metre observer height. The finer point query is not a survey of the whole ray or the true maximum horizon."
+    },
+    {
+      "key": "mount-tamalpais",
+      "kind": "observer",
+      "viewpointId": "mount-tamalpais",
+      "lat": 37.9290002,
+      "lng": -122.5778103,
+      "sourceUrl": "https://epqs.nationalmap.gov/v1/json?x=-122.5778103&y=37.9290002&wkid=4326&units=Meters&includeDate=true",
+      "response": {
+        "location": {
+          "x": -122.5778103,
+          "y": 37.9290002,
+          "spatialReference": {
+            "wkid": 4326,
+            "latestWkid": 4326
+          }
+        },
+        "locationId": 0,
+        "value": "781.652709961",
+        "rasterId": 84452,
+        "resolution": 1,
+        "attributes": {
+          "AcquisitionDate": "3/2/2018"
+        }
+      },
+      "checkedAt": "2026-10-16T21:37:30.835640+00:00",
+      "pointElevationMeters": 781.652709961,
+      "rasterElevationMeters": 757.439453125,
+      "rasterMinusPointMeters": -24.21
+    },
+    {
+      "key": "mount-tamalpais-ray",
+      "kind": "ray",
+      "viewpointId": "mount-tamalpais",
+      "lat": 37.928999797922415,
+      "lng": -122.5875586041118,
+      "bearing": 270,
+      "distanceMeters": 855,
+      "sourceUrl": "https://epqs.nationalmap.gov/v1/json?x=-122.5875586041118&y=37.928999797922415&wkid=4326&units=Meters&includeDate=true",
+      "response": {
+        "location": {
+          "x": -122.5875586041118,
+          "y": 37.928999797922415,
+          "spatialReference": {
+            "wkid": 4326,
+            "latestWkid": 4326
+          }
+        },
+        "locationId": 0,
+        "value": "761.119689941",
+        "rasterId": 84452,
+        "resolution": 1,
+        "attributes": {
+          "AcquisitionDate": "3/2/2018"
+        }
+      },
+      "checkedAt": "2026-10-16T21:38:07.646840+00:00",
+      "pointElevationMeters": 761.119689941,
+      "rasterElevationMeters": 750.8978271484375,
+      "rasterMinusPointMeters": -10.22,
+      "pointQuerySampleAngleDegrees": -1.493,
+      "rasterSampleAngleDegrees": -0.556,
+      "note": "Angle to this single sampled point, with Earth curvature and 1.7 metre observer height. The finer point query is not a survey of the whole ray or the true maximum horizon."
+    },
+    {
+      "key": "mount-tamalpais-old-pin",
+      "kind": "superseded-observer",
+      "lat": 37.9235,
+      "lng": -122.5779,
+      "sourceUrl": "https://epqs.nationalmap.gov/v1/json?x=-122.5779&y=37.9235&wkid=4326&units=Meters&includeDate=true",
+      "response": {
+        "location": {
+          "x": -122.5779,
+          "y": 37.9235,
+          "spatialReference": {
+            "wkid": 4326,
+            "latestWkid": 4326
+          }
+        },
+        "locationId": 0,
+        "value": "578.533142090",
+        "rasterId": 84452,
+        "resolution": 1,
+        "attributes": {
+          "AcquisitionDate": "3/2/2018"
+        }
+      },
+      "checkedAt": "2026-10-16T21:37:32.464731+00:00",
+      "pointElevationMeters": 578.53314209,
+      "rasterElevationMeters": 575.451171875,
+      "rasterMinusPointMeters": -3.08
+    },
+    {
+      "key": "pacific-ocean",
+      "kind": "ocean",
+      "lat": 37.86,
+      "lng": -122.8,
+      "sourceUrl": "https://epqs.nationalmap.gov/v1/json?x=-122.8&y=37.86&wkid=4326&units=Meters&includeDate=true",
+      "response": {
+        "location": {
+          "x": -122.8,
+          "y": 37.86,
+          "spatialReference": {
+            "wkid": 4326,
+            "latestWkid": 4326
+          }
+        },
+        "locationId": 0,
+        "value": "-47.318119049",
+        "rasterId": 16342,
+        "resolution": 3.086419871794868e-05,
+        "attributes": {
+          "AcquisitionDate": "11/4/2010"
+        }
+      },
+      "checkedAt": "2026-10-16T21:37:35.015403+00:00",
+      "pointElevationMeters": -47.318119049,
+      "rasterElevationMeters": 0.0,
+      "rasterMinusPointMeters": 47.32
+    }
+  ],
+  "scope": "Three featured viewpoints, three inland ray maxima samples, one corrected pin and one ocean sample. This is a sanity check, not exhaustive validation or a measured horizon-accuracy claim.",
+  "limitations": [
+    "The exported ~89 by 111 metre raster smooths narrow summits and coastal cliffs. Its elevation can differ substantially from the finer EPQS source.",
+    "Nearby sample-angle differences of several degrees occur in these checks; no blanket sub-degree horizon accuracy or exact obstruction minute is established.",
+    "A higher-resolution point elevation does not validate terrain between sampled points or distant horizon bearings.",
+    "EPQS can report bathymetry offshore. Its seabed height must not be confused with the sea surface. This report retains the raw USGS response rather than converting it to sea level.",
+    "Viewpoint pins are approximate feature locations; buildings, vegetation, guardrails and the actual standing position are not modelled."
+  ]
+}

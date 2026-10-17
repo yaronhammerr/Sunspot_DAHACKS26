@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-10-16",
-  "scope": "All 1,501 existing discovery entries, named and unnamed; primary media source: Wikimedia Commons.",
+  "checkedAt": "2026-10-17",
+  "scope": "The original 1,501-place discovery photo search plus six added Bay Area coastal destinations, researched by named Commons search and primary-source place/coordinate review. Original per-place research dates are retained.",
   "radiusMeters": 150,
   "photoMinimum": {
     "longEdge": 1600,
@@ -9,10 +9,10 @@
     "panoramaHeight": 400
   },
   "summary": {
-    "inventory": 1501,
+    "inventory": 1507,
     "coordinateSearches": 1501,
-    "namedSearches": 578,
-    "withCandidates": 773,
+    "namedSearches": 584,
+    "withCandidates": 779,
     "incomplete": 0
   },
   "viewpoints": [
@@ -37838,6 +37838,114 @@
       "candidatesFound": 20,
       "resolutionAndLicenseQualified": 17,
       "missingSearches": []
+    },
+    {
+      "id": "fitzgerald-bluff",
+      "name": "Fitzgerald Marine Reserve — Coastal Bluff",
+      "county": "San Mateo",
+      "checkedAt": "2026-10-17",
+      "searches": [
+        {
+          "method": "name",
+          "query": "\"Fitzgerald Marine Reserve\"",
+          "status": "searched",
+          "returned": 20
+        }
+      ],
+      "candidatesFound": 20,
+      "resolutionAndLicenseQualified": 16,
+      "missingSearches": [],
+      "note": "Named destination search plus primary-source place/coordinate review. Approved preview assets were decoded and visually reviewed separately; no coordinate-radius API search is claimed."
+    },
+    {
+      "id": "pillar-point-bluff",
+      "name": "Pillar Point Bluff — Pacific View",
+      "county": "San Mateo",
+      "checkedAt": "2026-10-17",
+      "searches": [
+        {
+          "method": "name",
+          "query": "\"Pillar Point Bluff\"",
+          "status": "searched",
+          "returned": 20
+        }
+      ],
+      "candidatesFound": 20,
+      "resolutionAndLicenseQualified": 17,
+      "missingSearches": [],
+      "note": "Named destination search plus primary-source place/coordinate review. Approved preview assets were decoded and visually reviewed separately; no coordinate-radius API search is claimed."
+    },
+    {
+      "id": "montara-beach",
+      "name": "Montara State Beach — Pacific Shore",
+      "county": "San Mateo",
+      "checkedAt": "2026-10-17",
+      "searches": [
+        {
+          "method": "name",
+          "query": "\"Montara State Beach\"",
+          "status": "searched",
+          "returned": 13
+        }
+      ],
+      "candidatesFound": 13,
+      "resolutionAndLicenseQualified": 9,
+      "missingSearches": [],
+      "note": "Named destination search plus primary-source place/coordinate review. Approved preview assets were decoded and visually reviewed separately; no coordinate-radius API search is claimed."
+    },
+    {
+      "id": "gray-whale-cove",
+      "name": "Gray Whale Cove — Bluff and Beach",
+      "county": "San Mateo",
+      "checkedAt": "2026-10-17",
+      "searches": [
+        {
+          "method": "name",
+          "query": "\"Gray Whale Cove\"",
+          "status": "searched",
+          "returned": 20
+        }
+      ],
+      "candidatesFound": 20,
+      "resolutionAndLicenseQualified": 18,
+      "missingSearches": [],
+      "note": "Named destination search plus primary-source place/coordinate review. Approved preview assets were decoded and visually reviewed separately; no coordinate-radius API search is claimed."
+    },
+    {
+      "id": "francis-beach",
+      "name": "Francis Beach — Half Moon Bay",
+      "county": "San Mateo",
+      "checkedAt": "2026-10-17",
+      "searches": [
+        {
+          "method": "name",
+          "query": "\"Francis Beach\" \"Half Moon Bay\"",
+          "status": "searched",
+          "returned": 6
+        }
+      ],
+      "candidatesFound": 6,
+      "resolutionAndLicenseQualified": 3,
+      "missingSearches": [],
+      "note": "Named destination search plus primary-source place/coordinate review. Approved preview assets were decoded and visually reviewed separately; no coordinate-radius API search is claimed."
+    },
+    {
+      "id": "pacifica-beach",
+      "name": "Pacifica State Beach — Linda Mar",
+      "county": "San Mateo",
+      "checkedAt": "2026-10-17",
+      "searches": [
+        {
+          "method": "name",
+          "query": "\"Pacifica State Beach\"",
+          "status": "searched",
+          "returned": 20
+        }
+      ],
+      "candidatesFound": 20,
+      "resolutionAndLicenseQualified": 18,
+      "missingSearches": [],
+      "note": "Named destination search plus primary-source place/coordinate review. Approved preview assets were decoded and visually reviewed separately; no coordinate-radius API search is claimed."
     }
   ]
 }

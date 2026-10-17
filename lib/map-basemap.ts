@@ -2,6 +2,7 @@ import type * as Leaflet from "leaflet";
 import { maplibreGL } from "@maplibre/maplibre-gl-leaflet";
 import { getVersion, setWorkerUrl, type StyleSpecification } from "maplibre-gl";
 import { prepareMapStyle } from "./map-style";
+import { bindBasemapLifecycle } from "./map-basemap-lifecycle";
 import "maplibre-gl/dist/maplibre-gl.css";
 
 // OpenFreeMap permits commercial use without registration or an API key.
@@ -66,7 +67,9 @@ export function addBasemap(L: typeof Leaflet, map: Leaflet.Map, onUnavailable: (
     gl.on("webglcontextlost", fallback);
     gl.once("style.load", onStyleLoad);
     gl.once("load", onLoad);
+    const detachLifecycle = bindBasemapLifecycle(L, map, vector);
     detachVectorEvents = () => {
+      detachLifecycle();
       gl.off("error", onError); gl.off("webglcontextlost", fallback);
       gl.off("style.load", onStyleLoad); gl.off("load", onLoad);
     };

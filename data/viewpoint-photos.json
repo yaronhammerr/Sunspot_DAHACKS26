@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-16",
+  "checkedAt": "2026-10-17",
   "policy": {
     "minLongEdge": 1600,
     "minShortEdge": 900,
@@ -12325,6 +12325,170 @@
             "status": "verified",
             "checkedAt": "2026-10-16",
             "subjectNote": "Full-resolution image reviewed against explicit source description: Pacific Ocean in Carmel Highlands from an overlook along CA-1. Rocky shoreline, cypresses and nearby independently captioned Carmel Highlands photographs agree with this location; camera coordinates are about 19 m from the mapped overlook."
+          }
+        }
+      ]
+    },
+    "fitzgerald-bluff": {
+      "photos": [
+        {
+          "url": "/viewpoints/photos/609b7a3d510b6a8e280c.png",
+          "width": 1920,
+          "height": 1453,
+          "sourceWidth": 3223,
+          "sourceHeight": 2439,
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/67/Fitzgerald_Marine_Reserve_at_low_tide_during_the_2025_King_Tides.png",
+          "author": "E mln e",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fitzgerald_Marine_Reserve_at_low_tide_during_the_2025_King_Tides.png",
+          "caption": "Fitzgerald Marine Reserve at low tide during the 2025 King Tides.png",
+          "sha256": "609b7a3d510b6a8e280cf16047fee5694aa6fca58ed1a6f211a0d72f574c5596",
+          "bytes": 3949134,
+          "verification": {
+            "status": "verified",
+            "checkedAt": "2026-10-17",
+            "subjectNote": "Decoded photo and published source description visually reviewed: coastal scenery at Fitzgerald Marine Reserve — Coastal Bluff. No upscaling; historical photograph, not current weather."
+          }
+        },
+        {
+          "url": "/viewpoints/photos/07e4f88e6e7f67517081.jpg",
+          "width": 1920,
+          "height": 1336,
+          "sourceWidth": 2144,
+          "sourceHeight": 1492,
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/74/Mosserazorback.jpg",
+          "author": "User:Anlace",
+          "license": "Public domain",
+          "licenseUrl": null,
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mosserazorback.jpg",
+          "caption": "Mosserazorback.jpg",
+          "sha256": "07e4f88e6e7f67517081c25b48a3ca9b1d8f815feebb94c327ad2f2be8322d66",
+          "bytes": 386779,
+          "verification": {
+            "status": "verified",
+            "checkedAt": "2026-10-17",
+            "subjectNote": "Decoded photo and published source description visually reviewed: coastal scenery at Fitzgerald Marine Reserve — Coastal Bluff. No upscaling; historical photograph, not current weather."
+          }
+        }
+      ]
+    },
+    "francis-beach": {
+      "photos": [
+        {
+          "url": "/viewpoints/photos/2e2b9f2f1c4cc2d818a0.jpg",
+          "width": 1920,
+          "height": 1440,
+          "sourceWidth": 3072,
+          "sourceHeight": 2304,
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Half_Moon_Bay_State_Beach_%28Francis%29_L1_2007-Aug.jpg",
+          "author": "Rep07",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Half_Moon_Bay_State_Beach_(Francis)_L1_2007-Aug.jpg",
+          "caption": "Half Moon Bay State Beach (Francis) L1 2007-Aug.jpg",
+          "sha256": "2e2b9f2f1c4cc2d818a03c5c8be7c8f0d9f157b90f319ee1071cbf806a08ffa9",
+          "bytes": 560075,
+          "verification": {
+            "status": "verified",
+            "checkedAt": "2026-10-17",
+            "subjectNote": "Decoded photo and published source description visually reviewed: coastal scenery at Francis Beach — Half Moon Bay. No upscaling; historical photograph, not current weather."
+          }
+        }
+      ]
+    },
+    "gray-whale-cove": {
+      "photos": [
+        {
+          "url": "/viewpoints/photos/3df183629482fc549ab6.jpg",
+          "width": 1920,
+          "height": 1280,
+          "sourceWidth": 5184,
+          "sourceHeight": 3456,
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Gray_Whale_Cove_State_Beach%2C_Pacifica%2C_California_%2825074275306%29.jpg",
+          "author": "Tony Webster from San Francisco, California",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gray_Whale_Cove_State_Beach,_Pacifica,_California_(25074275306).jpg",
+          "caption": "Gray Whale Cove State Beach, Pacifica, California (25074275306).jpg",
+          "sha256": "3df183629482fc549ab69e382b0977cb5aab6c87009fe0cb3a9c786feccedcfe",
+          "bytes": 578158,
+          "verification": {
+            "status": "verified",
+            "checkedAt": "2026-10-17",
+            "subjectNote": "Decoded photo and published source description visually reviewed: coastal scenery at Gray Whale Cove — Bluff and Beach. No upscaling; historical photograph, not current weather."
+          }
+        }
+      ]
+    },
+    "montara-beach": {
+      "photos": [
+        {
+          "url": "/viewpoints/photos/4c91d2c06f50a633b36b.jpg",
+          "width": 1920,
+          "height": 1280,
+          "sourceWidth": 3264,
+          "sourceHeight": 2176,
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Montara_Summer_Surf_%28Unsplash%29.jpg",
+          "author": "Josh Austin joshaustin",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Montara_Summer_Surf_(Unsplash).jpg",
+          "caption": "Montara Summer Surf (Unsplash).jpg",
+          "sha256": "4c91d2c06f50a633b36bd227c9a8e09fa4fd4e7057e2aa1ecaf0fab967f49f89",
+          "bytes": 675758,
+          "verification": {
+            "status": "verified",
+            "checkedAt": "2026-10-17",
+            "subjectNote": "Decoded photo and published source description visually reviewed: coastal scenery at Montara State Beach — Pacific Shore. No upscaling; historical photograph, not current weather."
+          }
+        }
+      ]
+    },
+    "pacifica-beach": {
+      "photos": [
+        {
+          "url": "/viewpoints/photos/b514cfda44b2cb22bdd9.jpg",
+          "width": 1920,
+          "height": 1328,
+          "sourceWidth": 1942,
+          "sourceHeight": 1343,
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cb/PacificaStateBeach.jpg",
+          "author": "Bob n' Renee",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:PacificaStateBeach.jpg",
+          "caption": "PacificaStateBeach.jpg",
+          "sha256": "b514cfda44b2cb22bdd9dd712f2a64266fcc08879f154506e583cec61bcd8106",
+          "bytes": 523558,
+          "verification": {
+            "status": "verified",
+            "checkedAt": "2026-10-17",
+            "subjectNote": "Decoded photo and published source description visually reviewed: coastal scenery at Pacifica State Beach — Linda Mar. No upscaling; historical photograph, not current weather."
+          }
+        }
+      ]
+    },
+    "pillar-point-bluff": {
+      "photos": [
+        {
+          "url": "/viewpoints/photos/ba251f3012cb58bdce12.jpg",
+          "width": 1920,
+          "height": 1440,
+          "sourceWidth": 3264,
+          "sourceHeight": 2448,
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/North_Pillar_Point_Bluff_looking_South.jpg",
+          "author": "Sharon Hahn Darlin",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:North_Pillar_Point_Bluff_looking_South.jpg",
+          "caption": "North Pillar Point Bluff looking South.jpg",
+          "sha256": "ba251f3012cb58bdce121e11897dd8aabeb9ea9faafbb69630204229be9f1635",
+          "bytes": 1008757,
+          "verification": {
+            "status": "verified",
+            "checkedAt": "2026-10-17",
+            "subjectNote": "Decoded photo and published source description visually reviewed: coastal scenery at Pillar Point Bluff — Pacific View. No upscaling; historical photograph, not current weather."
           }
         }
       ]
